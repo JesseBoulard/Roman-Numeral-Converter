@@ -31,4 +31,11 @@ public class RomanNumeralConverterTest {
 		assertEquals("D", romanNumeralConverter.romanNumeralSymbolFor(500));
 		assertEquals("M", romanNumeralConverter.romanNumeralSymbolFor(1000));
 	}
+	
+	@Test
+	public void setArabicNumeralAndGetArabicNumeralTest() 
+	{
+		romanNumeralConverter.setArabicNumeral(10);
+		assertEquals(10, romanNumeralConverter.getArabicNumeral());
+	}
 }

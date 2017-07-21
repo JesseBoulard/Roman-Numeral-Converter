@@ -21,8 +21,18 @@ public class RomanNumeralConverter {
 		return Collections.unmodifiableMap(convertToRomanNumeral);
 	}
 	
+	private int arabicNumeral;
+	
 	protected String romanNumeralSymbolFor(int arabicNumeral) {
 		return CONVERT_TO_ROMAN_NUMERAL_SYMBOL.get(arabicNumeral);
+	}
+
+	public int getArabicNumeral() {
+		return arabicNumeral;
+	}
+
+	public void setArabicNumeral(int arabicNumeral) {
+		this.arabicNumeral = arabicNumeral;
 	}
 
 }
