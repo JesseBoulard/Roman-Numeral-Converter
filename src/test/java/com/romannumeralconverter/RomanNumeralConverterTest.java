@@ -46,4 +46,13 @@ public class RomanNumeralConverterTest {
 		assertEquals(1, romanNumeralConverter.getDigitArray()[0]);
 	}
 
+	@Test
+	public void testGetDigitArrayForAllDigitArrayValuesWhenArabicNumeralIsSetTo1666AndSplitArabicNumeralIntoDigitArrayIsCalled() {
+		romanNumeralConverter.setArabicNumeral(1666);
+		romanNumeralConverter.splitArabicNumeralIntoDigitArray();
+		assertEquals(1, romanNumeralConverter.getDigitArray()[0]);
+		assertEquals(6, romanNumeralConverter.getDigitArray()[1]);
+		assertEquals(6, romanNumeralConverter.getDigitArray()[2]);
+		assertEquals(6, romanNumeralConverter.getDigitArray()[3]);
+	}
 }

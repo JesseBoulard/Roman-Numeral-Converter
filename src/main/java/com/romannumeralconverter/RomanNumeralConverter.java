@@ -28,9 +28,13 @@ public class RomanNumeralConverter {
 		return CONVERT_TO_ROMAN_NUMERAL_SYMBOL.get(arabicNumeral);
 	}
 
-	public void splitArabicNumeralIntoDigitArray() {
-		digitArray = new int[1];
-		digitArray[0] = 1;
+	public void splitArabicNumeralIntoDigitArray() { 
+		String[] digitArrayAsString = Integer.toString(arabicNumeral).split("");
+		digitArray = new int[digitArrayAsString.length];
+		for (int i = 0; i < digitArray.length; i++)
+		{
+			digitArray[i] = Integer.parseInt(digitArrayAsString[i]);
+		}
 	}
 
 	public int getArabicNumeral() {
