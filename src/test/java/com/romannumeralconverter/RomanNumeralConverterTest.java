@@ -33,9 +33,17 @@ public class RomanNumeralConverterTest {
 	}
 	
 	@Test
-	public void setArabicNumeralAndGetArabicNumeralTest() 
+	public void testSetArabicNumeralAndGetArabicNumeral() 
 	{
 		romanNumeralConverter.setArabicNumeral(10);
 		assertEquals(10, romanNumeralConverter.getArabicNumeral());
 	}
+	
+	@Test
+	public void testGetDigitArrayWhenArabicNumeralIsSetTo1666() {
+		romanNumeralConverter.setArabicNumeral(1666);
+		romanNumeralConverter.splitArabicNumeralIntoDigitArray();
+		assertEquals(1, romanNumeralConverter.getDigitArray()[0]);
+	}
+
 }

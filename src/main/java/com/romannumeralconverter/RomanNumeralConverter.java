@@ -22,9 +22,15 @@ public class RomanNumeralConverter {
 	}
 	
 	private int arabicNumeral;
+	private int[] digitArray;
 	
 	protected String romanNumeralSymbolFor(int arabicNumeral) {
 		return CONVERT_TO_ROMAN_NUMERAL_SYMBOL.get(arabicNumeral);
+	}
+
+	public void splitArabicNumeralIntoDigitArray() {
+		digitArray = new int[1];
+		digitArray[0] = 1;
 	}
 
 	public int getArabicNumeral() {
@@ -35,4 +41,7 @@ public class RomanNumeralConverter {
 		this.arabicNumeral = arabicNumeral;
 	}
 
+	public int[] getDigitArray() {
+		return digitArray;
+	}
 }
