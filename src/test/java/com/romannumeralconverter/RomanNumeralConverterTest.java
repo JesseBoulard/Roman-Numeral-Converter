@@ -258,4 +258,10 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.splitArabicNumeralIntoDigitArray();
 		assertEquals("MCMXLVII", romanNumeralConverter.returnArabicNumeralConvertedToRomanNumeral());		
 	}
+	
+	@Test
+	public void testGetIsValidAndSetIsValid() {
+		romanNumeralConverter.setIsValid(false);
+		assertEquals(false, romanNumeralConverter.getIsValid());		
+	}
 }

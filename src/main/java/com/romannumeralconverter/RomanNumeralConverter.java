@@ -27,6 +27,8 @@ public class RomanNumeralConverter {
 	private int currentDigitPlaceValue;
 	private int currentDigitValue;
 	private String romanNumeralConcatenation;
+	private String userInput;
+	private boolean isValid;
 
 	protected String romanNumeralSymbolFor(int arabicNumeral) {
 		return CONVERT_TO_ROMAN_NUMERAL_SYMBOL.get(arabicNumeral);
@@ -123,6 +125,8 @@ public class RomanNumeralConverter {
 		return romanNumeralConcatenation;
 	}
 	
+
+	
 	//************************************ setters and getters ********************************************
 	public int getArabicNumeral() {
 		return arabicNumeral;
@@ -158,6 +162,14 @@ public class RomanNumeralConverter {
 
 	public void setRomanNumeralConcatenation(String romanNumeralConcatenation) {
 		this.romanNumeralConcatenation = romanNumeralConcatenation;
+	}
+
+	public boolean getIsValid() {
+		return isValid;
+	}
+
+	public void setIsValid(boolean isValid) {
+		this.isValid = isValid;
 	}
 
 
