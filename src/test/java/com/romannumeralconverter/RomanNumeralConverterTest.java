@@ -109,11 +109,20 @@ public class RomanNumeralConverterTest {
 	}
 	
 	@Test
-	public void ifCurrentdigitIsA9Add9EquivalentToRomanNumeralConcatenationWhen9IsInOnesPlaceTest() {
+	public void ifCurrentDigitIsA9Add9EquivalentToRomanNumeralConcatenationWhen9IsInOnesPlaceTest() {
 		romanNumeralConverter.setArabicNumeral(2109);
 		romanNumeralConverter.splitArabicNumeralIntoDigitArray();
 		romanNumeralConverter.setCurrentDigitIndex(3);
 		romanNumeralConverter.ifCurrentDigitIsA9Add9EquivalentToRomanNumeralConcatenation();
 		assertEquals("IX", romanNumeralConverter.getRomanNumeralConcatenation());
+	}
+	
+	@Test
+	public void ifCurrentDigitIsA9Add9EquivalentToRomanNumeralConcatenationWhen9IsInTensPlaceTest() {
+		romanNumeralConverter.setArabicNumeral(2190);
+		romanNumeralConverter.splitArabicNumeralIntoDigitArray();
+		romanNumeralConverter.setCurrentDigitIndex(2);
+		romanNumeralConverter.ifCurrentDigitIsA9Add9EquivalentToRomanNumeralConcatenation();
+		assertEquals("XC", romanNumeralConverter.getRomanNumeralConcatenation());
 	}
 }
