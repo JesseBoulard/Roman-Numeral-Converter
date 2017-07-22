@@ -134,6 +134,7 @@ public class RomanNumeralConverter {
 			arabicNumeral = Integer.parseInt(userInput);
 			if (arabicNumeral < 1 || arabicNumeral > 3999)
 			{
+				arabicNumeral = 0;
 				isValid = false;
 			}
 		}
