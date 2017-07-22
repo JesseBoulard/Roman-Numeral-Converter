@@ -190,4 +190,14 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.ifCurrentDigitIsA4Add4EquivalentToRomanNumeralConcatenation();
 		assertEquals("XL", romanNumeralConverter.getRomanNumeralConcatenation());
 	}
+	
+	@Test
+	public void testIfCurrentDigitIsA4Add4EquivalentToRomanNumeralConcatenationWhen4IsInHundredsPlace() {
+		romanNumeralConverter.setArabicNumeral(1458);
+		romanNumeralConverter.splitArabicNumeralIntoDigitArray();
+		romanNumeralConverter.setCurrentDigitIndex(1);
+		romanNumeralConverter.setRomanNumeralConcatenation("");
+		romanNumeralConverter.ifCurrentDigitIsA4Add4EquivalentToRomanNumeralConcatenation();
+		assertEquals("CD", romanNumeralConverter.getRomanNumeralConcatenation());
+	}
 }
