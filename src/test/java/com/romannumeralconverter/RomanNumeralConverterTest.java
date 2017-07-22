@@ -245,4 +245,10 @@ public class RomanNumeralConverterTest {
 		assertEquals("MMMCMXCIX", romanNumeralConverter.returnArabicNumeralConvertedToRomanNumeral());		
 	}
 
+	@Test
+	public void returnIifArabicNumeralIs1AndReturnArabicNumeralConvertedToRomanNumeralMethodIsCalled() {
+		romanNumeralConverter.setArabicNumeral(1);
+		romanNumeralConverter.splitArabicNumeralIntoDigitArray();
+		assertEquals("I", romanNumeralConverter.returnArabicNumeralConvertedToRomanNumeral());		
+	}
 }
