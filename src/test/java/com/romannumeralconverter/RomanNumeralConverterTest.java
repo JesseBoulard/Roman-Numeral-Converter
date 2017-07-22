@@ -94,4 +94,10 @@ public class RomanNumeralConverterTest {
 		assertEquals(1000, romanNumeralConverter.nextDigitPlaceValue());	
 	}
 	
+	@Test
+	public void testsetCurrentDigitValueAndGetCurrentDigitValue() 
+	{
+		romanNumeralConverter.setCurrentDigitValue(10);
+		assertEquals(10, romanNumeralConverter.getCurrentDigitValue());
+	}
 }
