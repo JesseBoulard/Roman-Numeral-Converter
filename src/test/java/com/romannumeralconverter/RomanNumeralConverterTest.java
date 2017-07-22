@@ -107,4 +107,10 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.setRomanNumeralConcatenation("MMC");
 		assertEquals("MMC", romanNumeralConverter.getRomanNumeralConcatenation());
 	}
+	
+	@Test
+	public void ifCurrentdigitIsA9Add9EquivalentToRomanNumeralConcatenationWhen9IsInOnesPlaceTest() {
+		romanNumeralConverter.ifCurrentDigitIsA9Add9EquivalentToRomanNumeralConcatenation();
+		assertEquals("MMCV", romanNumeralConverter.getRomanNumeralConcatenation());
+	}
 }

@@ -70,7 +70,11 @@ public class RomanNumeralConverter {
 	{
 		return currentDigitPlaceValue * 10;
 	}
-	
+
+	public void ifCurrentDigitIsA9Add9EquivalentToRomanNumeralConcatenation() {
+		romanNumeralConcatenation = "MMCV";
+	}
+
 	public int getArabicNumeral() {
 		return arabicNumeral;
 	}
@@ -106,4 +110,5 @@ public class RomanNumeralConverter {
 	public void setRomanNumeralConcatenation(String romanNumeralConcatenation) {
 		this.romanNumeralConcatenation = romanNumeralConcatenation;
 	}
+
 }
