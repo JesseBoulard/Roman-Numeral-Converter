@@ -110,7 +110,10 @@ public class RomanNumeralConverterTest {
 	
 	@Test
 	public void ifCurrentdigitIsA9Add9EquivalentToRomanNumeralConcatenationWhen9IsInOnesPlaceTest() {
+		romanNumeralConverter.setArabicNumeral(2109);
+		romanNumeralConverter.splitArabicNumeralIntoDigitArray();
+		romanNumeralConverter.setCurrentDigitIndex(3);
 		romanNumeralConverter.ifCurrentDigitIsA9Add9EquivalentToRomanNumeralConcatenation();
-		assertEquals("MMCV", romanNumeralConverter.getRomanNumeralConcatenation());
+		assertEquals("IX", romanNumeralConverter.getRomanNumeralConcatenation());
 	}
 }

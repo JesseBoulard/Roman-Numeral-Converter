@@ -72,7 +72,12 @@ public class RomanNumeralConverter {
 	}
 
 	public void ifCurrentDigitIsA9Add9EquivalentToRomanNumeralConcatenation() {
-		romanNumeralConcatenation = "MMCV";
+		setRomanNumeralConcatenation("");
+		if (digitArray[currentDigitIndex] == 9)
+		{
+			romanNumeralConcatenation += romanNumeralSymbolFor(currentDigitPlaceValue());
+			romanNumeralConcatenation += romanNumeralSymbolFor(nextDigitPlaceValue());
+		}
 	}
 
 	public int getArabicNumeral() {
