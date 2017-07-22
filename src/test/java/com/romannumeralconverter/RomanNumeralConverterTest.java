@@ -127,4 +127,14 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.ifCurrentDigitIsA9Add9EquivalentToRomanNumeralConcatenation();
 		assertEquals("XC", romanNumeralConverter.getRomanNumeralConcatenation());
 	}
+	
+	@Test
+	public void ifCurrentDigitIsA9Add9EquivalentToRomanNumeralConcatenationWhen9IsInHundredsPlaceTest() {
+		romanNumeralConverter.setArabicNumeral(2910);
+		romanNumeralConverter.splitArabicNumeralIntoDigitArray();
+		romanNumeralConverter.setCurrentDigitIndex(1);
+		romanNumeralConverter.setRomanNumeralConcatenation("");
+		romanNumeralConverter.ifCurrentDigitIsA9Add9EquivalentToRomanNumeralConcatenation();
+		assertEquals("CM", romanNumeralConverter.getRomanNumeralConcatenation());
+	}
 }
