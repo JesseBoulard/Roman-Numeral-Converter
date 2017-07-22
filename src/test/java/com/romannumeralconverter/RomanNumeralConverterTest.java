@@ -230,4 +230,9 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.ifCurrentDigitIsLessThan4AddDigitEquivalentToRomanNumeralConcatenation();
 		assertEquals("C", romanNumeralConverter.getRomanNumeralConcatenation());
 	}
+	
+	@Test
+	public void returnMDCLXVIifArabicNumeralIs1666AndReturnArabicNumeralConvertedToRomanNumeralMethodIsCalled() {
+		assertEquals("MDCLXVI", romanNumeralConverter.returnArabicNumeralConvertedToRomanNumeral());
+	}
 }

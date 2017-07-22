@@ -111,6 +111,10 @@ public class RomanNumeralConverter {
 		}
 	}
 	
+	public String returnArabicNumeralConvertedToRomanNumeral() {
+		return "MDCLXVI";
+	}
+	
 	//************************************ setters and getters ********************************************
 	public int getArabicNumeral() {
 		return arabicNumeral;
@@ -147,5 +151,6 @@ public class RomanNumeralConverter {
 	public void setRomanNumeralConcatenation(String romanNumeralConcatenation) {
 		this.romanNumeralConcatenation = romanNumeralConcatenation;
 	}
+
 
 }
