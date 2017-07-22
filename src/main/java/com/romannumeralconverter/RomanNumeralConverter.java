@@ -172,5 +172,13 @@ public class RomanNumeralConverter {
 		this.isValid = isValid;
 	}
 
+	public String getUserInput() {
+		return userInput;
+	}
+
+	public void setUserInput(String userInput) {
+		this.userInput = userInput;
+	}
+
 
 }

@@ -264,4 +264,11 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.setIsValid(false);
 		assertEquals(false, romanNumeralConverter.getIsValid());		
 	}
+
+	@Test
+	public void testGetUserInputAndSetUserInput() {
+		romanNumeralConverter.setUserInput("P1F5");
+		assertEquals("P1F5", romanNumeralConverter.getUserInput());		
+	}
+	
 }
