@@ -172,8 +172,22 @@ public class RomanNumeralConverterTest {
 	}
 	
 	@Test
-	public void ifCurrentDigitIsA4Add4EquivalentToRomanNumeralConcatenationWhen4IsInOnesPlaceTest() {
+	public void testIfCurrentDigitIsA4Add4EquivalentToRomanNumeralConcatenationWhen4IsInOnesPlace() {
+		romanNumeralConverter.setArabicNumeral(1394);
+		romanNumeralConverter.splitArabicNumeralIntoDigitArray();
+		romanNumeralConverter.setCurrentDigitIndex(3);
+		romanNumeralConverter.setRomanNumeralConcatenation("");
 		romanNumeralConverter.ifCurrentDigitIsA4Add4EquivalentToRomanNumeralConcatenation();
 		assertEquals("IV", romanNumeralConverter.getRomanNumeralConcatenation());
+	}
+	
+	@Test
+	public void testIfCurrentDigitIsA4Add4EquivalentToRomanNumeralConcatenationWhen4IsInTensPlace() {
+		romanNumeralConverter.setArabicNumeral(1348);
+		romanNumeralConverter.splitArabicNumeralIntoDigitArray();
+		romanNumeralConverter.setCurrentDigitIndex(2);
+		romanNumeralConverter.setRomanNumeralConcatenation("");
+		romanNumeralConverter.ifCurrentDigitIsA4Add4EquivalentToRomanNumeralConcatenation();
+		assertEquals("XL", romanNumeralConverter.getRomanNumeralConcatenation());
 	}
 }

@@ -93,7 +93,11 @@ public class RomanNumeralConverter {
 
 	public void ifCurrentDigitIsA4Add4EquivalentToRomanNumeralConcatenation()
 	{
-		romanNumeralConcatenation = "IV";
+		if (digitArray[currentDigitIndex] == 4)
+		{
+			romanNumeralConcatenation += romanNumeralSymbolFor(currentDigitPlaceValue());
+			romanNumeralConcatenation += romanNumeralSymbolFor(nextDigitPlaceValue() / 2);
+		}
 	}
 
 	public int getArabicNumeral() {
