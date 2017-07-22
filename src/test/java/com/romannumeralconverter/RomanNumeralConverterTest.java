@@ -200,4 +200,10 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.ifCurrentDigitIsA4Add4EquivalentToRomanNumeralConcatenation();
 		assertEquals("CD", romanNumeralConverter.getRomanNumeralConcatenation());
 	}
+	
+	@Test
+	public void testIfCurrentDigitIsLessThan4AddDigitEquivalentToRomanNumeralConcatenationWhenDigitIsInOnesPlace() {
+		romanNumeralConverter.ifCurrentDigitIsLessThan4AddDigitEquivalentToRomanNumeralConcatenation();
+		assertEquals("III", romanNumeralConverter.getRomanNumeralConcatenation());
+	}
 }

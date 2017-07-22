@@ -100,6 +100,12 @@ public class RomanNumeralConverter {
 		}
 	}
 
+	public void ifCurrentDigitIsLessThan4AddDigitEquivalentToRomanNumeralConcatenation()
+	{
+		romanNumeralConcatenation = "III";
+	}
+
+	//************************************ setters and getters ********************************************
 	public int getArabicNumeral() {
 		return arabicNumeral;
 	}
