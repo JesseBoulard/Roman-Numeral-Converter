@@ -62,5 +62,9 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.setCurrentDigitIndex(2);
 		assertEquals(2, romanNumeralConverter.getCurrentDigitIndex());
 	}
-
+	
+	@Test
+	public void testGetCurrentPlaceValueWhenPlaceValueShouldBe100() {
+		assertEquals(100, romanNumeralConverter.getCurrentPlaceValue());
+	}
 }

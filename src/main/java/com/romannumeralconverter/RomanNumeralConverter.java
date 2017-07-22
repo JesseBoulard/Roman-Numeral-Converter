@@ -37,6 +37,11 @@ public class RomanNumeralConverter {
 			digitArray[i] = Integer.parseInt(digitArrayAsString[i]);
 		}
 	}
+	
+	public int getCurrentPlaceValue()
+	{
+		return 100;
+	}
 
 	public int getArabicNumeral() {
 		return arabicNumeral;
