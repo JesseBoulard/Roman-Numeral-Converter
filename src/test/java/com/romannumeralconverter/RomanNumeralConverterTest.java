@@ -65,6 +65,23 @@ public class RomanNumeralConverterTest {
 	
 	@Test
 	public void testGetCurrentPlaceValueWhenPlaceValueShouldBe100() {
+		romanNumeralConverter.setArabicNumeral(1693);
+		romanNumeralConverter.splitArabicNumeralIntoDigitArray();
+		romanNumeralConverter.setCurrentDigitIndex(1);
 		assertEquals(100, romanNumeralConverter.getCurrentPlaceValue());
+	}
+	
+	@Test
+	public void testGetCurrentPlaceValueForAllValues() {
+		romanNumeralConverter.setArabicNumeral(1693);
+		romanNumeralConverter.splitArabicNumeralIntoDigitArray();
+		romanNumeralConverter.setCurrentDigitIndex(0);
+		assertEquals(1000, romanNumeralConverter.getCurrentPlaceValue());
+		romanNumeralConverter.setCurrentDigitIndex(1);
+		assertEquals(100, romanNumeralConverter.getCurrentPlaceValue());
+		romanNumeralConverter.setCurrentDigitIndex(2);
+		assertEquals(10, romanNumeralConverter.getCurrentPlaceValue());
+		romanNumeralConverter.setCurrentDigitIndex(3);
+		assertEquals(1, romanNumeralConverter.getCurrentPlaceValue());
 	}
 }

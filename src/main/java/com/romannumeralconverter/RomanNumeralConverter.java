@@ -7,7 +7,7 @@ import java.util.Map;
 public class RomanNumeralConverter {
 
 	private static final Map<Integer, String> CONVERT_TO_ROMAN_NUMERAL_SYMBOL = createMapOfArabicToRomanNumerals();
-	
+
 	private static Map<Integer, String> createMapOfArabicToRomanNumerals() 
 	{
 		Map<Integer, String> convertToRomanNumeral = new HashMap<Integer, String>();
@@ -20,11 +20,12 @@ public class RomanNumeralConverter {
 		convertToRomanNumeral.put(1000, "M");
 		return Collections.unmodifiableMap(convertToRomanNumeral);
 	}
-	
+
 	private int arabicNumeral;
 	private int[] digitArray;
 	private int currentDigitIndex;
-	
+	private int currentPlaceValue;
+
 	protected String romanNumeralSymbolFor(int arabicNumeral) {
 		return CONVERT_TO_ROMAN_NUMERAL_SYMBOL.get(arabicNumeral);
 	}
@@ -37,10 +38,30 @@ public class RomanNumeralConverter {
 			digitArray[i] = Integer.parseInt(digitArrayAsString[i]);
 		}
 	}
-	
+
 	public int getCurrentPlaceValue()
 	{
-		return 100;
+		if (currentDigitIndex == digitArray.length - 1)
+		{
+			currentPlaceValue = 1;
+		}
+		else if (currentDigitIndex == digitArray.length - 2)
+		{
+			currentPlaceValue = 10;
+		}
+		else if (currentDigitIndex == digitArray.length - 3)
+		{
+			currentPlaceValue = 100;
+		}
+		else if (currentDigitIndex == digitArray.length - 4)
+		{
+			currentPlaceValue = 1000;
+		}
+		else
+		{
+			currentPlaceValue = 0;
+		}
+		return currentPlaceValue;
 	}
 
 	public int getArabicNumeral() {
