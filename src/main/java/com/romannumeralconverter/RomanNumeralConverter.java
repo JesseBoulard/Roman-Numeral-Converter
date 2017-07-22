@@ -127,7 +127,7 @@ public class RomanNumeralConverter {
 	
 	public void verifyInputIsArabicNumeralBetween1And3999()
 	{
-		isValid = true;
+		arabicNumeral = 1;
 	}
 	
 	//************************************ setters and getters ********************************************

@@ -274,6 +274,6 @@ public class RomanNumeralConverterTest {
 	@Test
 	public void testVerifyInputIsArabicNumeralBetween1And3999WhenUserInputIs1() {
 		romanNumeralConverter.verifyInputIsArabicNumeralBetween1And3999();
-		assertEquals(true, romanNumeralConverter.getIsValid());		
+		assertEquals(1, romanNumeralConverter.getArabicNumeral());		
 	}
 }
