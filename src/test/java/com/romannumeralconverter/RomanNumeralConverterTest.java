@@ -170,4 +170,10 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.ifCurrentDigitIsLessThan9AndGreaterThanOrEqualTo5AddDigitEquivalentToRomanNumeralConcatenation();
 		assertEquals("DCCC", romanNumeralConverter.getRomanNumeralConcatenation());
 	}
+	
+	@Test
+	public void ifCurrentDigitIsA4Add4EquivalentToRomanNumeralConcatenationWhen4IsInOnesPlaceTest() {
+		romanNumeralConverter.ifCurrentDigitIsA4Add4EquivalentToRomanNumeralConcatenation();
+		assertEquals("IV", romanNumeralConverter.getRomanNumeralConcatenation());
+	}
 }

@@ -90,7 +90,12 @@ public class RomanNumeralConverter {
 			}
 		}
 	}
-	
+
+	public void ifCurrentDigitIsA4Add4EquivalentToRomanNumeralConcatenation()
+	{
+		romanNumeralConcatenation = "IV";
+	}
+
 	public int getArabicNumeral() {
 		return arabicNumeral;
 	}
