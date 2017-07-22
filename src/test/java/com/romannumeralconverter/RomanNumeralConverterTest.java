@@ -95,9 +95,16 @@ public class RomanNumeralConverterTest {
 	}
 	
 	@Test
-	public void testsetCurrentDigitValueAndGetCurrentDigitValue() 
+	public void testSetCurrentDigitValueAndGetCurrentDigitValue() 
 	{
 		romanNumeralConverter.setCurrentDigitValue(10);
 		assertEquals(10, romanNumeralConverter.getCurrentDigitValue());
+	}
+	
+	@Test
+	public void testSetRomanNumeralConcatenationAndGetRomanNumeralConcatenation() 
+	{
+		romanNumeralConverter.setRomanNumeralConcatenation("MMC");
+		assertEquals("MMC", romanNumeralConverter.getRomanNumeralConcatenation());
 	}
 }

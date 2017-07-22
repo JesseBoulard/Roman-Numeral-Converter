@@ -26,6 +26,7 @@ public class RomanNumeralConverter {
 	private int currentDigitIndex;
 	private int currentDigitPlaceValue;
 	private int currentDigitValue;
+	private String romanNumeralConcatenation;
 
 	protected String romanNumeralSymbolFor(int arabicNumeral) {
 		return CONVERT_TO_ROMAN_NUMERAL_SYMBOL.get(arabicNumeral);
@@ -96,5 +97,13 @@ public class RomanNumeralConverter {
 
 	public void setCurrentDigitValue(int currentDigitValue) {
 		this.currentDigitValue = currentDigitValue;
+	}
+
+	public String getRomanNumeralConcatenation() {
+		return romanNumeralConcatenation;
+	}
+
+	public void setRomanNumeralConcatenation(String romanNumeralConcatenation) {
+		this.romanNumeralConcatenation = romanNumeralConcatenation;
 	}
 }
