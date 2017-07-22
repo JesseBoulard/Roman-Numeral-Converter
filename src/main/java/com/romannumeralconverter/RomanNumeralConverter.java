@@ -39,7 +39,7 @@ public class RomanNumeralConverter {
 		}
 	}
 
-	public int getCurrentPlaceValue()
+	public int currentDigitPlaceValue()
 	{
 		if (currentDigitIndex == digitArray.length - 1)
 		{

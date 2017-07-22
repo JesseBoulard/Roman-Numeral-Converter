@@ -64,24 +64,24 @@ public class RomanNumeralConverterTest {
 	}
 	
 	@Test
-	public void testGetCurrentPlaceValueWhenPlaceValueShouldBe100() {
+	public void testCurrentDigitPlaceValueWhenPlaceValueShouldBe100() {
 		romanNumeralConverter.setArabicNumeral(1693);
 		romanNumeralConverter.splitArabicNumeralIntoDigitArray();
 		romanNumeralConverter.setCurrentDigitIndex(1);
-		assertEquals(100, romanNumeralConverter.getCurrentPlaceValue());
+		assertEquals(100, romanNumeralConverter.currentDigitPlaceValue());
 	}
 	
 	@Test
-	public void testGetCurrentPlaceValueForAllValues() {
+	public void testCurrentDigitPlaceValueForAllValues() {
 		romanNumeralConverter.setArabicNumeral(1693);
 		romanNumeralConverter.splitArabicNumeralIntoDigitArray();
 		romanNumeralConverter.setCurrentDigitIndex(0);
-		assertEquals(1000, romanNumeralConverter.getCurrentPlaceValue());
+		assertEquals(1000, romanNumeralConverter.currentDigitPlaceValue());
 		romanNumeralConverter.setCurrentDigitIndex(1);
-		assertEquals(100, romanNumeralConverter.getCurrentPlaceValue());
+		assertEquals(100, romanNumeralConverter.currentDigitPlaceValue());
 		romanNumeralConverter.setCurrentDigitIndex(2);
-		assertEquals(10, romanNumeralConverter.getCurrentPlaceValue());
+		assertEquals(10, romanNumeralConverter.currentDigitPlaceValue());
 		romanNumeralConverter.setCurrentDigitIndex(3);
-		assertEquals(1, romanNumeralConverter.getCurrentPlaceValue());
+		assertEquals(1, romanNumeralConverter.currentDigitPlaceValue());
 	}
 }
