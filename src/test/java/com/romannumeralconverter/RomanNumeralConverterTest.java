@@ -210,4 +210,14 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.ifCurrentDigitIsLessThan4AddDigitEquivalentToRomanNumeralConcatenation();
 		assertEquals("III", romanNumeralConverter.getRomanNumeralConcatenation());
 	}
+	
+	@Test
+	public void testIfCurrentDigitIsLessThan4AddDigitEquivalentToRomanNumeralConcatenationWhenDigitIsInTensPlace() {
+		romanNumeralConverter.setArabicNumeral(1624);
+		romanNumeralConverter.splitArabicNumeralIntoDigitArray();
+		romanNumeralConverter.setCurrentDigitIndex(2);
+		romanNumeralConverter.setRomanNumeralConcatenation("");
+		romanNumeralConverter.ifCurrentDigitIsLessThan4AddDigitEquivalentToRomanNumeralConcatenation();
+		assertEquals("XX", romanNumeralConverter.getRomanNumeralConcatenation());
+	}
 }
