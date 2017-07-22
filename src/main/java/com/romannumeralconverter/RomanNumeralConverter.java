@@ -24,7 +24,7 @@ public class RomanNumeralConverter {
 	private int arabicNumeral;
 	private int[] digitArray;
 	private int currentDigitIndex;
-	private int currentPlaceValue;
+	private int currentDigitPlaceValue;
 
 	protected String romanNumeralSymbolFor(int arabicNumeral) {
 		return CONVERT_TO_ROMAN_NUMERAL_SYMBOL.get(arabicNumeral);
@@ -43,27 +43,32 @@ public class RomanNumeralConverter {
 	{
 		if (currentDigitIndex == digitArray.length - 1)
 		{
-			currentPlaceValue = 1;
+			currentDigitPlaceValue = 1;
 		}
 		else if (currentDigitIndex == digitArray.length - 2)
 		{
-			currentPlaceValue = 10;
+			currentDigitPlaceValue = 10;
 		}
 		else if (currentDigitIndex == digitArray.length - 3)
 		{
-			currentPlaceValue = 100;
+			currentDigitPlaceValue = 100;
 		}
 		else if (currentDigitIndex == digitArray.length - 4)
 		{
-			currentPlaceValue = 1000;
+			currentDigitPlaceValue = 1000;
 		}
 		else
 		{
-			currentPlaceValue = 0;
+			currentDigitPlaceValue = 0;
 		}
-		return currentPlaceValue;
+		return currentDigitPlaceValue;
 	}
 
+	public int nextDigitPlaceValue()
+	{
+		return currentDigitPlaceValue * 10;
+	}
+	
 	public int getArabicNumeral() {
 		return arabicNumeral;
 	}

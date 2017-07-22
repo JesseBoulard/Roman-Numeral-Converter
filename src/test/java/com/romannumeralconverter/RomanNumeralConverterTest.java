@@ -84,4 +84,14 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.setCurrentDigitIndex(3);
 		assertEquals(1, romanNumeralConverter.currentDigitPlaceValue());
 	}
+	
+	@Test
+	public void testNextDigitPlaceValue() {
+		romanNumeralConverter.setArabicNumeral(1693);
+		romanNumeralConverter.splitArabicNumeralIntoDigitArray();
+		romanNumeralConverter.setCurrentDigitIndex(1);
+		assertEquals(100, romanNumeralConverter.currentDigitPlaceValue());
+		assertEquals(1000, romanNumeralConverter.nextDigitPlaceValue());	
+	}
+	
 }
