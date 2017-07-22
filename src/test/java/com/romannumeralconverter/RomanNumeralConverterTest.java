@@ -233,6 +233,16 @@ public class RomanNumeralConverterTest {
 	
 	@Test
 	public void returnMDCLXVIifArabicNumeralIs1666AndReturnArabicNumeralConvertedToRomanNumeralMethodIsCalled() {
+		romanNumeralConverter.setArabicNumeral(1666);
+		romanNumeralConverter.splitArabicNumeralIntoDigitArray();
 		assertEquals("MDCLXVI", romanNumeralConverter.returnArabicNumeralConvertedToRomanNumeral());
 	}
+	
+	@Test
+	public void returnMMMCMXCIXifArabicNumeralIs3999AndReturnArabicNumeralConvertedToRomanNumeralMethodIsCalled() {
+		romanNumeralConverter.setArabicNumeral(3999);
+		romanNumeralConverter.splitArabicNumeralIntoDigitArray();
+		assertEquals("MMMCMXCIX", romanNumeralConverter.returnArabicNumeralConvertedToRomanNumeral());		
+	}
+
 }

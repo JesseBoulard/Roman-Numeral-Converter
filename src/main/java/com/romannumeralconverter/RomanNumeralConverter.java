@@ -112,7 +112,15 @@ public class RomanNumeralConverter {
 	}
 	
 	public String returnArabicNumeralConvertedToRomanNumeral() {
-		return "MDCLXVI";
+		romanNumeralConcatenation = "";
+		for (currentDigitIndex = 0; currentDigitIndex < digitArray.length; currentDigitIndex++)
+		{
+			ifCurrentDigitIsA9Add9EquivalentToRomanNumeralConcatenation();
+			ifCurrentDigitIsLessThan9AndGreaterThanOrEqualTo5AddDigitEquivalentToRomanNumeralConcatenation();
+			ifCurrentDigitIsA4Add4EquivalentToRomanNumeralConcatenation();
+			ifCurrentDigitIsLessThan4AddDigitEquivalentToRomanNumeralConcatenation();
+		}
+		return romanNumeralConcatenation;
 	}
 	
 	//************************************ setters and getters ********************************************
