@@ -273,8 +273,17 @@ public class RomanNumeralConverterTest {
 	
 	@Test
 	public void testVerifyInputIsArabicNumeralBetween1And3999WhenUserInputIs1() {
+		romanNumeralConverter.setUserInput("1");
 		romanNumeralConverter.verifyInputIsArabicNumeralBetween1And3999();
 		assertEquals(1, romanNumeralConverter.getArabicNumeral());		
 		assertTrue(romanNumeralConverter.getIsValid());	
+	}
+	
+	@Test
+	public void testVerifyInputIsArabicNumeralBetween1And3999WhenUserInputIsME262() {
+		romanNumeralConverter.setUserInput("ME262");
+		romanNumeralConverter.verifyInputIsArabicNumeralBetween1And3999();
+		assertEquals(0, romanNumeralConverter.getArabicNumeral());		
+		assertFalse(romanNumeralConverter.getIsValid());	
 	}
 }

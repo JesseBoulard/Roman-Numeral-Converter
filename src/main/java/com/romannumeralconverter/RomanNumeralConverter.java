@@ -127,8 +127,20 @@ public class RomanNumeralConverter {
 	
 	public void verifyInputIsArabicNumeralBetween1And3999()
 	{
-		arabicNumeral = 1;
+		arabicNumeral = 0;
 		isValid = true;
+		try
+		{
+			arabicNumeral = Integer.parseInt(userInput);
+			if (arabicNumeral < 1 || arabicNumeral > 3999)
+			{
+				isValid = false;
+			}
+		}
+		catch (Exception e)
+		{
+			isValid = false;
+		}
 	}
 	
 	//************************************ setters and getters ********************************************
