@@ -148,4 +148,15 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.ifCurrentDigitIsLessThan9AndGreaterThanOrEqualTo5AddDigitEquivalentToRomanNumeralConcatenation();
 		assertEquals("VI", romanNumeralConverter.getRomanNumeralConcatenation());
 	}
+	
+	@Test
+	public void testIfCurrentDigitIsLessThan9AndGreaterThanOrEqualTo5AddDigitEquivalentToRomanNumeralConcatenationWhenCurrentDigitPlaceValueIsTens() {
+		romanNumeralConverter.setArabicNumeral(1376);
+		romanNumeralConverter.splitArabicNumeralIntoDigitArray();
+		romanNumeralConverter.setCurrentDigitIndex(2);
+		romanNumeralConverter.currentDigitPlaceValue();
+		romanNumeralConverter.setRomanNumeralConcatenation("");
+		romanNumeralConverter.ifCurrentDigitIsLessThan9AndGreaterThanOrEqualTo5AddDigitEquivalentToRomanNumeralConcatenation();
+		assertEquals("LXX", romanNumeralConverter.getRomanNumeralConcatenation());
+	}
 }
