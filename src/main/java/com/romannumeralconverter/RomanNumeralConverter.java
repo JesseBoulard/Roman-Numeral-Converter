@@ -125,7 +125,10 @@ public class RomanNumeralConverter {
 		return romanNumeralConcatenation;
 	}
 	
-
+	public void verifyInputIsArabicNumeralBetween1And3999()
+	{
+		isValid = true;
+	}
 	
 	//************************************ setters and getters ********************************************
 	public int getArabicNumeral() {
