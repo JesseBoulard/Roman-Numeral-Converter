@@ -112,7 +112,7 @@ public class RomanNumeralConverter {
 			}
 		}
 	}
-	
+
 	public String returnArabicNumeralConvertedToRomanNumeral() {
 		romanNumeralConcatenation = "";
 		for (currentDigitIndex = 0; currentDigitIndex < digitArray.length; currentDigitIndex++)
@@ -125,25 +125,30 @@ public class RomanNumeralConverter {
 		return romanNumeralConcatenation;
 	}
 	
-	public void verifyInputIsArabicNumeralBetween1And3999()
+	public void setIsValidToTrueIfUserInputIsAnIntBetween1And3999()
 	{
 		arabicNumeral = 0;
 		isValid = true;
+		arabicNumeral = Integer.parseInt(userInput);
+		if (arabicNumeral < 1 || arabicNumeral > 3999)
+		{
+			arabicNumeral = 0;
+			isValid = false;
+		}
+	}
+	
+	public void setIsValidToFalseIfUserInputIsNotAnIntBetween1And3999()
+	{
 		try
 		{
-			arabicNumeral = Integer.parseInt(userInput);
-			if (arabicNumeral < 1 || arabicNumeral > 3999)
-			{
-				arabicNumeral = 0;
-				isValid = false;
-			}
+			setIsValidToTrueIfUserInputIsAnIntBetween1And3999();
 		}
 		catch (Exception e)
 		{
 			isValid = false;
 		}
 	}
-	
+
 	//************************************ setters and getters ********************************************
 	public int getArabicNumeral() {
 		return arabicNumeral;
