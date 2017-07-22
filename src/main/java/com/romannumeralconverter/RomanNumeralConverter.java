@@ -80,7 +80,15 @@ public class RomanNumeralConverter {
 	}
 
 	public void ifCurrentDigitIsLessThan9AndGreaterThanOrEqualTo5AddDigitEquivalentToRomanNumeralConcatenation() {
-		romanNumeralConcatenation = "VI";
+		if (digitArray[currentDigitIndex] >= 5 && digitArray[currentDigitIndex] < 9)
+		{
+			currentDigitPlaceValue = currentDigitPlaceValue();
+			romanNumeralConcatenation += romanNumeralSymbolFor(nextDigitPlaceValue() / 2);
+			for (int i = 0; i < (digitArray[currentDigitIndex] - 5); i++)
+			{
+				romanNumeralConcatenation += romanNumeralSymbolFor(currentDigitPlaceValue);
+			}
+		}
 	}
 	
 	public int getArabicNumeral() {

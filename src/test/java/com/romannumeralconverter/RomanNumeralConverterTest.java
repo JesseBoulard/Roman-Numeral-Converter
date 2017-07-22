@@ -109,7 +109,7 @@ public class RomanNumeralConverterTest {
 	}
 	
 	@Test
-	public void ifCurrentDigitIsA9Add9EquivalentToRomanNumeralConcatenationWhen9IsInOnesPlaceTest() {
+	public void testIfCurrentDigitIsA9Add9EquivalentToRomanNumeralConcatenationWhen9IsInOnesPlace() {
 		romanNumeralConverter.setArabicNumeral(2109);
 		romanNumeralConverter.splitArabicNumeralIntoDigitArray();
 		romanNumeralConverter.setCurrentDigitIndex(3);
@@ -119,7 +119,7 @@ public class RomanNumeralConverterTest {
 	}
 	
 	@Test
-	public void ifCurrentDigitIsA9Add9EquivalentToRomanNumeralConcatenationWhen9IsInTensPlaceTest() {
+	public void testIfCurrentDigitIsA9Add9EquivalentToRomanNumeralConcatenationWhen9IsInTensPlace() {
 		romanNumeralConverter.setArabicNumeral(2190);
 		romanNumeralConverter.splitArabicNumeralIntoDigitArray();
 		romanNumeralConverter.setCurrentDigitIndex(2);
@@ -129,7 +129,7 @@ public class RomanNumeralConverterTest {
 	}
 	
 	@Test
-	public void ifCurrentDigitIsA9Add9EquivalentToRomanNumeralConcatenationWhen9IsInHundredsPlaceTest() {
+	public void testIfCurrentDigitIsA9Add9EquivalentToRomanNumeralConcatenationWhen9IsInHundredsPlace() {
 		romanNumeralConverter.setArabicNumeral(2910);
 		romanNumeralConverter.splitArabicNumeralIntoDigitArray();
 		romanNumeralConverter.setCurrentDigitIndex(1);
@@ -139,7 +139,12 @@ public class RomanNumeralConverterTest {
 	}
 	
 	@Test
-	public void ifCurrentDigitIsGreaterThanOrEqualTo5AddDigitEquivalentToRomanNumeralConcatenationWhenDigitIsInOnesPlaceTest() {
+	public void testIfCurrentDigitIsLessThan9AndGreaterThanOrEqualTo5AddDigitEquivalentToRomanNumeralConcatenationWhenCurrentDigitPlaceValueIsOnes() {
+		romanNumeralConverter.setArabicNumeral(1396);
+		romanNumeralConverter.splitArabicNumeralIntoDigitArray();
+		romanNumeralConverter.setCurrentDigitIndex(3);
+		romanNumeralConverter.currentDigitPlaceValue();
+		romanNumeralConverter.setRomanNumeralConcatenation("");
 		romanNumeralConverter.ifCurrentDigitIsLessThan9AndGreaterThanOrEqualTo5AddDigitEquivalentToRomanNumeralConcatenation();
 		assertEquals("VI", romanNumeralConverter.getRomanNumeralConcatenation());
 	}
