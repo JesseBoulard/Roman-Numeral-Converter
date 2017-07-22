@@ -72,7 +72,6 @@ public class RomanNumeralConverter {
 	}
 
 	public void ifCurrentDigitIsA9Add9EquivalentToRomanNumeralConcatenation() {
-		setRomanNumeralConcatenation("");
 		if (digitArray[currentDigitIndex] == 9)
 		{
 			romanNumeralConcatenation += romanNumeralSymbolFor(currentDigitPlaceValue());

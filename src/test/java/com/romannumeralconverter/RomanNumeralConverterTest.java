@@ -113,6 +113,7 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.setArabicNumeral(2109);
 		romanNumeralConverter.splitArabicNumeralIntoDigitArray();
 		romanNumeralConverter.setCurrentDigitIndex(3);
+		romanNumeralConverter.setRomanNumeralConcatenation("");
 		romanNumeralConverter.ifCurrentDigitIsA9Add9EquivalentToRomanNumeralConcatenation();
 		assertEquals("IX", romanNumeralConverter.getRomanNumeralConcatenation());
 	}
@@ -122,6 +123,7 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.setArabicNumeral(2190);
 		romanNumeralConverter.splitArabicNumeralIntoDigitArray();
 		romanNumeralConverter.setCurrentDigitIndex(2);
+		romanNumeralConverter.setRomanNumeralConcatenation("");
 		romanNumeralConverter.ifCurrentDigitIsA9Add9EquivalentToRomanNumeralConcatenation();
 		assertEquals("XC", romanNumeralConverter.getRomanNumeralConcatenation());
 	}
