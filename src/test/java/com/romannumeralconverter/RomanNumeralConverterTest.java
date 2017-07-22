@@ -137,4 +137,10 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.ifCurrentDigitIsA9Add9EquivalentToRomanNumeralConcatenation();
 		assertEquals("CM", romanNumeralConverter.getRomanNumeralConcatenation());
 	}
+	
+	@Test
+	public void ifCurrentDigitIsGreaterThanOrEqualTo5AddDigitEquivalentToRomanNumeralConcatenationWhenDigitIsInOnesPlaceTest() {
+		romanNumeralConverter.ifCurrentDigitIsLessThan9AndGreaterThanOrEqualTo5AddDigitEquivalentToRomanNumeralConcatenation();
+		assertEquals("VI", romanNumeralConverter.getRomanNumeralConcatenation());
+	}
 }

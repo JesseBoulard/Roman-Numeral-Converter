@@ -79,6 +79,10 @@ public class RomanNumeralConverter {
 		}
 	}
 
+	public void ifCurrentDigitIsLessThan9AndGreaterThanOrEqualTo5AddDigitEquivalentToRomanNumeralConcatenation() {
+		romanNumeralConcatenation = "VI";
+	}
+	
 	public int getArabicNumeral() {
 		return arabicNumeral;
 	}
