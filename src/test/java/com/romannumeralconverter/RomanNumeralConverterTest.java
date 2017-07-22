@@ -251,4 +251,11 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.splitArabicNumeralIntoDigitArray();
 		assertEquals("I", romanNumeralConverter.returnArabicNumeralConvertedToRomanNumeral());		
 	}
+
+	@Test
+	public void returnMCMXLVIIifArabicNumeralIs1947AndReturnArabicNumeralConvertedToRomanNumeralMethodIsCalled() {
+		romanNumeralConverter.setArabicNumeral(1947);
+		romanNumeralConverter.splitArabicNumeralIntoDigitArray();
+		assertEquals("MCMXLVII", romanNumeralConverter.returnArabicNumeralConvertedToRomanNumeral());		
+	}
 }
