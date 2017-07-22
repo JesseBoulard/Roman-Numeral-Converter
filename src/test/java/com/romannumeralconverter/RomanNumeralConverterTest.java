@@ -203,6 +203,10 @@ public class RomanNumeralConverterTest {
 	
 	@Test
 	public void testIfCurrentDigitIsLessThan4AddDigitEquivalentToRomanNumeralConcatenationWhenDigitIsInOnesPlace() {
+		romanNumeralConverter.setArabicNumeral(1693);
+		romanNumeralConverter.splitArabicNumeralIntoDigitArray();
+		romanNumeralConverter.setCurrentDigitIndex(3);
+		romanNumeralConverter.setRomanNumeralConcatenation("");
 		romanNumeralConverter.ifCurrentDigitIsLessThan4AddDigitEquivalentToRomanNumeralConcatenation();
 		assertEquals("III", romanNumeralConverter.getRomanNumeralConcatenation());
 	}

@@ -102,9 +102,15 @@ public class RomanNumeralConverter {
 
 	public void ifCurrentDigitIsLessThan4AddDigitEquivalentToRomanNumeralConcatenation()
 	{
-		romanNumeralConcatenation = "III";
+		if (digitArray[currentDigitIndex] < 4)
+		{
+			for (int i = 0; i < digitArray[currentDigitIndex]; i++)
+			{
+				romanNumeralConcatenation += romanNumeralSymbolFor(currentDigitPlaceValue());
+			}
+		}
 	}
-
+	
 	//************************************ setters and getters ********************************************
 	public int getArabicNumeral() {
 		return arabicNumeral;
