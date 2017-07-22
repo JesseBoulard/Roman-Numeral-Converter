@@ -302,4 +302,12 @@ public class RomanNumeralConverterTest {
 		assertEquals(0, romanNumeralConverter.getArabicNumeral());		
 		assertFalse(romanNumeralConverter.getIsValid());	
 	}
+	
+	@Test
+	public void testVerifyInputIsArabicNumeralBetween1And3999WhenUserInputIs0() {
+		romanNumeralConverter.setUserInput("0");
+		romanNumeralConverter.verifyInputIsArabicNumeralBetween1And3999();
+		assertEquals(0, romanNumeralConverter.getArabicNumeral());		
+		assertFalse(romanNumeralConverter.getIsValid());	
+	}
 }
