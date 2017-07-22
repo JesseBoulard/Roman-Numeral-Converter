@@ -23,6 +23,7 @@ public class RomanNumeralConverter {
 	
 	private int arabicNumeral;
 	private int[] digitArray;
+	private int currentDigitIndex;
 	
 	protected String romanNumeralSymbolFor(int arabicNumeral) {
 		return CONVERT_TO_ROMAN_NUMERAL_SYMBOL.get(arabicNumeral);
@@ -47,5 +48,13 @@ public class RomanNumeralConverter {
 
 	public int[] getDigitArray() {
 		return digitArray;
+	}
+
+	public int getCurrentDigitIndex() {
+		return currentDigitIndex;
+	}
+
+	public void setCurrentDigitIndex(int currentDigitIndex) {
+		this.currentDigitIndex = currentDigitIndex;
 	}
 }

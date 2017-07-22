@@ -55,4 +55,12 @@ public class RomanNumeralConverterTest {
 		assertEquals(6, romanNumeralConverter.getDigitArray()[2]);
 		assertEquals(6, romanNumeralConverter.getDigitArray()[3]);
 	}
+	
+	@Test
+	public void testSetCurrentDigitIndexAndGetCurrentDigitIndex() 
+	{
+		romanNumeralConverter.setCurrentDigitIndex(2);
+		assertEquals(2, romanNumeralConverter.getCurrentDigitIndex());
+	}
+
 }
