@@ -223,4 +223,14 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.setIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5AppearsTwiceInARow();
 		assertTrue(romanNumeralConverter.getIsValid());		
 	}
+	
+	@Test
+	public void returnFalseIfMoreThanThreeRomanNumeralsAreInARowTest() {
+		romanNumeralConverter.setRomanNumeral("XXXXIV");	
+		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
+		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.setIsValidToFalseIfMoreThanThreeRomanNumeralsAreInARow();
+		assertFalse(romanNumeralConverter.getIsValid());		
+	}
+	
 }

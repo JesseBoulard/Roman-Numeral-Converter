@@ -99,6 +99,10 @@ public class RomanNumeralConverter {
 		}
 	}
 
+	public void setIsValidToFalseIfMoreThanThreeRomanNumeralsAreInARow() {
+		isValid = false;
+	}
+
 	//************************************setters and getters****************************************
 
 	public String getRomanNumeral() {
