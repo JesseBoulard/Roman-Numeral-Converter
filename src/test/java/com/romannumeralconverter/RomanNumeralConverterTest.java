@@ -241,4 +241,13 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.setIsValidToFalseIfMoreThanThreeRomanNumeralsAreInARow();
 		assertTrue(romanNumeralConverter.getIsValid());		
 	}
+	
+	@Test
+	public void returnFalseIfMoreThanOneRomanNumeralIsSubtractedFromAProceedingHigherNumeralTest() {
+		romanNumeralConverter.setRomanNumeral("XXLVI");	
+		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
+		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.setIsValidToFalseIfMoreThanOneRomanNumeralIsSubtractedFromAProceedingHigherNumeral();
+		assertFalse(romanNumeralConverter.getIsValid());		
+	}
 }

@@ -111,6 +111,11 @@ public class RomanNumeralConverter {
 		}
 	}
 
+	public void setIsValidToFalseIfMoreThanOneRomanNumeralIsSubtractedFromAProceedingHigherNumeral() 
+	{
+		isValid = false;	
+	}
+	
 	//************************************setters and getters****************************************
 
 	public String getRomanNumeral() {
