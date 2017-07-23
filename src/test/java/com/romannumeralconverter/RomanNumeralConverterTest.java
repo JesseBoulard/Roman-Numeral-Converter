@@ -97,4 +97,14 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.calcValueOfCurrentSymbol();
 		assertEquals(1, romanNumeralConverter.getValueOfCurrentSymbol());
 	}
+	
+	@Test
+	public void return10ifNextSymbolIsXAndValueOfNextSymbolMethodIsCalled() {
+		romanNumeralConverter.setRomanNumeral("MDCLXVI");
+		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
+		romanNumeralConverter.setCurrentSymbolIndex(3);
+		romanNumeralConverter.calcValueOfNextSymbol();
+		assertEquals(10, romanNumeralConverter.getValueOfNextSymbol());
+	}
+	
 }

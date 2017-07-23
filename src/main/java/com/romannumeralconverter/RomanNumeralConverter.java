@@ -12,6 +12,7 @@ public class RomanNumeralConverter {
 	private String[] romanNumeralSymbolArray;
 	private int currentSymbolIndex;
 	private int valueOfCurrentSymbol;
+	private int valueOfNextSymbol;
 	
 	private static Map<String, Integer> createMapOfRomanToArabicNumerals() 
 	{
@@ -38,6 +39,20 @@ public class RomanNumeralConverter {
 		valueOfCurrentSymbol = valueOf(romanNumeralSymbolArray[currentSymbolIndex]);
 	}
 	
+
+	public void calcValueOfNextSymbol()
+	{
+		if (currentSymbolIndex == romanNumeralSymbolArray.length - 1)
+		{
+			valueOfNextSymbol = 0;
+		}
+		else
+		{
+			valueOfNextSymbol = valueOf(romanNumeralSymbolArray[currentSymbolIndex + 1]);
+		}
+	}
+
+
 	//************************************setters and getters****************************************
 	
 	public String getRomanNumeral() {
@@ -64,4 +79,7 @@ public class RomanNumeralConverter {
 		return valueOfCurrentSymbol;
 	}
 
+	public int getValueOfNextSymbol() {
+		return valueOfNextSymbol;
+	}
 }
