@@ -34,7 +34,7 @@ public class RomanNumeralConverter {
 		romanNumeralSymbolArray = romanNumeral.split("");
 	}
 
-	public void setValueOfCurrentSymbol() {
+	public void calcValueOfCurrentSymbol() {
 		valueOfCurrentSymbol = valueOf(romanNumeralSymbolArray[currentSymbolIndex]);
 	}
 	

@@ -63,17 +63,38 @@ public class RomanNumeralConverterTest {
 	}
 	
 	@Test
-	public void testSetAndGetValueOfCurrentSymbol() {
-		romanNumeralConverter.setValueOfCurrentSymbol(10);
-		assertEquals(10, romanNumeralConverter.getValueOfCurrentSymbol());
-	}
-	
-	@Test
 	public void return50ifCurrentSymbolIsLAndValueOfCurrentSymbolMethodIsCalled() {
 		romanNumeralConverter.setRomanNumeral("MDCLXVI");
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
 		romanNumeralConverter.setCurrentSymbolIndex(3);
-		romanNumeralConverter.setValueOfCurrentSymbol();
+		romanNumeralConverter.calcValueOfCurrentSymbol();
 		assertEquals(50, romanNumeralConverter.getValueOfCurrentSymbol());
+	}
+	
+	@Test
+	public void testAllSymbolsWhenValueOfCurrentSymbolMethodIsCalled() {
+		romanNumeralConverter.setRomanNumeral("MDCLXVI");
+		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
+		romanNumeralConverter.setCurrentSymbolIndex(0);
+		romanNumeralConverter.calcValueOfCurrentSymbol();
+		assertEquals(1000, romanNumeralConverter.getValueOfCurrentSymbol());
+		romanNumeralConverter.setCurrentSymbolIndex(1);
+		romanNumeralConverter.calcValueOfCurrentSymbol();
+		assertEquals(500, romanNumeralConverter.getValueOfCurrentSymbol());
+		romanNumeralConverter.setCurrentSymbolIndex(2);
+		romanNumeralConverter.calcValueOfCurrentSymbol();
+		assertEquals(100, romanNumeralConverter.getValueOfCurrentSymbol());
+		romanNumeralConverter.setCurrentSymbolIndex(3);
+		romanNumeralConverter.calcValueOfCurrentSymbol();
+		assertEquals(50, romanNumeralConverter.getValueOfCurrentSymbol());
+		romanNumeralConverter.setCurrentSymbolIndex(4);
+		romanNumeralConverter.calcValueOfCurrentSymbol();
+		assertEquals(10, romanNumeralConverter.getValueOfCurrentSymbol());
+		romanNumeralConverter.setCurrentSymbolIndex(5);
+		romanNumeralConverter.calcValueOfCurrentSymbol();
+		assertEquals(5, romanNumeralConverter.getValueOfCurrentSymbol());
+		romanNumeralConverter.setCurrentSymbolIndex(6);
+		romanNumeralConverter.calcValueOfCurrentSymbol();
+		assertEquals(1, romanNumeralConverter.getValueOfCurrentSymbol());
 	}
 }
