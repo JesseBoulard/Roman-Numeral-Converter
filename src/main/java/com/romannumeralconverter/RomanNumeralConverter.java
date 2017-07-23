@@ -99,8 +99,16 @@ public class RomanNumeralConverter {
 		}
 	}
 
-	public void setIsValidToFalseIfMoreThanThreeRomanNumeralsAreInARow() {
-		isValid = false;
+	public void setIsValidToFalseIfMoreThanThreeRomanNumeralsAreInARow()
+	{
+		for (int i = 0; i < romanNumeralSymbolArray.length - 3; i++)
+		{
+			if (romanNumeralSymbolArray[i].equals(romanNumeralSymbolArray[i + 1]) && romanNumeralSymbolArray[i].equals(romanNumeralSymbolArray[i + 2]) && 
+					romanNumeralSymbolArray[i].equals(romanNumeralSymbolArray[i + 3]))
+			{
+				isValid = false;
+			}
+		}
 	}
 
 	//************************************setters and getters****************************************

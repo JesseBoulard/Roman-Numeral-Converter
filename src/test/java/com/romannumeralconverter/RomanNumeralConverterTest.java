@@ -233,4 +233,12 @@ public class RomanNumeralConverterTest {
 		assertFalse(romanNumeralConverter.getIsValid());		
 	}
 	
+	@Test
+	public void returnTrueIfNoMoreThanThreeRomanNumeralsAreInARowTest() {
+		romanNumeralConverter.setRomanNumeral("XXXIV");	
+		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
+		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.setIsValidToFalseIfMoreThanThreeRomanNumeralsAreInARow();
+		assertTrue(romanNumeralConverter.getIsValid());		
+	}
 }
