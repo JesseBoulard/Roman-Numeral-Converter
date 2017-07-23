@@ -154,4 +154,10 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
 		assertEquals(3999, romanNumeralConverter.returnRomanNumeralConvertedToArabicNumeral());
 	}
+	
+	@Test
+	public void testGetIsValidAndSetIsValid() {
+		romanNumeralConverter.setIsValid(false);
+		assertEquals(false, romanNumeralConverter.getIsValid());		
+	}
 }

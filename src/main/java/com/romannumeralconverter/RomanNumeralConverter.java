@@ -15,6 +15,7 @@ public class RomanNumeralConverter {
 	private int valueOfNextSymbol;
 	private int valueToSubtractFromCurrentSymbol;
 	private int arabicNumeral;
+	private boolean isValid;
 	
 	private static Map<String, Integer> createMapOfRomanToArabicNumerals() 
 	{
@@ -73,6 +74,7 @@ public class RomanNumeralConverter {
 		}
 		return arabicNumeral;
 	}
+
 	
 	//************************************setters and getters****************************************
 	
@@ -102,5 +104,13 @@ public class RomanNumeralConverter {
 
 	public int getValueOfNextSymbol() {
 		return valueOfNextSymbol;
+	}
+
+	public boolean getIsValid() {
+		return isValid;
+	}
+
+	public void setIsValid(boolean isValid) {
+		this.isValid = isValid;
 	}
 }
