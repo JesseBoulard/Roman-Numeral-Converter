@@ -147,4 +147,11 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
 		assertEquals(1, romanNumeralConverter.returnRomanNumeralConvertedToArabicNumeral());
 	}
+	
+	@Test
+	public void return3999ifRomanNumeralIsMMMCMXCIXAndReturnRomanNumeralConvertedToArabicNumeralMethodIsCalled() {
+		romanNumeralConverter.setRomanNumeral("MMMCMXCIX");
+		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
+		assertEquals(3999, romanNumeralConverter.returnRomanNumeralConvertedToArabicNumeral());
+	}
 }
