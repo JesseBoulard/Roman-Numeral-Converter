@@ -162,11 +162,20 @@ public class RomanNumeralConverterTest {
 	}
 	
 	@Test
-	public void setIsValidToFalseIfARomanNumeralIsProceededByAHigherRomanNumeralExceptWhenBothNumeralsCombineToMakeA9OrA4Test() {
+	public void testSetIsValidToFalseIfARomanNumeralSymbolIsProceededByAHigherSymbolExceptWhenBothSymbolsCombineToMakeA9OrA4() {
 		romanNumeralConverter.setRomanNumeral("DM");	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
 		romanNumeralConverter.setIsValid(true);
-		romanNumeralConverter.setIsValidToFalseIfARomanNumeralIsProceededByAHigherRomanNumeralExceptWhenBothNumeralsCombineToMakeA9OrA4();
+		romanNumeralConverter.setIsValidToFalseIfARomanNumeralSymbolIsProceededByAHigherSymbolExceptWhenBothSymbolsCombineToMakeA9OrA4();
 		assertFalse(romanNumeralConverter.getIsValid());		
+	}
+	
+	@Test
+	public void setIsValidToTrueIfARomanNumeralIsNotProceededByAHigherRomanNumeralExceptWhenBothNumeralsCombineToMakeA9OrA4() {
+		romanNumeralConverter.setRomanNumeral("MMMCMXCIX");	
+		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
+		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.setIsValidToFalseIfARomanNumeralSymbolIsProceededByAHigherSymbolExceptWhenBothSymbolsCombineToMakeA9OrA4();
+		assertTrue(romanNumeralConverter.getIsValid());		
 	}
 }

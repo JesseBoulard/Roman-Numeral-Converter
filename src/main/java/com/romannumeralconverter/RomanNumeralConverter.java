@@ -75,9 +75,18 @@ public class RomanNumeralConverter {
 		return arabicNumeral;
 	}
 
-	public void setIsValidToFalseIfARomanNumeralIsProceededByAHigherRomanNumeralExceptWhenBothNumeralsCombineToMakeA9OrA4() {
-		isValid = false;
-	}
+	public void setIsValidToFalseIfARomanNumeralSymbolIsProceededByAHigherSymbolExceptWhenBothSymbolsCombineToMakeA9OrA4() 
+	{
+			for (int i = 0; i < romanNumeralSymbolArray.length - 1; i++)
+			{
+				if (valueOf(romanNumeralSymbolArray[i]) < valueOf(romanNumeralSymbolArray[i + 1]) && 
+						Integer.toString((valueOf(romanNumeralSymbolArray[i + 1]) - valueOf(romanNumeralSymbolArray[i]))).charAt(0) != '9' &&
+						Integer.toString((valueOf(romanNumeralSymbolArray[i + 1]) - valueOf(romanNumeralSymbolArray[i]))).charAt(0) != '4')
+				{
+					isValid = false;
+				}
+			}
+		}
 	
 	//************************************setters and getters****************************************
 	
