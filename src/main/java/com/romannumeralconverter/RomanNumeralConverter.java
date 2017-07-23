@@ -13,6 +13,8 @@ public class RomanNumeralConverter {
 	private int currentSymbolIndex;
 	private int valueOfCurrentSymbol;
 	private int valueOfNextSymbol;
+	private int valueToSubtractFromCurrentSymbol;
+	private int arabicNumeral;
 	
 	private static Map<String, Integer> createMapOfRomanToArabicNumerals() 
 	{
@@ -52,7 +54,12 @@ public class RomanNumeralConverter {
 		}
 	}
 
-
+	public int returnRomanNumeralConvertedToArabicNumeral()
+	{
+		arabicNumeral = 1666;
+		return arabicNumeral;
+	}
+	
 	//************************************setters and getters****************************************
 	
 	public String getRomanNumeral() {

@@ -133,4 +133,11 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.calcValueOfNextSymbol();
 		assertEquals(500, romanNumeralConverter.getValueOfNextSymbol());
 	}
+	
+	@Test
+	public void return1666ifRomanNumeralIsMDCLXVIAndReturnRomanNumeralConvertedToArabicNumeralMethodIsCalled() {
+		romanNumeralConverter.setRomanNumeral("MDCLXVI");
+		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
+		assertEquals(1666, romanNumeralConverter.returnRomanNumeralConvertedToArabicNumeral());
+	}
 }
