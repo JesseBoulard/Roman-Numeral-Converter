@@ -189,29 +189,38 @@ public class RomanNumeralConverterTest {
 	}
 	
 	@Test
-	public void testSetIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5IsProceededByAnotherRomanNumeralSymbolWithAValueStartingWith5() {
+	public void testSetIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5AppearsTwiceInARowWhenRomanNumeralIsMDDCVI() {
 		romanNumeralConverter.setRomanNumeral("MDDCVI");	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
 		romanNumeralConverter.setIsValid(true);
-		romanNumeralConverter.setIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5IsProceededByAnotherRomanNumeralSymbolWithAValueStartingWith5();
+		romanNumeralConverter.setIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5AppearsTwiceInARow();
 		assertFalse(romanNumeralConverter.getIsValid());		
 	}
 	
 	@Test
-	public void testSetIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5IsProceededByAnotherRomanNumeralSymbolWithAValueStartingWith5whenRomanNumeralIsMDCVVI() {
+	public void testSetIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5AppearsTwiceInARowWhenRomanNumeralIsMDCVVI() {
 		romanNumeralConverter.setRomanNumeral("MDCVVI");	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
 		romanNumeralConverter.setIsValid(true);
-		romanNumeralConverter.setIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5IsProceededByAnotherRomanNumeralSymbolWithAValueStartingWith5();
+		romanNumeralConverter.setIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5AppearsTwiceInARow();
 		assertFalse(romanNumeralConverter.getIsValid());		
 	}
 	
 	@Test
-	public void testSetIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5IsProceededByAnotherRomanNumeralSymbolWithAValueStartingWith5whenRomanNumeralIsMDCLLXI() {
+	public void testSetIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5AppearsTwiceInARowWhenRomanNumeralIsMDCLLXI() {
 		romanNumeralConverter.setRomanNumeral("MDCLLXI");	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
 		romanNumeralConverter.setIsValid(true);
-		romanNumeralConverter.setIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5IsProceededByAnotherRomanNumeralSymbolWithAValueStartingWith5();
+		romanNumeralConverter.setIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5AppearsTwiceInARow();
 		assertFalse(romanNumeralConverter.getIsValid());		
+	}
+	
+	@Test
+	public void testIsValidIsTrueWhenSetIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5AppearsTwiceInARowWhenRomanNumeralIsMDLVI() {
+		romanNumeralConverter.setRomanNumeral("MDLVI");	
+		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
+		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.setIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5AppearsTwiceInARow();
+		assertTrue(romanNumeralConverter.getIsValid());		
 	}
 }
