@@ -3,6 +3,7 @@ package com.romannumeralconverter;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class RomanNumeralConverter {
 
@@ -149,6 +150,14 @@ public class RomanNumeralConverter {
 		}
 	}
 
+	public void promptUserForAnArabicNumeral()
+	{
+		Scanner scnr = new Scanner(System.in);
+		System.out.println("Please enter an Arabic numeral to convert to a Roman numeral.");
+		userInput = scnr.next();
+	}
+	//an app for converting Arabic numerals should work now
+	
 	//************************************ setters and getters ********************************************
 	public int getArabicNumeral() {
 		return arabicNumeral;
