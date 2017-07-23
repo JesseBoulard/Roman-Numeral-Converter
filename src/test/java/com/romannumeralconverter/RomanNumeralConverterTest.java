@@ -55,4 +55,10 @@ public class RomanNumeralConverterTest {
 		assertEquals("V", romanNumeralConverter.getRomanNumeralSymbolArray()[5]);
 		assertEquals("I", romanNumeralConverter.getRomanNumeralSymbolArray()[6]);
 	}
+	
+	@Test
+	public void testSetAndGetCurrentSymbolIndex() {
+		romanNumeralConverter.setCurrentSymbolIndex(8);
+		assertEquals(8, romanNumeralConverter.getCurrentSymbolIndex());
+	}
 }

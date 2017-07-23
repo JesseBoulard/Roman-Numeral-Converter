@@ -10,6 +10,7 @@ public class RomanNumeralConverter {
 	private static final Map<String, Integer> CONVERT_TO_ARABIC_DIGIT = createMapOfRomanToArabicNumerals();
 	private String romanNumeral;
 	private String[] romanNumeralSymbolArray;
+	private int currentSymbolIndex;
 	
 	private static Map<String, Integer> createMapOfRomanToArabicNumerals() 
 	{
@@ -45,6 +46,14 @@ public class RomanNumeralConverter {
 
 	public String[] getRomanNumeralSymbolArray() {
 		return romanNumeralSymbolArray;
+	}
+
+	public int getCurrentSymbolIndex() {
+		return currentSymbolIndex;
+	}
+
+	public void setCurrentSymbolIndex(int currentSymbolIndex) {
+		this.currentSymbolIndex = currentSymbolIndex;
 	}
 
 }
