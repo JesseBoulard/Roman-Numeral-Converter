@@ -28,5 +28,11 @@ public class RomanNumeralConverterTest {
 		assertEquals(100, romanNumeralConverter.valueOf("C"));
 		assertEquals(500, romanNumeralConverter.valueOf("D"));
 		assertEquals(1000, romanNumeralConverter.valueOf("M"));
-	}	
+	}
+	
+	@Test
+	public void testSetAndGetRomanNumeral() {
+		romanNumeralConverter.setRomanNumeral("MDCLXVI");
+		assertEquals("MDCLXVI", romanNumeralConverter.getRomanNumeral());
+	}
 }

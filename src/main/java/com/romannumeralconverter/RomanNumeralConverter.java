@@ -8,6 +8,8 @@ import java.util.Scanner;
 public class RomanNumeralConverter {
 	
 	private static final Map<String, Integer> CONVERT_TO_ARABIC_DIGIT = createMapOfRomanToArabicNumerals();
+	private String romanNumeral;
+	
 	private static Map<String, Integer> createMapOfRomanToArabicNumerals() 
 	{
 		Map<String, Integer> convertToArabicNumeral = new HashMap<String, Integer>();
@@ -23,6 +25,17 @@ public class RomanNumeralConverter {
 
 	public int valueOf(String romanNumeralSymbol) {
 		return CONVERT_TO_ARABIC_DIGIT.get(romanNumeralSymbol);
+	}
+
+	
+	//************************************setters and getters****************************************
+	
+	public String getRomanNumeral() {
+		return romanNumeral;
+	}
+
+	public void setRomanNumeral(String romanNumeral) {
+		this.romanNumeral = romanNumeral;
 	}
 
 }
