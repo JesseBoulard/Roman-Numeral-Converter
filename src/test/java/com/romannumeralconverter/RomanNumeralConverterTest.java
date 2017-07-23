@@ -259,4 +259,13 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.setIsValidToFalseIfMoreThanOneRomanNumeralIsSubtractedFromAProceedingHigherNumeral();
 		assertTrue(romanNumeralConverter.getIsValid());		
 	}
+	
+	@Test
+	public void testSetIsValidToFalseIfSymbolIsNotRomanNumeralSymbolWhenRomanNumeralIsXLPI() {
+		romanNumeralConverter.setRomanNumeral("XLPI");	
+		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
+		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.setIsValidToFalseIfSymbolIsNotRomanNumeralSymbol();
+		assertFalse(romanNumeralConverter.getIsValid());		
+	}
 }

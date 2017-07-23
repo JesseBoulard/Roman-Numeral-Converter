@@ -121,7 +121,12 @@ public class RomanNumeralConverter {
 			}
 		}
 	}
-	
+
+	public void setIsValidToFalseIfSymbolIsNotRomanNumeralSymbol()
+	{
+		isValid = false;
+	}
+
 	//************************************setters and getters****************************************
 
 	public String getRomanNumeral() {
