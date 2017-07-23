@@ -107,4 +107,30 @@ public class RomanNumeralConverterTest {
 		assertEquals(10, romanNumeralConverter.getValueOfNextSymbol());
 	}
 	
+	@Test
+	public void returnCorrectValueIfTheValueOfNextSymbolMethodIsCalledOnAnySymbolInRomanNumeralSymbolArray() {
+		romanNumeralConverter.setRomanNumeral("MDCLXVI");
+		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
+		romanNumeralConverter.setCurrentSymbolIndex(6);
+		romanNumeralConverter.calcValueOfNextSymbol();
+		assertEquals(0, romanNumeralConverter.getValueOfNextSymbol());
+		romanNumeralConverter.setCurrentSymbolIndex(5);
+		romanNumeralConverter.calcValueOfNextSymbol();
+		assertEquals(1, romanNumeralConverter.getValueOfNextSymbol());
+		romanNumeralConverter.setCurrentSymbolIndex(4);
+		romanNumeralConverter.calcValueOfNextSymbol();
+		assertEquals(5, romanNumeralConverter.getValueOfNextSymbol());
+		romanNumeralConverter.setCurrentSymbolIndex(3);
+		romanNumeralConverter.calcValueOfNextSymbol();
+		assertEquals(10, romanNumeralConverter.getValueOfNextSymbol());
+		romanNumeralConverter.setCurrentSymbolIndex(2);
+		romanNumeralConverter.calcValueOfNextSymbol();
+		assertEquals(50, romanNumeralConverter.getValueOfNextSymbol());
+		romanNumeralConverter.setCurrentSymbolIndex(1);
+		romanNumeralConverter.calcValueOfNextSymbol();
+		assertEquals(100, romanNumeralConverter.getValueOfNextSymbol());
+		romanNumeralConverter.setCurrentSymbolIndex(0);
+		romanNumeralConverter.calcValueOfNextSymbol();
+		assertEquals(500, romanNumeralConverter.getValueOfNextSymbol());
+	}
 }
