@@ -268,4 +268,13 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.setIsValidToFalseIfSymbolIsNotRomanNumeralSymbol();
 		assertFalse(romanNumeralConverter.getIsValid());		
 	}
+	
+	@Test
+	public void testSetIsValidToFalseIfSymbolIsNotRomanNumeralSymbolWhenRomanNumeralIsXLVI() {
+		romanNumeralConverter.setRomanNumeral("XLVI");	
+		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
+		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.setIsValidToFalseIfSymbolIsNotRomanNumeralSymbol();
+		assertTrue(romanNumeralConverter.getIsValid());		
+	}
 }
