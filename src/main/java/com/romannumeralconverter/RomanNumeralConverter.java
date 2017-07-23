@@ -137,6 +137,12 @@ public class RomanNumeralConverter {
 		}
 	}
 	
+	public boolean isValidRomanNumeral()
+	{
+		isValid = true;
+		return isValid;
+	}
+	
 	//************************************setters and getters****************************************
 
 	public String getRomanNumeral() {
