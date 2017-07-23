@@ -111,9 +111,15 @@ public class RomanNumeralConverter {
 		}
 	}
 
-	public void setIsValidToFalseIfMoreThanOneRomanNumeralIsSubtractedFromAProceedingHigherNumeral() 
+	public void setIsValidToFalseIfMoreThanOneRomanNumeralIsSubtractedFromAProceedingHigherNumeral()
 	{
-		isValid = false;	
+		for (int i = 0; i < romanNumeralSymbolArray.length - 2; i++)
+		{
+			if (romanNumeralSymbolArray[i].equals(romanNumeralSymbolArray[i + 1]) && valueOf(romanNumeralSymbolArray[i + 2]) > valueOf(romanNumeralSymbolArray[i + 1]))
+			{
+				isValid = false;
+			}
+		}
 	}
 	
 	//************************************setters and getters****************************************

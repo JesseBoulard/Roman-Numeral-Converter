@@ -216,7 +216,7 @@ public class RomanNumeralConverterTest {
 	}
 	
 	@Test
-	public void testIsValidIsTrueWhenSetIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5AppearsTwiceInARowWhenRomanNumeralIsMDLVI() {
+	public void testSetIsValidIsTrueWhenSetIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5AppearsTwiceInARowWhenRomanNumeralIsMDLVI() {
 		romanNumeralConverter.setRomanNumeral("MDLVI");	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
 		romanNumeralConverter.setIsValid(true);
@@ -225,7 +225,7 @@ public class RomanNumeralConverterTest {
 	}
 	
 	@Test
-	public void returnFalseIfMoreThanThreeRomanNumeralsAreInARowTest() {
+	public void testSetIsValidToFalseIfMoreThanThreeRomanNumeralsAreInARow() {
 		romanNumeralConverter.setRomanNumeral("XXXXIV");	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
 		romanNumeralConverter.setIsValid(true);
@@ -234,7 +234,7 @@ public class RomanNumeralConverterTest {
 	}
 	
 	@Test
-	public void returnTrueIfNoMoreThanThreeRomanNumeralsAreInARowTest() {
+	public void testIsValidIsTrueIfNoMoreThanThreeRomanNumeralsAreInARow() {
 		romanNumeralConverter.setRomanNumeral("XXXIV");	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
 		romanNumeralConverter.setIsValid(true);
@@ -243,11 +243,20 @@ public class RomanNumeralConverterTest {
 	}
 	
 	@Test
-	public void returnFalseIfMoreThanOneRomanNumeralIsSubtractedFromAProceedingHigherNumeralTest() {
+	public void testSetIsValidToFalseIfMoreThanOneRomanNumeralIsSubtractedFromAProceedingHigherNumeral() {
 		romanNumeralConverter.setRomanNumeral("XXLVI");	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
 		romanNumeralConverter.setIsValid(true);
 		romanNumeralConverter.setIsValidToFalseIfMoreThanOneRomanNumeralIsSubtractedFromAProceedingHigherNumeral();
 		assertFalse(romanNumeralConverter.getIsValid());		
+	}
+	
+	@Test
+	public void testSetIsValidToFalseIfMoreThanOneRomanNumeralIsSubtractedFromAProceedingHigherNumeralSetsIsValidToTrueWhenRomanNumeralIsXLVI() {
+		romanNumeralConverter.setRomanNumeral("XLVI");	
+		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
+		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.setIsValidToFalseIfMoreThanOneRomanNumeralIsSubtractedFromAProceedingHigherNumeral();
+		assertTrue(romanNumeralConverter.getIsValid());		
 	}
 }
