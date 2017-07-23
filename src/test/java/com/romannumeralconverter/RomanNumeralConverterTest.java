@@ -189,8 +189,17 @@ public class RomanNumeralConverterTest {
 	}
 	
 	@Test
-	public void setIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5IsProceededByAnotherRomanNumeralSymbolWithAValueStartingWith5Test() {
-		romanNumeralConverter.setRomanNumeral("MMD");	
+	public void testSetIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5IsProceededByAnotherRomanNumeralSymbolWithAValueStartingWith5() {
+		romanNumeralConverter.setRomanNumeral("MDDCVI");	
+		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
+		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.setIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5IsProceededByAnotherRomanNumeralSymbolWithAValueStartingWith5();
+		assertFalse(romanNumeralConverter.getIsValid());		
+	}
+	
+	@Test
+	public void testSetIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5IsProceededByAnotherRomanNumeralSymbolWithAValueStartingWith5whenRomanNumeralIsMDCVVI() {
+		romanNumeralConverter.setRomanNumeral("MDCVVI");	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
 		romanNumeralConverter.setIsValid(true);
 		romanNumeralConverter.setIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5IsProceededByAnotherRomanNumeralSymbolWithAValueStartingWith5();

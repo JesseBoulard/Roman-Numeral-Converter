@@ -88,9 +88,17 @@ public class RomanNumeralConverter {
 		}
 	}
 
-	public void setIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5IsProceededByAnotherRomanNumeralSymbolWithAValueStartingWith5() 
+	public void setIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5IsProceededByAnotherRomanNumeralSymbolWithAValueStartingWith5()
 	{
-		isValid = false;	
+		for (int i = 0; i < romanNumeralSymbolArray.length - 1; i++)
+		{
+			if (valueOf(romanNumeralSymbolArray[i]) == valueOf(romanNumeralSymbolArray[i + 1]) && 
+					Integer.toString(valueOf(romanNumeralSymbolArray[i])).charAt(0) == '5' &&
+					Integer.toString(valueOf(romanNumeralSymbolArray[i + 1])).charAt(0) == '5')
+			{
+				isValid = false;
+			}
+		}
 	}
 
 	//************************************setters and getters****************************************
