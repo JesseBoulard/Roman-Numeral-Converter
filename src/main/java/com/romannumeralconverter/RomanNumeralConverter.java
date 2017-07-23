@@ -88,6 +88,11 @@ public class RomanNumeralConverter {
 		}
 	}
 
+	public void setIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5IsProceededByAnotherRomanNumeralSymbolWithAValueStartingWith5() 
+	{
+		isValid = false;	
+	}
+
 	//************************************setters and getters****************************************
 
 	public String getRomanNumeral() {
