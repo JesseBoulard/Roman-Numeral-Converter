@@ -8,7 +8,17 @@ import java.util.Scanner;
 public class RomanNumeralConverter {
 
 	private static final Map<Integer, String> CONVERT_TO_ROMAN_NUMERAL_SYMBOL = createMapOfArabicToRomanNumerals();
+	private int arabicNumeral;
+	private int[] digitArray;
+	private int currentDigitIndex;
+	private int currentDigitPlaceValue;
+	private int currentDigitValue;
+	private String romanNumeralConcatenation;
+	private String userInput;
+	private boolean isValid;
 
+	//************************************Convert Arabic numeral to Roman numeral************************************************
+	
 	private static Map<Integer, String> createMapOfArabicToRomanNumerals() 
 	{
 		Map<Integer, String> convertToRomanNumeral = new HashMap<Integer, String>();
@@ -21,16 +31,7 @@ public class RomanNumeralConverter {
 		convertToRomanNumeral.put(1000, "M");
 		return Collections.unmodifiableMap(convertToRomanNumeral);
 	}
-
-	private int arabicNumeral;
-	private int[] digitArray;
-	private int currentDigitIndex;
-	private int currentDigitPlaceValue;
-	private int currentDigitValue;
-	private String romanNumeralConcatenation;
-	private String userInput;
-	private boolean isValid;
-
+	
 	protected String romanNumeralSymbolFor(int arabicNumeral) {
 		return CONVERT_TO_ROMAN_NUMERAL_SYMBOL.get(arabicNumeral);
 	}
@@ -156,9 +157,14 @@ public class RomanNumeralConverter {
 		System.out.println("Please enter an Arabic numeral to convert to a Roman numeral.");
 		userInput = scnr.next();
 	}
-	//an app for converting Arabic numerals should work now
 	
-	//************************************ setters and getters ********************************************
+	//************************************Convert Roman numeral to Arabic numeral************************************************
+
+	public int valueOf(String romanNumeralSymbol) {
+		return 1;
+	}
+	
+	//************************************ setters and getters *********************************************
 	public int getArabicNumeral() {
 		return arabicNumeral;
 	}
@@ -210,6 +216,5 @@ public class RomanNumeralConverter {
 	public void setUserInput(String userInput) {
 		this.userInput = userInput;
 	}
-
 
 }

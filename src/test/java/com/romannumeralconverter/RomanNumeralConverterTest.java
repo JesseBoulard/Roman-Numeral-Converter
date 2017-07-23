@@ -310,4 +310,9 @@ public class RomanNumeralConverterTest {
 		assertEquals(0, romanNumeralConverter.getArabicNumeral());		
 		assertFalse(romanNumeralConverter.getIsValid());	
 	}
+	
+	@Test
+	public void ifValueOfIsPassedAnIReturn1() {
+		assertEquals(1, romanNumeralConverter.valueOf("I"));
+	}
 }
