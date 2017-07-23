@@ -9,6 +9,7 @@ public class RomanNumeralConverter {
 	
 	private static final Map<String, Integer> CONVERT_TO_ARABIC_DIGIT = createMapOfRomanToArabicNumerals();
 	private String romanNumeral;
+	private String[] romanNumeralSymbolArray;
 	
 	private static Map<String, Integer> createMapOfRomanToArabicNumerals() 
 	{
@@ -27,6 +28,10 @@ public class RomanNumeralConverter {
 		return CONVERT_TO_ARABIC_DIGIT.get(romanNumeralSymbol);
 	}
 
+	public void splitRomanNumeralIntoRomanNumeralSymbolArray() {
+		romanNumeralSymbolArray = romanNumeral.split("");
+	}
+
 	
 	//************************************setters and getters****************************************
 	
@@ -36,6 +41,10 @@ public class RomanNumeralConverter {
 
 	public void setRomanNumeral(String romanNumeral) {
 		this.romanNumeral = romanNumeral;
+	}
+
+	public String[] getRomanNumeralSymbolArray() {
+		return romanNumeralSymbolArray;
 	}
 
 }

@@ -35,4 +35,11 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.setRomanNumeral("MDCLXVI");
 		assertEquals("MDCLXVI", romanNumeralConverter.getRomanNumeral());
 	}
+	
+	@Test
+	public void testSplitRomanNumeralIntoRomanNumeralSymbolArrayWhenRomanNumeralIsSetToMDCLXVI() {
+		romanNumeralConverter.setRomanNumeral("MDCLXVI");
+		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
+		assertEquals("C", romanNumeralConverter.getRomanNumeralSymbolArray()[2]);
+	}
 }
