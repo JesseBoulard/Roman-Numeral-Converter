@@ -274,7 +274,7 @@ public class RomanNumeralConverterTest {
 	@Test
 	public void testVerifyInputIsArabicNumeralBetween1And3999WhenUserInputIs1() {
 		romanNumeralConverter.setUserInput("1");
-		romanNumeralConverter.verifyInputIsArabicNumeralBetween1And3999();
+		romanNumeralConverter.setIsValidToFalseIfUserInputIsNotAnIntBetween1And3999();
 		assertEquals(1, romanNumeralConverter.getArabicNumeral());		
 		assertTrue(romanNumeralConverter.getIsValid());	
 	}
@@ -282,7 +282,7 @@ public class RomanNumeralConverterTest {
 	@Test
 	public void testVerifyInputIsArabicNumeralBetween1And3999WhenUserInputIsME262() {
 		romanNumeralConverter.setUserInput("ME262");
-		romanNumeralConverter.verifyInputIsArabicNumeralBetween1And3999();
+		romanNumeralConverter.setIsValidToFalseIfUserInputIsNotAnIntBetween1And3999();
 		assertEquals(0, romanNumeralConverter.getArabicNumeral());		
 		assertFalse(romanNumeralConverter.getIsValid());	
 	}
@@ -290,7 +290,7 @@ public class RomanNumeralConverterTest {
 	@Test
 	public void testVerifyInputIsArabicNumeralBetween1And3999WhenUserInputIs3999() {
 		romanNumeralConverter.setUserInput("3999");
-		romanNumeralConverter.verifyInputIsArabicNumeralBetween1And3999();
+		romanNumeralConverter.setIsValidToFalseIfUserInputIsNotAnIntBetween1And3999();
 		assertEquals(3999, romanNumeralConverter.getArabicNumeral());		
 		assertTrue(romanNumeralConverter.getIsValid());	
 	}
@@ -298,7 +298,7 @@ public class RomanNumeralConverterTest {
 	@Test
 	public void testVerifyInputIsArabicNumeralBetween1And3999WhenUserInputIs4000() {
 		romanNumeralConverter.setUserInput("4000");
-		romanNumeralConverter.verifyInputIsArabicNumeralBetween1And3999();
+		romanNumeralConverter.setIsValidToFalseIfUserInputIsNotAnIntBetween1And3999();
 		assertEquals(0, romanNumeralConverter.getArabicNumeral());		
 		assertFalse(romanNumeralConverter.getIsValid());	
 	}
@@ -306,7 +306,7 @@ public class RomanNumeralConverterTest {
 	@Test
 	public void testVerifyInputIsArabicNumeralBetween1And3999WhenUserInputIs0() {
 		romanNumeralConverter.setUserInput("0");
-		romanNumeralConverter.verifyInputIsArabicNumeralBetween1And3999();
+		romanNumeralConverter.setIsValidToFalseIfUserInputIsNotAnIntBetween1And3999();
 		assertEquals(0, romanNumeralConverter.getArabicNumeral());		
 		assertFalse(romanNumeralConverter.getIsValid());	
 	}
