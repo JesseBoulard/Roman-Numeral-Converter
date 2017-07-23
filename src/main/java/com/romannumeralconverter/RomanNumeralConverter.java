@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class RomanNumeralConverter {
-	
+
 	private static final Map<String, Integer> CONVERT_TO_ARABIC_DIGIT = createMapOfRomanToArabicNumerals();
 	private String romanNumeral;
 	private String[] romanNumeralSymbolArray;
@@ -16,7 +16,7 @@ public class RomanNumeralConverter {
 	private int valueToSubtractFromCurrentSymbol;
 	private int arabicNumeral;
 	private boolean isValid;
-	
+
 	private static Map<String, Integer> createMapOfRomanToArabicNumerals() 
 	{
 		Map<String, Integer> convertToArabicNumeral = new HashMap<String, Integer>();
@@ -41,7 +41,7 @@ public class RomanNumeralConverter {
 	public void calcValueOfCurrentSymbol() {
 		valueOfCurrentSymbol = valueOf(romanNumeralSymbolArray[currentSymbolIndex]);
 	}
-	
+
 
 	public void calcValueOfNextSymbol()
 	{
@@ -77,19 +77,19 @@ public class RomanNumeralConverter {
 
 	public void setIsValidToFalseIfARomanNumeralSymbolIsProceededByAHigherSymbolExceptWhenBothSymbolsCombineToMakeA9OrA4() 
 	{
-			for (int i = 0; i < romanNumeralSymbolArray.length - 1; i++)
+		for (int i = 0; i < romanNumeralSymbolArray.length - 1; i++)
+		{
+			if (valueOf(romanNumeralSymbolArray[i]) < valueOf(romanNumeralSymbolArray[i + 1]) && 
+					Integer.toString((valueOf(romanNumeralSymbolArray[i + 1]) - valueOf(romanNumeralSymbolArray[i]))).charAt(0) != '9' &&
+					Integer.toString((valueOf(romanNumeralSymbolArray[i + 1]) - valueOf(romanNumeralSymbolArray[i]))).charAt(0) != '4')
 			{
-				if (valueOf(romanNumeralSymbolArray[i]) < valueOf(romanNumeralSymbolArray[i + 1]) && 
-						Integer.toString((valueOf(romanNumeralSymbolArray[i + 1]) - valueOf(romanNumeralSymbolArray[i]))).charAt(0) != '9' &&
-						Integer.toString((valueOf(romanNumeralSymbolArray[i + 1]) - valueOf(romanNumeralSymbolArray[i]))).charAt(0) != '4')
-				{
-					isValid = false;
-				}
+				isValid = false;
 			}
 		}
-	
+	}
+
 	//************************************setters and getters****************************************
-	
+
 	public String getRomanNumeral() {
 		return romanNumeral;
 	}

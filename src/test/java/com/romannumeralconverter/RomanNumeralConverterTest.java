@@ -171,8 +171,17 @@ public class RomanNumeralConverterTest {
 	}
 	
 	@Test
-	public void setIsValidToTrueIfARomanNumeralIsNotProceededByAHigherRomanNumeralExceptWhenBothNumeralsCombineToMakeA9OrA4() {
+	public void testSetIsValidToTrueIfARomanNumeralIsNotProceededByAHigherRomanNumeralExceptWhenBothNumeralsCombineToMakeA9OrA4WhenRomanNumeralIsMMMCMXCIX() {
 		romanNumeralConverter.setRomanNumeral("MMMCMXCIX");	
+		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
+		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.setIsValidToFalseIfARomanNumeralSymbolIsProceededByAHigherSymbolExceptWhenBothSymbolsCombineToMakeA9OrA4();
+		assertTrue(romanNumeralConverter.getIsValid());		
+	}
+	
+	@Test
+	public void testSetIsValidToTrueIfARomanNumeralIsNotProceededByAHigherRomanNumeralExceptWhenBothNumeralsCombineToMakeA9OrA4WhenRomanNumeralIsCDXLIV() {
+		romanNumeralConverter.setRomanNumeral("CDXLIV");	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
 		romanNumeralConverter.setIsValid(true);
 		romanNumeralConverter.setIsValidToFalseIfARomanNumeralSymbolIsProceededByAHigherSymbolExceptWhenBothSymbolsCombineToMakeA9OrA4();
