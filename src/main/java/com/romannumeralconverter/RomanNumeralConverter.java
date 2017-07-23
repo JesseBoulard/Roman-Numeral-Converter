@@ -56,7 +56,21 @@ public class RomanNumeralConverter {
 
 	public int returnRomanNumeralConvertedToArabicNumeral()
 	{
-		arabicNumeral = 1666;
+		arabicNumeral = 0;
+		for (currentSymbolIndex = 0; currentSymbolIndex < romanNumeralSymbolArray.length; currentSymbolIndex++)
+		{
+			calcValueOfCurrentSymbol();
+			calcValueOfNextSymbol();
+			if (valueOfCurrentSymbol < getValueOfNextSymbol())
+			{
+				valueToSubtractFromCurrentSymbol = valueOfCurrentSymbol;
+			}
+			else
+			{
+				arabicNumeral += (valueOfCurrentSymbol - valueToSubtractFromCurrentSymbol);
+				valueToSubtractFromCurrentSymbol = 0;
+			}
+		}
 		return arabicNumeral;
 	}
 	

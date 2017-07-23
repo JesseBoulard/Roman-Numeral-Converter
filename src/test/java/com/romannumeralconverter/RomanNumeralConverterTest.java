@@ -140,4 +140,11 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
 		assertEquals(1666, romanNumeralConverter.returnRomanNumeralConvertedToArabicNumeral());
 	}
+	
+	@Test
+	public void return1ifRomanNumeralIsIAndReturnRomanNumeralConvertedToArabicNumeralMethodIsCalled() {
+		romanNumeralConverter.setRomanNumeral("I");
+		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
+		assertEquals(1, romanNumeralConverter.returnRomanNumeralConvertedToArabicNumeral());
+	}
 }
