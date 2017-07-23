@@ -61,4 +61,10 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.setCurrentSymbolIndex(8);
 		assertEquals(8, romanNumeralConverter.getCurrentSymbolIndex());
 	}
+	
+	@Test
+	public void testSetAndGetValueOfCurrentSymbol() {
+		romanNumeralConverter.setValueOfCurrentSymbol(10);
+		assertEquals(10, romanNumeralConverter.getValueOfCurrentSymbol());
+	}
 }

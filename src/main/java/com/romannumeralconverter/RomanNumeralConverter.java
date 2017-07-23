@@ -11,6 +11,7 @@ public class RomanNumeralConverter {
 	private String romanNumeral;
 	private String[] romanNumeralSymbolArray;
 	private int currentSymbolIndex;
+	private int valueOfCurrentSymbol;
 	
 	private static Map<String, Integer> createMapOfRomanToArabicNumerals() 
 	{
@@ -54,6 +55,14 @@ public class RomanNumeralConverter {
 
 	public void setCurrentSymbolIndex(int currentSymbolIndex) {
 		this.currentSymbolIndex = currentSymbolIndex;
+	}
+
+	public int getValueOfCurrentSymbol() {
+		return valueOfCurrentSymbol;
+	}
+
+	public void setValueOfCurrentSymbol(int valueOfCurrentSymbol) {
+		this.valueOfCurrentSymbol = valueOfCurrentSymbol;
 	}
 
 }
