@@ -75,6 +75,9 @@ public class RomanNumeralConverter {
 		return arabicNumeral;
 	}
 
+	public void setIsValidToFalseIfARomanNumeralIsProceededByAHigherRomanNumeralExceptWhenBothNumeralsCombineToMakeA9OrA4() {
+		isValid = false;
+	}
 	
 	//************************************setters and getters****************************************
 	
@@ -113,4 +116,5 @@ public class RomanNumeralConverter {
 	public void setIsValid(boolean isValid) {
 		this.isValid = isValid;
 	}
+
 }

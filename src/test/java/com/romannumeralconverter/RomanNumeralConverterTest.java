@@ -160,4 +160,13 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.setIsValid(false);
 		assertEquals(false, romanNumeralConverter.getIsValid());		
 	}
+	
+	@Test
+	public void setIsValidToFalseIfARomanNumeralIsProceededByAHigherRomanNumeralExceptWhenBothNumeralsCombineToMakeA9OrA4Test() {
+		romanNumeralConverter.setRomanNumeral("DM");	
+		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
+		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.setIsValidToFalseIfARomanNumeralIsProceededByAHigherRomanNumeralExceptWhenBothNumeralsCombineToMakeA9OrA4();
+		assertFalse(romanNumeralConverter.getIsValid());		
+	}
 }
