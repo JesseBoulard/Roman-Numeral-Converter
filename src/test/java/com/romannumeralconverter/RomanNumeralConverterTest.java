@@ -205,4 +205,13 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.setIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5IsProceededByAnotherRomanNumeralSymbolWithAValueStartingWith5();
 		assertFalse(romanNumeralConverter.getIsValid());		
 	}
+	
+	@Test
+	public void testSetIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5IsProceededByAnotherRomanNumeralSymbolWithAValueStartingWith5whenRomanNumeralIsMDCLLXI() {
+		romanNumeralConverter.setRomanNumeral("MDCLLXI");	
+		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
+		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.setIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5IsProceededByAnotherRomanNumeralSymbolWithAValueStartingWith5();
+		assertFalse(romanNumeralConverter.getIsValid());		
+	}
 }
