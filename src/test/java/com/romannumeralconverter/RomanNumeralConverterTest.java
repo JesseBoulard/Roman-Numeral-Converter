@@ -67,4 +67,13 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.setValueOfCurrentSymbol(10);
 		assertEquals(10, romanNumeralConverter.getValueOfCurrentSymbol());
 	}
+	
+	@Test
+	public void return50ifCurrentSymbolIsLAndValueOfCurrentSymbolMethodIsCalled() {
+		romanNumeralConverter.setRomanNumeral("MDCLXVI");
+		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
+		romanNumeralConverter.setCurrentSymbolIndex(3);
+		romanNumeralConverter.setValueOfCurrentSymbol();
+		assertEquals(50, romanNumeralConverter.getValueOfCurrentSymbol());
+	}
 }

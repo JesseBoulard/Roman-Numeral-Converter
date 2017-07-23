@@ -34,6 +34,9 @@ public class RomanNumeralConverter {
 		romanNumeralSymbolArray = romanNumeral.split("");
 	}
 
+	public void setValueOfCurrentSymbol() {
+		valueOfCurrentSymbol = valueOf(romanNumeralSymbolArray[currentSymbolIndex]);
+	}
 	
 	//************************************setters and getters****************************************
 	
@@ -59,10 +62,6 @@ public class RomanNumeralConverter {
 
 	public int getValueOfCurrentSymbol() {
 		return valueOfCurrentSymbol;
-	}
-
-	public void setValueOfCurrentSymbol(int valueOfCurrentSymbol) {
-		this.valueOfCurrentSymbol = valueOfCurrentSymbol;
 	}
 
 }
