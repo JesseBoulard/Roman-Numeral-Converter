@@ -306,4 +306,14 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.isValidRomanNumeral();
 		assertFalse(romanNumeralConverter.getIsValid());		
 	}
+	
+	
+	@Test
+	public void testIsValidRomanNumeralWhenRomanNumeralIsXXXXVI() {
+		romanNumeralConverter.setRomanNumeral("XXXXVI");	
+		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
+		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.isValidRomanNumeral();
+		assertFalse(romanNumeralConverter.getIsValid());		
+	}
 }
