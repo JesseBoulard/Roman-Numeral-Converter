@@ -148,14 +148,30 @@ public class ArabicNumeralConverter {
 		}
 	}
 
-	
 	public void promptUserForAnArabicNumeral()
 	{
+		System.out.println("Please enter a Arabic numeral to convert to a Roman numeral. Enter q to to quit.");
 		Scanner scnr = new Scanner(System.in);
-		System.out.println("Please enter an Arabic numeral to convert to a Roman numeral.");
 		userInput = scnr.next();
-		scnr.close();
+		setIsValidToFalseIfUserInputIsNotAnIntBetween1And3999();
+		if (userInput.charAt(0) == 'q')
+		{
+			RomanNumeralConverterApp romanNumeralConverterApp = new RomanNumeralConverterApp();
+			return;
+		}
+		if (isValid)
+		{
+			splitArabicNumeralIntoDigitArray();
+			System.out.println(arabicNumeral + " is equal to " + returnArabicNumeralConvertedToRomanNumeral());
+			promptUserForAnArabicNumeral();
+		}
+		else
+		{
+			System.out.println("Arabic numeral is invalid!");
+			promptUserForAnArabicNumeral();
+		}
 	}
+	
 	
 	
 	public void promptUserAgain()

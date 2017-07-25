@@ -164,7 +164,7 @@ public class RomanNumeralConverter {
 	
 		public void promptUserForARomanNumeral()
 		{
-			System.out.println("Please enter a Roman numeral to convert to an Arabic numeral. Enter q to quit.");
+			System.out.println("Please enter a Roman numeral to convert to an Arabic numeral. Enter q to to quit.");
 			Scanner scnr = new Scanner(System.in);
 			userInput = scnr.next();
 			romanNumeral = userInput.toUpperCase();
