@@ -297,18 +297,10 @@ public class RomanNumeralConverterTest {
 		assertTrue(romanNumeralConverter.getIsValid());		
 	}
 	
-	@Test
-	public void testIsValidRomanNumeralWhenRomanNumeralIsXLLVPI() {
-		romanNumeralConverter.setRomanNumeral("XLLVI");	
-		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
-		romanNumeralConverter.setIsValid(true);
-		romanNumeralConverter.isValidRomanNumeral();
-		assertFalse(romanNumeralConverter.getIsValid());		
-	}
 	
 	@Test
-	public void testIsValidRomanNumeralWhenRomanNumeralIsXXXXVI() {
-		romanNumeralConverter.setRomanNumeral("XXXXVI");	
+	public void testIsValidRomanNumeralWhenRomanNumeralIsLLVI() {
+		romanNumeralConverter.setRomanNumeral("LLVI");	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
 		romanNumeralConverter.setIsValid(true);
 		romanNumeralConverter.isValidRomanNumeral();
