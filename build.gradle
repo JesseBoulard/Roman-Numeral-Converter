@@ -18,7 +18,11 @@ repositories {
 mavenCentral()
 
 }
-mainClassName = 'com.omanNumeralconverter/RomanNumeralConverterApp'
+mainClassName = 'com.romannumeralconverter/RomanNumeralConverterApp'
+
+run{
+    standardInput = System.in
+}
 
 dependencies {
 
