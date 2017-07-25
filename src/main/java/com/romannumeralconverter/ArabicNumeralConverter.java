@@ -154,6 +154,7 @@ public class ArabicNumeralConverter {
 		Scanner scnr = new Scanner(System.in);
 		System.out.println("Please enter an Arabic numeral to convert to a Roman numeral.");
 		userInput = scnr.next();
+		scnr.close();
 	}
 	
 	

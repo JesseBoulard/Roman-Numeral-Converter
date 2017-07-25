@@ -162,26 +162,30 @@ public class RomanNumeralConverter {
 			return isValid;
 		}
 	
-		public void promptUserAgain()
+		public void promptUserForARomanNumeral()
 		{
-			romanNumeral = userInput;
+			System.out.println("Please enter a Roman numeral to convert to an Arabic numeral. Enter q to quit.");
+			Scanner scnr = new Scanner(System.in);
+			userInput = scnr.next();
+			romanNumeral = userInput.toUpperCase();
+			if (romanNumeral.charAt(0) == 'Q')
+			{
+				RomanNumeralConverterApp romanNumeralConverterApp = new RomanNumeralConverterApp();
+				return;
+			}
+			splitRomanNumeralIntoRomanNumeralSymbolArray();
 			if (isValidRomanNumeral())
 			{
-				System.out.println(romanNumeral + " is equal to " + returnRomanNumeralConvertedToArabicNumeral())
+				System.out.println(romanNumeral + " is equal to " + returnRomanNumeralConvertedToArabicNumeral());
+				promptUserForARomanNumeral();
 			}
 			else
 			{
+				System.out.println("Roman numeral is invalid!");
 				promptUserForARomanNumeral();
-				promptUserAgain();
 			}
 		}
-		
-		public void promptUserForARomanNumeral()
-		{
-			Scanner scnr = new Scanner(System.in);
-			System.out.println("Please enter a Roman numeral to convert to an Arabic numeral.");
-			userInput = scnr.next();
-		}
+
 	
 	//************************************setters and getters****************************************
 
