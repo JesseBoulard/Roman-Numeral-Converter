@@ -77,11 +77,11 @@ public class RomanNumeralConverter {
 
 	public void setIsValidToFalseIfARomanNumeralSymbolIsProceededByAHigherSymbolExceptWhenBothSymbolsCombineToMakeA9OrA4() 
 	{
-		for (int i = 0; i < romanNumeralSymbolArray.length - 1; i++)
+		for (currentSymbolIndex = 0; currentSymbolIndex < romanNumeralSymbolArray.length - 1; currentSymbolIndex++)
 		{
-			if (valueOf(romanNumeralSymbolArray[i]) < valueOf(romanNumeralSymbolArray[i + 1]) && 
-					Integer.toString((valueOf(romanNumeralSymbolArray[i + 1]) - valueOf(romanNumeralSymbolArray[i]))).charAt(0) != '9' &&
-					Integer.toString((valueOf(romanNumeralSymbolArray[i + 1]) - valueOf(romanNumeralSymbolArray[i]))).charAt(0) != '4')
+			if (valueOf(romanNumeralSymbolArray[currentSymbolIndex]) < valueOf(romanNumeralSymbolArray[currentSymbolIndex + 1]) && 
+					valueOf(romanNumeralSymbolArray[currentSymbolIndex + 1]) / valueOf(romanNumeralSymbolArray[currentSymbolIndex]) != 10 &&
+					valueOf(romanNumeralSymbolArray[currentSymbolIndex + 1]) / valueOf(romanNumeralSymbolArray[currentSymbolIndex]) != 5)
 			{
 				isValid = false;
 			}
