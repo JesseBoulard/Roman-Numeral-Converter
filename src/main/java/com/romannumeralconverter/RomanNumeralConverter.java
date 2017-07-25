@@ -137,11 +137,30 @@ public class RomanNumeralConverter {
 		}
 	}
 	
-	public boolean isValidRomanNumeral()
-	{
-		isValid = false;
-		return isValid;
-	}
+
+		public boolean isValidRomanNumeral()
+		{
+			isValid = true;
+			setIsValidToFalseIfSymbolIsNotRomanNumeralSymbol();
+			if (isValid == true)
+			{
+				setIsValidToFalseIfARomanNumeralSymbolIsProceededByAHigherSymbolExceptWhenBothSymbolsCombineToMakeA9OrA4();
+			}
+			if (isValid == true)
+			{
+				setIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5AppearsTwiceInARow();
+			}
+			if (isValid == true)
+			{
+				setIsValidToFalseIfMoreThanThreeRomanNumeralsAreInARow();
+			}
+			if (isValid == true)
+			{
+				setIsValidToFalseIfMoreThanOneRomanNumeralIsSubtractedFromAProceedingHigherNumeral();
+			}
+			return isValid;
+		}
+	
 	
 	//************************************setters and getters****************************************
 

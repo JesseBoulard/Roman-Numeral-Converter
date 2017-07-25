@@ -286,4 +286,32 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.isValidRomanNumeral();
 		assertFalse(romanNumeralConverter.getIsValid());		
 	}
+	
+
+	@Test
+	public void testIsValidRomanNumeralWhenRomanNumeralIsXLVI() {
+		romanNumeralConverter.setRomanNumeral("XLVI");	
+		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
+		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.isValidRomanNumeral();
+		assertTrue(romanNumeralConverter.getIsValid());		
+	}
+	
+	@Test
+	public void testIsValidRomanNumeralWhenRomanNumeralIsXLLVPI() {
+		romanNumeralConverter.setRomanNumeral("XLLVI");	
+		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
+		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.isValidRomanNumeral();
+		assertFalse(romanNumeralConverter.getIsValid());		
+	}
+	
+	@Test
+	public void testIsValidRomanNumeralWhenRomanNumeralIsXXXXVI() {
+		romanNumeralConverter.setRomanNumeral("XXXXVI");	
+		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
+		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.isValidRomanNumeral();
+		assertFalse(romanNumeralConverter.getIsValid());		
+	}
 }
