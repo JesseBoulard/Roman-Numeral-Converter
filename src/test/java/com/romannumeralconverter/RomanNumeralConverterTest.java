@@ -335,4 +335,12 @@ public class RomanNumeralConverterTest {
 		assertFalse(romanNumeralConverter.getIsValid());		
 	}
 	
+	@Test
+	public void testIsValidRomanNumeralWhenRomanNumeralIsVXVI() {
+		romanNumeralConverter.setRomanNumeral("VXVI");	
+		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
+		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.isValidRomanNumeral();
+		assertFalse(romanNumeralConverter.getIsValid());		
+	}
 }
