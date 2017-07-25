@@ -156,6 +156,21 @@ public class ArabicNumeralConverter {
 		userInput = scnr.next();
 	}
 	
+	
+	public void promptUserAgain()
+	{
+		setIsValidToFalseIfUserInputIsNotAnIntBetween1And3999();
+		if (isValid)
+		{
+			System.out.println(arabicNumeral + " is equal to " + returnArabicNumeralConvertedToRomanNumeral());
+		}
+		else
+		{
+			promptUserForAnArabicNumeral();
+			promptUserAgain();
+		}
+	}
+	
 	//************************************ setters and getters *********************************************
 	public int getArabicNumeral() {
 		return arabicNumeral;

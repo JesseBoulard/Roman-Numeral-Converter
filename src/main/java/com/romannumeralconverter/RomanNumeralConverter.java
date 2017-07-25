@@ -162,6 +162,20 @@ public class RomanNumeralConverter {
 			return isValid;
 		}
 	
+		public void promptUserAgain()
+		{
+			romanNumeral = userInput;
+			if (isValidRomanNumeral())
+			{
+				System.out.println(romanNumeral + " is equal to " + returnRomanNumeralConvertedToArabicNumeral())
+			}
+			else
+			{
+				promptUserForARomanNumeral();
+				promptUserAgain();
+			}
+		}
+		
 		public void promptUserForARomanNumeral()
 		{
 			Scanner scnr = new Scanner(System.in);
