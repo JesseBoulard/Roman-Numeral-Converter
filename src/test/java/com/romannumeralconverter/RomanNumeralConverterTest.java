@@ -343,4 +343,13 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.isValidRomanNumeral();
 		assertFalse(romanNumeralConverter.getIsValid());		
 	}
+	
+	@Test
+	public void testIsValidRomanNumeralWhenRomanNumeralIsMMMCMXCIX() {
+		romanNumeralConverter.setRomanNumeral("MMMCMXCIX");	
+		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
+		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.isValidRomanNumeral();
+		assertTrue(romanNumeralConverter.getIsValid());		
+	}
 }
