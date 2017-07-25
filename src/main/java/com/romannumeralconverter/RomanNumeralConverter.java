@@ -139,7 +139,7 @@ public class RomanNumeralConverter {
 	
 	public boolean isValidRomanNumeral()
 	{
-		isValid = true;
+		isValid = false;
 		return isValid;
 	}
 	

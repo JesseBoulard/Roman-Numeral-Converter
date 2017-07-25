@@ -280,10 +280,10 @@ public class RomanNumeralConverterTest {
 	
 	@Test
 	public void testIsValidRomanNumeralWhenRomanNumeralIsXLPI() {
-		romanNumeralConverter.setRomanNumeral("XLVI");	
+		romanNumeralConverter.setRomanNumeral("XLPI");	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
 		romanNumeralConverter.setIsValid(true);
 		romanNumeralConverter.isValidRomanNumeral();
-		assertTrue(romanNumeralConverter.getIsValid());		
+		assertFalse(romanNumeralConverter.getIsValid());		
 	}
 }
