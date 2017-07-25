@@ -352,4 +352,13 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.isValidRomanNumeral();
 		assertTrue(romanNumeralConverter.getIsValid());		
 	}
+	
+	@Test
+	public void testIsValidRomanNumeralWhenRomanNumeralIsMMMM() {
+		romanNumeralConverter.setRomanNumeral("MMMM");	
+		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
+		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.isValidRomanNumeral();
+		assertTrue(romanNumeralConverter.getIsValid());		
+	}
 }
