@@ -16,6 +16,7 @@ public class RomanNumeralConverter {
 	private int valueToSubtractFromCurrentSymbol;
 	private int arabicNumeral;
 	private boolean isValid;
+	private String userInput;
 
 	private static Map<String, Integer> createMapOfRomanToArabicNumerals() 
 	{
@@ -161,6 +162,12 @@ public class RomanNumeralConverter {
 			return isValid;
 		}
 	
+		public void promptUserForARomanNumeral()
+		{
+			Scanner scnr = new Scanner(System.in);
+			System.out.println("Please enter a Roman numeral to convert to an Arabic numeral.");
+			userInput = scnr.next();
+		}
 	
 	//************************************setters and getters****************************************
 
@@ -198,6 +205,14 @@ public class RomanNumeralConverter {
 
 	public void setIsValid(boolean isValid) {
 		this.isValid = isValid;
+	}
+
+	public String getUserInput() {
+		return userInput;
+	}
+
+	public void setUserInput(String userInput) {
+		this.userInput = userInput;
 	}
 
 }

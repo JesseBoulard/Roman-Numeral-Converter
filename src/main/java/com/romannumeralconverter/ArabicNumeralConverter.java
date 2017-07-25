@@ -148,6 +148,7 @@ public class ArabicNumeralConverter {
 		}
 	}
 
+	
 	public void promptUserForAnArabicNumeral()
 	{
 		Scanner scnr = new Scanner(System.in);

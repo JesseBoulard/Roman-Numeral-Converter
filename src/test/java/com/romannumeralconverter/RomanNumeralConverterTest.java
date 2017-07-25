@@ -359,6 +359,12 @@ public class RomanNumeralConverterTest {
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
 		romanNumeralConverter.setIsValid(true);
 		romanNumeralConverter.isValidRomanNumeral();
-		assertTrue(romanNumeralConverter.getIsValid());		
+		assertFalse(romanNumeralConverter.getIsValid());		
+	}
+	
+	@Test
+	public void testGetUserInputAndSetUserInput() {
+		romanNumeralConverter.setUserInput("XXX");
+		assertEquals("XXX", romanNumeralConverter.getUserInput());		
 	}
 }
