@@ -270,20 +270,20 @@ public class RomanNumeralConverterTest {
 	}
 	
 	@Test
-	public void testIsValidRomanNumeralWhenRomanNumeralIsXLPI() {
-		romanNumeralConverter.setRomanNumeral("XLPI");	
-		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
-		romanNumeralConverter.setIsValid(true);
-		romanNumeralConverter.setIsValidToFalseIfSymbolIsNotRomanNumeralSymbol();
-		assertFalse(romanNumeralConverter.getIsValid());		
-	}
-	
-	@Test
-	public void testIsValidRomanNumeralWhenRomanNumeralIsXLVI() {
+	public void testSetIsValidToFalseIfSymbolIsNotRomanNumeralSymbolWhenRomanNumeralIsXLVI() {
 		romanNumeralConverter.setRomanNumeral("XLVI");	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
 		romanNumeralConverter.setIsValid(true);
 		romanNumeralConverter.setIsValidToFalseIfSymbolIsNotRomanNumeralSymbol();
+		assertTrue(romanNumeralConverter.getIsValid());		
+	}
+	
+	@Test
+	public void testIsValidRomanNumeralWhenRomanNumeralIsXLPI() {
+		romanNumeralConverter.setRomanNumeral("XLVI");	
+		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
+		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.isValidRomanNumeral();
 		assertTrue(romanNumeralConverter.getIsValid());		
 	}
 }
