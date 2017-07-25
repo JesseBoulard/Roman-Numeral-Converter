@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.romannumeralconverter.RomanNumeralConverterTest" tests="37" skipped="0" failures="0" errors="0" timestamp="2017-07-25T18:40:08" hostname="DESKTOP-J7R3U31" time="0.127">
+  <properties/>
+  <testcase name="testGetIsValidAndSetIsValid" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.005"/>
+  <testcase name="testGetUserInputAndSetUserInput" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.0"/>
+  <testcase name="testSplitRomanNumeralIntoRomanNumeralSymbolArrayWhenRomanNumeralIsSetToMDCLXVI" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.0"/>
+  <testcase name="testSetIsValidToFalseIfMoreThanThreeRomanNumeralsAreInARow" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.002"/>
+  <testcase name="testIsValidRomanNumeralWhenRomanNumeralIsLLVI" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.0"/>
+  <testcase name="testIsValidRomanNumeralWhenRomanNumeralIsMMMM" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.0"/>
+  <testcase name="testIsValidRomanNumeralWhenRomanNumeralIsVXVI" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.0"/>
+  <testcase name="testIsValidRomanNumeralWhenRomanNumeralIsXLPI" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.0"/>
+  <testcase name="testIsValidRomanNumeralWhenRomanNumeralIsXLVI" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.0"/>
+  <testcase name="testSetIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5AppearsTwiceInARowWhenRomanNumeralIsMDCVVI" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.0"/>
+  <testcase name="testSetIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5AppearsTwiceInARowWhenRomanNumeralIsMDDCVI" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.0"/>
+  <testcase name="testSetAndGetRomanNumeral" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.001"/>
+  <testcase name="testSetIsValidToTrueIfARomanNumeralIsNotProceededByAHigherRomanNumeralExceptWhenBothNumeralsCombineToMakeA9OrA4WhenRomanNumeralIsMMMCMXCIX" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.0"/>
+  <testcase name="return50ifCurrentSymbolIsLAndValueOfCurrentSymbolMethodIsCalled" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.0"/>
+  <testcase name="return1666ifRomanNumeralIsMDCLXVIAndReturnRomanNumeralConvertedToArabicNumeralMethodIsCalled" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.0"/>
+  <testcase name="returnCorrectValueIfTheValueOfNextSymbolMethodIsCalledOnAnySymbolInRomanNumeralSymbolArray" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.001"/>
+  <testcase name="ifValueOfIsPassedAnIReturn1" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.0"/>
+  <testcase name="ifValueOfMethodIsPassedAnyRomanNumeralReturnItsValue" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.043"/>
+  <testcase name="testSetIsValidToFalseIfARomanNumeralSymbolIsProceededByAHigherSymbolExceptWhenBothSymbolsCombineToMakeA9OrA4" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.0"/>
+  <testcase name="testSetIsValidToTrueIfARomanNumeralIsNotProceededByAHigherRomanNumeralExceptWhenBothNumeralsCombineToMakeA9OrA4WhenRomanNumeralIsCDXLIV" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.001"/>
+  <testcase name="getEveryRomanNumeralSymbolInRomanNumeralSymbolArrayWhenRomanNumeralIsSetToMDCLXVI" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.001"/>
+  <testcase name="return3999ifRomanNumeralIsMMMCMXCIXAndReturnRomanNumeralConvertedToArabicNumeralMethodIsCalled" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.004"/>
+  <testcase name="testIsValidRomanNumeralWhenRomanNumeralIsXMXVI" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.0"/>
+  <testcase name="testSetIsValidToFalseIfMoreThanOneRomanNumeralIsSubtractedFromAProceedingHigherNumeral" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.005"/>
+  <testcase name="testSetIsValidIsTrueWhenSetIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5AppearsTwiceInARowWhenRomanNumeralIsMDLVI" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.0"/>
+  <testcase name="return1ifRomanNumeralIsIAndReturnRomanNumeralConvertedToArabicNumeralMethodIsCalled" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.002"/>
+  <testcase name="testIsValidRomanNumeralWhenRomanNumeralIsMMMCMXCIX" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.0"/>
+  <testcase name="testSetAndGetCurrentSymbolIndex" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.0"/>
+  <testcase name="testIsValidRomanNumeralWhenRomanNumeralIsXXCXVI" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.001"/>
+  <testcase name="testIsValidRomanNumeralWhenRomanNumeralIsXXXXVI" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.001"/>
+  <testcase name="return10ifNextSymbolIsXAndValueOfNextSymbolMethodIsCalled" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.001"/>
+  <testcase name="testSetIsValidToFalseIfMoreThanOneRomanNumeralIsSubtractedFromAProceedingHigherNumeralSetsIsValidToTrueWhenRomanNumeralIsXLVI" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.0"/>
+  <testcase name="testSetIsValidToFalseIfSymbolIsNotRomanNumeralSymbolWhenRomanNumeralIsXLPI" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.0"/>
+  <testcase name="testSetIsValidToFalseIfSymbolIsNotRomanNumeralSymbolWhenRomanNumeralIsXLVI" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.001"/>
+  <testcase name="testAllSymbolsWhenValueOfCurrentSymbolMethodIsCalled" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.002"/>
+  <testcase name="testSetIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5AppearsTwiceInARowWhenRomanNumeralIsMDCLLXI" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.001"/>
+  <testcase name="testIsValidIsTrueIfNoMoreThanThreeRomanNumeralsAreInARow" classname="com.romannumeralconverter.RomanNumeralConverterTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
