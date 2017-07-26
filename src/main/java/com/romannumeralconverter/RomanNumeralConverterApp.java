@@ -25,19 +25,19 @@ public class RomanNumeralConverterApp {
 		attemptToConvertNumeralOfTypeSelected();
 	}
 	
-	public void convertRomanNumeral()
+	private void convertRomanNumeral()
 	{
 		RomanNumeralConverter romanNumeralConverter = new RomanNumeralConverter();
 		romanNumeralConverter.promptUserForARomanNumeral();
 	}
 	
-	public void convertArabicNumeral()
+	private void convertArabicNumeral()
 	{
 		ArabicNumeralConverter arabicNumeralConverter = new ArabicNumeralConverter();
 		arabicNumeralConverter.promptUserForAnArabicNumeral();
 	}
 	
-	public void attemptToConvertNumeralOfTypeSelected()
+	private void attemptToConvertNumeralOfTypeSelected()
 	{
 		if (whichConverter == 1)
 		{
