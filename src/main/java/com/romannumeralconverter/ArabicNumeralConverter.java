@@ -10,8 +10,8 @@ public class ArabicNumeralConverter {
 	private int arabicNumeral;
 	private int[] digitArray;
 	private int currentDigitIndex;
-	private int currentDigitPlaceValue;
 	private int currentDigitValue;
+	private int nextDigitPlaceValue;
 	private String romanNumeralConcatenation;
 	private String userInput;
 	private boolean isValid;
@@ -28,7 +28,7 @@ public class ArabicNumeralConverter {
 		convertToRomanNumeral.put(1000, "M");
 		return Collections.unmodifiableMap(convertToRomanNumeral);
 	}
-	
+
 	protected String romanNumeralSymbolFor(int arabicNumeral) {
 		return CONVERT_TO_ROMAN_NUMERAL_SYMBOL.get(arabicNumeral);
 	}
@@ -46,45 +46,40 @@ public class ArabicNumeralConverter {
 	{
 		if (currentDigitIndex == digitArray.length - 1)
 		{
-			currentDigitPlaceValue = 1;
+			nextDigitPlaceValue = 10;
 		}
 		else if (currentDigitIndex == digitArray.length - 2)
 		{
-			currentDigitPlaceValue = 10;
+			nextDigitPlaceValue = 100;
 		}
 		else if (currentDigitIndex == digitArray.length - 3)
 		{
-			currentDigitPlaceValue = 100;
+			nextDigitPlaceValue = 1000;
 		}
 		else if (currentDigitIndex == digitArray.length - 4)
 		{
-			currentDigitPlaceValue = 1000;
+			nextDigitPlaceValue = 10000;
 		}
 		else
 		{
-			currentDigitPlaceValue = 0;
+			nextDigitPlaceValue = 0;
 		}
-		return currentDigitPlaceValue;
-	}
-
-	public int nextDigitPlaceValue()
-	{
-		return currentDigitPlaceValue * 10;
+		return nextDigitPlaceValue / 10;
 	}
 
 	public void ifCurrentDigitIsA9Add9EquivalentToRomanNumeralConcatenation() {
 		if (digitArray[currentDigitIndex] == 9)
 		{
 			romanNumeralConcatenation += romanNumeralSymbolFor(currentDigitPlaceValue());
-			romanNumeralConcatenation += romanNumeralSymbolFor(nextDigitPlaceValue());
+			romanNumeralConcatenation += romanNumeralSymbolFor(nextDigitPlaceValue);
 		}
 	}
 
 	public void ifCurrentDigitIsLessThan9AndGreaterThanOrEqualTo5AddDigitEquivalentToRomanNumeralConcatenation() {
 		if (digitArray[currentDigitIndex] >= 5 && digitArray[currentDigitIndex] < 9)
 		{
-			currentDigitPlaceValue = currentDigitPlaceValue();
-			romanNumeralConcatenation += romanNumeralSymbolFor(nextDigitPlaceValue() / 2);
+			int currentDigitPlaceValue = currentDigitPlaceValue();
+			romanNumeralConcatenation += romanNumeralSymbolFor(nextDigitPlaceValue / 2);
 			for (int i = 0; i < (digitArray[currentDigitIndex] - 5); i++)
 			{
 				romanNumeralConcatenation += romanNumeralSymbolFor(currentDigitPlaceValue);
@@ -97,7 +92,7 @@ public class ArabicNumeralConverter {
 		if (digitArray[currentDigitIndex] == 4)
 		{
 			romanNumeralConcatenation += romanNumeralSymbolFor(currentDigitPlaceValue());
-			romanNumeralConcatenation += romanNumeralSymbolFor(nextDigitPlaceValue() / 2);
+			romanNumeralConcatenation += romanNumeralSymbolFor(nextDigitPlaceValue / 2);
 		}
 	}
 
@@ -123,7 +118,7 @@ public class ArabicNumeralConverter {
 		}
 		return romanNumeralConcatenation;
 	}
-	
+
 	public void setIsValidToTrueIfUserInputIsAnIntBetween1And3999()
 	{
 		arabicNumeral = 0;
@@ -135,7 +130,7 @@ public class ArabicNumeralConverter {
 			isValid = false;
 		}
 	}
-	
+
 	public void setIsValidToFalseIfUserInputIsNotAnIntBetween1And3999()
 	{
 		try
@@ -171,9 +166,9 @@ public class ArabicNumeralConverter {
 			promptUserForAnArabicNumeral();
 		}
 	}
-	
-	
-	
+
+
+
 	public void promptUserAgain()
 	{
 		setIsValidToFalseIfUserInputIsNotAnIntBetween1And3999();
@@ -187,7 +182,7 @@ public class ArabicNumeralConverter {
 			promptUserAgain();
 		}
 	}
-	
+
 	//************************************ setters and getters *********************************************
 	public int getArabicNumeral() {
 		return arabicNumeral;

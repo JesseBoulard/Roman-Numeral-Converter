@@ -85,15 +85,6 @@ public class ArabicNumeralConverterTest {
 	}
 	
 	@Test
-	public void testNextDigitPlaceValue() {
-		arabicNumeralConverter.setArabicNumeral(1693);
-		arabicNumeralConverter.splitArabicNumeralIntoDigitArray();
-		arabicNumeralConverter.setCurrentDigitIndex(1);
-		assertEquals(100, arabicNumeralConverter.currentDigitPlaceValue());
-		assertEquals(1000, arabicNumeralConverter.nextDigitPlaceValue());	
-	}
-	
-	@Test
 	public void testSetCurrentDigitValueAndGetCurrentDigitValue() 
 	{
 		arabicNumeralConverter.setCurrentDigitValue(10);
