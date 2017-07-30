@@ -92,20 +92,13 @@ public class ArabicNumeralConverterTest {
 	}
 	
 	@Test
-	public void testSetRomanNumeralConcatenationAndGetRomanNumeralConcatenation() 
-	{
-		arabicNumeralConverter.setRomanNumeralConcatenation("MMC");
-		assertEquals("MMC", arabicNumeralConverter.getRomanNumeralConcatenation());
-	}
-	
-	@Test
 	public void testIfCurrentDigitIsA9Add9EquivalentToRomanNumeralConcatenationWhen9IsInOnesPlace() {
 		arabicNumeralConverter.setArabicNumeral(2109);
 		arabicNumeralConverter.splitArabicNumeralIntoDigitArray();
 		arabicNumeralConverter.setCurrentDigitIndex(3);
-		arabicNumeralConverter.setRomanNumeralConcatenation("");
+		arabicNumeralConverter.romanNumeralConcatenation = "";
 		arabicNumeralConverter.ifCurrentDigitIsA9Add9EquivalentToRomanNumeralConcatenation();
-		assertEquals("IX", arabicNumeralConverter.getRomanNumeralConcatenation());
+		assertEquals("IX", arabicNumeralConverter.romanNumeralConcatenation);
 	}
 	
 	@Test
@@ -113,9 +106,9 @@ public class ArabicNumeralConverterTest {
 		arabicNumeralConverter.setArabicNumeral(2190);
 		arabicNumeralConverter.splitArabicNumeralIntoDigitArray();
 		arabicNumeralConverter.setCurrentDigitIndex(2);
-		arabicNumeralConverter.setRomanNumeralConcatenation("");
+		arabicNumeralConverter.romanNumeralConcatenation = "";
 		arabicNumeralConverter.ifCurrentDigitIsA9Add9EquivalentToRomanNumeralConcatenation();
-		assertEquals("XC", arabicNumeralConverter.getRomanNumeralConcatenation());
+		assertEquals("XC", arabicNumeralConverter.romanNumeralConcatenation);
 	}
 	
 	@Test
@@ -123,9 +116,9 @@ public class ArabicNumeralConverterTest {
 		arabicNumeralConverter.setArabicNumeral(2910);
 		arabicNumeralConverter.splitArabicNumeralIntoDigitArray();
 		arabicNumeralConverter.setCurrentDigitIndex(1);
-		arabicNumeralConverter.setRomanNumeralConcatenation("");
+		arabicNumeralConverter.romanNumeralConcatenation = "";
 		arabicNumeralConverter.ifCurrentDigitIsA9Add9EquivalentToRomanNumeralConcatenation();
-		assertEquals("CM", arabicNumeralConverter.getRomanNumeralConcatenation());
+		assertEquals("CM", arabicNumeralConverter.romanNumeralConcatenation);
 	}
 	
 	@Test
@@ -134,9 +127,9 @@ public class ArabicNumeralConverterTest {
 		arabicNumeralConverter.splitArabicNumeralIntoDigitArray();
 		arabicNumeralConverter.setCurrentDigitIndex(3);
 		arabicNumeralConverter.currentDigitPlaceValue();
-		arabicNumeralConverter.setRomanNumeralConcatenation("");
+		arabicNumeralConverter.romanNumeralConcatenation = "";
 		arabicNumeralConverter.ifCurrentDigitIsLessThan9AndGreaterThanOrEqualTo5AddDigitEquivalentToRomanNumeralConcatenation();
-		assertEquals("VI", arabicNumeralConverter.getRomanNumeralConcatenation());
+		assertEquals("VI", arabicNumeralConverter.romanNumeralConcatenation);
 	}
 	
 	@Test
@@ -145,9 +138,9 @@ public class ArabicNumeralConverterTest {
 		arabicNumeralConverter.splitArabicNumeralIntoDigitArray();
 		arabicNumeralConverter.setCurrentDigitIndex(2);
 		arabicNumeralConverter.currentDigitPlaceValue();
-		arabicNumeralConverter.setRomanNumeralConcatenation("");
+		arabicNumeralConverter.romanNumeralConcatenation = "";
 		arabicNumeralConverter.ifCurrentDigitIsLessThan9AndGreaterThanOrEqualTo5AddDigitEquivalentToRomanNumeralConcatenation();
-		assertEquals("LXX", arabicNumeralConverter.getRomanNumeralConcatenation());
+		assertEquals("LXX", arabicNumeralConverter.romanNumeralConcatenation);
 	}
 	
 	@Test
@@ -156,9 +149,9 @@ public class ArabicNumeralConverterTest {
 		arabicNumeralConverter.splitArabicNumeralIntoDigitArray();
 		arabicNumeralConverter.setCurrentDigitIndex(1);
 		arabicNumeralConverter.currentDigitPlaceValue();
-		arabicNumeralConverter.setRomanNumeralConcatenation("");
+		arabicNumeralConverter.romanNumeralConcatenation = "";
 		arabicNumeralConverter.ifCurrentDigitIsLessThan9AndGreaterThanOrEqualTo5AddDigitEquivalentToRomanNumeralConcatenation();
-		assertEquals("DCCC", arabicNumeralConverter.getRomanNumeralConcatenation());
+		assertEquals("DCCC", arabicNumeralConverter.romanNumeralConcatenation);
 	}
 	
 	@Test
@@ -166,9 +159,9 @@ public class ArabicNumeralConverterTest {
 		arabicNumeralConverter.setArabicNumeral(1394);
 		arabicNumeralConverter.splitArabicNumeralIntoDigitArray();
 		arabicNumeralConverter.setCurrentDigitIndex(3);
-		arabicNumeralConverter.setRomanNumeralConcatenation("");
+		arabicNumeralConverter.romanNumeralConcatenation = "";
 		arabicNumeralConverter.ifCurrentDigitIsA4Add4EquivalentToRomanNumeralConcatenation();
-		assertEquals("IV", arabicNumeralConverter.getRomanNumeralConcatenation());
+		assertEquals("IV", arabicNumeralConverter.romanNumeralConcatenation);
 	}
 	
 	@Test
@@ -176,9 +169,9 @@ public class ArabicNumeralConverterTest {
 		arabicNumeralConverter.setArabicNumeral(1348);
 		arabicNumeralConverter.splitArabicNumeralIntoDigitArray();
 		arabicNumeralConverter.setCurrentDigitIndex(2);
-		arabicNumeralConverter.setRomanNumeralConcatenation("");
+		arabicNumeralConverter.romanNumeralConcatenation = "";
 		arabicNumeralConverter.ifCurrentDigitIsA4Add4EquivalentToRomanNumeralConcatenation();
-		assertEquals("XL", arabicNumeralConverter.getRomanNumeralConcatenation());
+		assertEquals("XL", arabicNumeralConverter.romanNumeralConcatenation);
 	}
 	
 	@Test
@@ -186,9 +179,9 @@ public class ArabicNumeralConverterTest {
 		arabicNumeralConverter.setArabicNumeral(1458);
 		arabicNumeralConverter.splitArabicNumeralIntoDigitArray();
 		arabicNumeralConverter.setCurrentDigitIndex(1);
-		arabicNumeralConverter.setRomanNumeralConcatenation("");
+		arabicNumeralConverter.romanNumeralConcatenation = "";
 		arabicNumeralConverter.ifCurrentDigitIsA4Add4EquivalentToRomanNumeralConcatenation();
-		assertEquals("CD", arabicNumeralConverter.getRomanNumeralConcatenation());
+		assertEquals("CD", arabicNumeralConverter.romanNumeralConcatenation);
 	}
 	
 	@Test
@@ -196,9 +189,9 @@ public class ArabicNumeralConverterTest {
 		arabicNumeralConverter.setArabicNumeral(1693);
 		arabicNumeralConverter.splitArabicNumeralIntoDigitArray();
 		arabicNumeralConverter.setCurrentDigitIndex(3);
-		arabicNumeralConverter.setRomanNumeralConcatenation("");
+		arabicNumeralConverter.romanNumeralConcatenation = "";
 		arabicNumeralConverter.ifCurrentDigitIsLessThan4AddDigitEquivalentToRomanNumeralConcatenation();
-		assertEquals("III", arabicNumeralConverter.getRomanNumeralConcatenation());
+		assertEquals("III", arabicNumeralConverter.romanNumeralConcatenation);
 	}
 	
 	@Test
@@ -206,9 +199,9 @@ public class ArabicNumeralConverterTest {
 		arabicNumeralConverter.setArabicNumeral(1624);
 		arabicNumeralConverter.splitArabicNumeralIntoDigitArray();
 		arabicNumeralConverter.setCurrentDigitIndex(2);
-		arabicNumeralConverter.setRomanNumeralConcatenation("");
+		arabicNumeralConverter.romanNumeralConcatenation = "";
 		arabicNumeralConverter.ifCurrentDigitIsLessThan4AddDigitEquivalentToRomanNumeralConcatenation();
-		assertEquals("XX", arabicNumeralConverter.getRomanNumeralConcatenation());
+		assertEquals("XX", arabicNumeralConverter.romanNumeralConcatenation);
 	}
 	
 	@Test
@@ -216,9 +209,9 @@ public class ArabicNumeralConverterTest {
 		arabicNumeralConverter.setArabicNumeral(1154);
 		arabicNumeralConverter.splitArabicNumeralIntoDigitArray();
 		arabicNumeralConverter.setCurrentDigitIndex(1);
-		arabicNumeralConverter.setRomanNumeralConcatenation("");
+		arabicNumeralConverter.romanNumeralConcatenation = "";
 		arabicNumeralConverter.ifCurrentDigitIsLessThan4AddDigitEquivalentToRomanNumeralConcatenation();
-		assertEquals("C", arabicNumeralConverter.getRomanNumeralConcatenation());
+		assertEquals("C", arabicNumeralConverter.romanNumeralConcatenation);
 	}
 	
 	@Test

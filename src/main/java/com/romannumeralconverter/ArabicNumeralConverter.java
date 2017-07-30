@@ -6,15 +6,15 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class ArabicNumeralConverter {
-	private static final Map<Integer, String> CONVERT_TO_ROMAN_NUMERAL_SYMBOL = createMapOfArabicToRomanNumerals();
-	private int arabicNumeral;
-	private int[] digitArray;
-	private int currentDigitIndex;
-	private int currentDigitValue;
-	private int nextDigitPlaceValue;
-	private String romanNumeralConcatenation;
-	private String userInput;
-	private boolean isValid;
+	protected static final Map<Integer, String> CONVERT_TO_ROMAN_NUMERAL_SYMBOL = createMapOfArabicToRomanNumerals();
+	protected int arabicNumeral;
+	protected int[] digitArray;
+	protected int currentDigitIndex;
+	protected int currentDigitValue;
+	protected int nextDigitPlaceValue;
+	protected String romanNumeralConcatenation;
+	protected String userInput;
+	protected boolean isValid;
 
 	private static Map<Integer, String> createMapOfArabicToRomanNumerals() 
 	{
@@ -33,7 +33,7 @@ public class ArabicNumeralConverter {
 		return CONVERT_TO_ROMAN_NUMERAL_SYMBOL.get(arabicNumeral);
 	}
 
-	public void splitArabicNumeralIntoDigitArray() { 
+	protected void splitArabicNumeralIntoDigitArray() { 
 		String[] digitArrayAsString = Integer.toString(arabicNumeral).split("");
 		digitArray = new int[digitArrayAsString.length];
 		for (int i = 0; i < digitArray.length; i++)
@@ -41,8 +41,8 @@ public class ArabicNumeralConverter {
 			digitArray[i] = Integer.parseInt(digitArrayAsString[i]);
 		}
 	}
-
-	public int currentDigitPlaceValue()
+	
+	protected int currentDigitPlaceValue()
 	{
 		if (currentDigitIndex == digitArray.length - 1)
 		{
@@ -67,7 +67,7 @@ public class ArabicNumeralConverter {
 		return nextDigitPlaceValue / 10;
 	}
 
-	public void ifCurrentDigitIsA9Add9EquivalentToRomanNumeralConcatenation() {
+	protected void ifCurrentDigitIsA9Add9EquivalentToRomanNumeralConcatenation() {
 		if (digitArray[currentDigitIndex] == 9)
 		{
 			romanNumeralConcatenation += romanNumeralSymbolFor(currentDigitPlaceValue());
@@ -75,7 +75,7 @@ public class ArabicNumeralConverter {
 		}
 	}
 
-	public void ifCurrentDigitIsLessThan9AndGreaterThanOrEqualTo5AddDigitEquivalentToRomanNumeralConcatenation() {
+	protected void ifCurrentDigitIsLessThan9AndGreaterThanOrEqualTo5AddDigitEquivalentToRomanNumeralConcatenation() {
 		if (digitArray[currentDigitIndex] >= 5 && digitArray[currentDigitIndex] < 9)
 		{
 			int currentDigitPlaceValue = currentDigitPlaceValue();
@@ -87,7 +87,7 @@ public class ArabicNumeralConverter {
 		}
 	}
 
-	public void ifCurrentDigitIsA4Add4EquivalentToRomanNumeralConcatenation()
+	protected void ifCurrentDigitIsA4Add4EquivalentToRomanNumeralConcatenation()
 	{
 		if (digitArray[currentDigitIndex] == 4)
 		{
@@ -96,7 +96,7 @@ public class ArabicNumeralConverter {
 		}
 	}
 
-	public void ifCurrentDigitIsLessThan4AddDigitEquivalentToRomanNumeralConcatenation()
+	protected void ifCurrentDigitIsLessThan4AddDigitEquivalentToRomanNumeralConcatenation()
 	{
 		if (digitArray[currentDigitIndex] < 4)
 		{
@@ -107,7 +107,7 @@ public class ArabicNumeralConverter {
 		}
 	}
 
-	public String returnArabicNumeralConvertedToRomanNumeral() {
+	protected String returnArabicNumeralConvertedToRomanNumeral() {
 		romanNumeralConcatenation = "";
 		for (currentDigitIndex = 0; currentDigitIndex < digitArray.length; currentDigitIndex++)
 		{
@@ -119,7 +119,7 @@ public class ArabicNumeralConverter {
 		return romanNumeralConcatenation;
 	}
 
-	public void setIsValidToTrueIfUserInputIsAnIntBetween1And3999()
+	protected void setIsValidToTrueIfUserInputIsAnIntBetween1And3999()
 	{
 		arabicNumeral = 0;
 		isValid = true;
@@ -131,7 +131,7 @@ public class ArabicNumeralConverter {
 		}
 	}
 
-	public void setIsValidToFalseIfUserInputIsNotAnIntBetween1And3999()
+	protected void setIsValidToFalseIfUserInputIsNotAnIntBetween1And3999()
 	{
 		try
 		{
@@ -143,7 +143,7 @@ public class ArabicNumeralConverter {
 		}
 	}
 
-	public void promptUserForAnArabicNumeral()
+	protected void promptUserForAnArabicNumeral()
 	{
 		System.out.println("Please enter a Arabic numeral to convert to a Roman numeral. Enter q to to quit.");
 		Scanner scnr = new Scanner(System.in);
@@ -167,21 +167,6 @@ public class ArabicNumeralConverter {
 		}
 	}
 
-
-
-	public void promptUserAgain()
-	{
-		setIsValidToFalseIfUserInputIsNotAnIntBetween1And3999();
-		if (isValid)
-		{
-			System.out.println(arabicNumeral + " is equal to " + returnArabicNumeralConvertedToRomanNumeral());
-		}
-		else
-		{
-			promptUserForAnArabicNumeral();
-			promptUserAgain();
-		}
-	}
 
 	//************************************ setters and getters *********************************************
 	public int getArabicNumeral() {
@@ -210,14 +195,6 @@ public class ArabicNumeralConverter {
 
 	public void setCurrentDigitValue(int currentDigitValue) {
 		this.currentDigitValue = currentDigitValue;
-	}
-
-	public String getRomanNumeralConcatenation() {
-		return romanNumeralConcatenation;
-	}
-
-	public void setRomanNumeralConcatenation(String romanNumeralConcatenation) {
-		this.romanNumeralConcatenation = romanNumeralConcatenation;
 	}
 
 	public boolean getIsValid() {
