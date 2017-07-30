@@ -32,339 +32,321 @@ public class RomanNumeralConverterTest {
 	
 	@Test
 	public void testSetAndGetRomanNumeral() {
-		romanNumeralConverter.setRomanNumeral("MDCLXVI");
-		assertEquals("MDCLXVI", romanNumeralConverter.getRomanNumeral());
+		romanNumeralConverter.romanNumeral = "MDCLXVI";
+		assertEquals("MDCLXVI", romanNumeralConverter.romanNumeral);
 	}
 	
 	@Test
 	public void testSplitRomanNumeralIntoRomanNumeralSymbolArrayWhenRomanNumeralIsSetToMDCLXVI() {
-		romanNumeralConverter.setRomanNumeral("MDCLXVI");
+		romanNumeralConverter.romanNumeral = "MDCLXVI";
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
-		assertEquals("C", romanNumeralConverter.getRomanNumeralSymbolArray()[2]);
+		assertEquals("C", romanNumeralConverter.romanNumeralSymbolArray[2]);
 	}
 	
 	@Test
 	public void getEveryRomanNumeralSymbolInRomanNumeralSymbolArrayWhenRomanNumeralIsSetToMDCLXVI() {
-		romanNumeralConverter.setRomanNumeral("MDCLXVI");
+		romanNumeralConverter.romanNumeral = "MDCLXVI";
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
-		assertEquals("M", romanNumeralConverter.getRomanNumeralSymbolArray()[0]);
-		assertEquals("D", romanNumeralConverter.getRomanNumeralSymbolArray()[1]);
-		assertEquals("C", romanNumeralConverter.getRomanNumeralSymbolArray()[2]);
-		assertEquals("L", romanNumeralConverter.getRomanNumeralSymbolArray()[3]);
-		assertEquals("X", romanNumeralConverter.getRomanNumeralSymbolArray()[4]);
-		assertEquals("V", romanNumeralConverter.getRomanNumeralSymbolArray()[5]);
-		assertEquals("I", romanNumeralConverter.getRomanNumeralSymbolArray()[6]);
-	}
-	
-	@Test
-	public void testSetAndGetCurrentSymbolIndex() {
-		romanNumeralConverter.setCurrentSymbolIndex(8);
-		assertEquals(8, romanNumeralConverter.getCurrentSymbolIndex());
+		assertEquals("M", romanNumeralConverter.romanNumeralSymbolArray[0]);
+		assertEquals("D", romanNumeralConverter.romanNumeralSymbolArray[1]);
+		assertEquals("C", romanNumeralConverter.romanNumeralSymbolArray[2]);
+		assertEquals("L", romanNumeralConverter.romanNumeralSymbolArray[3]);
+		assertEquals("X", romanNumeralConverter.romanNumeralSymbolArray[4]);
+		assertEquals("V", romanNumeralConverter.romanNumeralSymbolArray[5]);
+		assertEquals("I", romanNumeralConverter.romanNumeralSymbolArray[6]);
 	}
 	
 	@Test
 	public void return50ifCurrentSymbolIsLAndValueOfCurrentSymbolMethodIsCalled() {
-		romanNumeralConverter.setRomanNumeral("MDCLXVI");
+		romanNumeralConverter.romanNumeral = "MDCLXVI";
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
-		romanNumeralConverter.setCurrentSymbolIndex(3);
+		romanNumeralConverter.currentSymbolIndex = 3;
 		romanNumeralConverter.calcValueOfCurrentSymbol();
-		assertEquals(50, romanNumeralConverter.getValueOfCurrentSymbol());
+		assertEquals(50, romanNumeralConverter.valueOfCurrentSymbol);
 	}
 	
 	@Test
 	public void testAllSymbolsWhenValueOfCurrentSymbolMethodIsCalled() {
-		romanNumeralConverter.setRomanNumeral("MDCLXVI");
+		romanNumeralConverter.romanNumeral = "MDCLXVI";
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
-		romanNumeralConverter.setCurrentSymbolIndex(0);
+		romanNumeralConverter.currentSymbolIndex = 0;
 		romanNumeralConverter.calcValueOfCurrentSymbol();
-		assertEquals(1000, romanNumeralConverter.getValueOfCurrentSymbol());
-		romanNumeralConverter.setCurrentSymbolIndex(1);
+		assertEquals(1000, romanNumeralConverter.valueOfCurrentSymbol);
+		romanNumeralConverter.currentSymbolIndex = 1;
 		romanNumeralConverter.calcValueOfCurrentSymbol();
-		assertEquals(500, romanNumeralConverter.getValueOfCurrentSymbol());
-		romanNumeralConverter.setCurrentSymbolIndex(2);
+		assertEquals(500, romanNumeralConverter.valueOfCurrentSymbol);
+		romanNumeralConverter.currentSymbolIndex = 2;
 		romanNumeralConverter.calcValueOfCurrentSymbol();
-		assertEquals(100, romanNumeralConverter.getValueOfCurrentSymbol());
-		romanNumeralConverter.setCurrentSymbolIndex(3);
+		assertEquals(100, romanNumeralConverter.valueOfCurrentSymbol);
+		romanNumeralConverter.currentSymbolIndex = 3;
 		romanNumeralConverter.calcValueOfCurrentSymbol();
-		assertEquals(50, romanNumeralConverter.getValueOfCurrentSymbol());
-		romanNumeralConverter.setCurrentSymbolIndex(4);
+		assertEquals(50, romanNumeralConverter.valueOfCurrentSymbol);
+		romanNumeralConverter.currentSymbolIndex = 4;
 		romanNumeralConverter.calcValueOfCurrentSymbol();
-		assertEquals(10, romanNumeralConverter.getValueOfCurrentSymbol());
-		romanNumeralConverter.setCurrentSymbolIndex(5);
+		assertEquals(10, romanNumeralConverter.valueOfCurrentSymbol);
+		romanNumeralConverter.currentSymbolIndex = 5;
 		romanNumeralConverter.calcValueOfCurrentSymbol();
-		assertEquals(5, romanNumeralConverter.getValueOfCurrentSymbol());
-		romanNumeralConverter.setCurrentSymbolIndex(6);
+		assertEquals(5, romanNumeralConverter.valueOfCurrentSymbol);
+		romanNumeralConverter.currentSymbolIndex = 6;
 		romanNumeralConverter.calcValueOfCurrentSymbol();
-		assertEquals(1, romanNumeralConverter.getValueOfCurrentSymbol());
+		assertEquals(1, romanNumeralConverter.valueOfCurrentSymbol);
 	}
 	
 	@Test
 	public void return10ifNextSymbolIsXAndValueOfNextSymbolMethodIsCalled() {
-		romanNumeralConverter.setRomanNumeral("MDCLXVI");
+		romanNumeralConverter.romanNumeral = "MDCLXVI";
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
-		romanNumeralConverter.setCurrentSymbolIndex(3);
+		romanNumeralConverter.currentSymbolIndex = 3;
 		romanNumeralConverter.calcValueOfNextSymbol();
-		assertEquals(10, romanNumeralConverter.getValueOfNextSymbol());
+		assertEquals(10, romanNumeralConverter.valueOfNextSymbol);
 	}
 	
 	@Test
 	public void returnCorrectValueIfTheValueOfNextSymbolMethodIsCalledOnAnySymbolInRomanNumeralSymbolArray() {
-		romanNumeralConverter.setRomanNumeral("MDCLXVI");
+		romanNumeralConverter.romanNumeral = "MDCLXVI";
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
-		romanNumeralConverter.setCurrentSymbolIndex(6);
+		romanNumeralConverter.currentSymbolIndex = 6;
 		romanNumeralConverter.calcValueOfNextSymbol();
-		assertEquals(0, romanNumeralConverter.getValueOfNextSymbol());
-		romanNumeralConverter.setCurrentSymbolIndex(5);
+		assertEquals(0, romanNumeralConverter.valueOfNextSymbol);
+		romanNumeralConverter.currentSymbolIndex = 5;
 		romanNumeralConverter.calcValueOfNextSymbol();
-		assertEquals(1, romanNumeralConverter.getValueOfNextSymbol());
-		romanNumeralConverter.setCurrentSymbolIndex(4);
+		assertEquals(1, romanNumeralConverter.valueOfNextSymbol);
+		romanNumeralConverter.currentSymbolIndex = 4;
 		romanNumeralConverter.calcValueOfNextSymbol();
-		assertEquals(5, romanNumeralConverter.getValueOfNextSymbol());
-		romanNumeralConverter.setCurrentSymbolIndex(3);
+		assertEquals(5, romanNumeralConverter.valueOfNextSymbol);
+		romanNumeralConverter.currentSymbolIndex = 3;
 		romanNumeralConverter.calcValueOfNextSymbol();
-		assertEquals(10, romanNumeralConverter.getValueOfNextSymbol());
-		romanNumeralConverter.setCurrentSymbolIndex(2);
+		assertEquals(10, romanNumeralConverter.valueOfNextSymbol);
+		romanNumeralConverter.currentSymbolIndex = 2;
 		romanNumeralConverter.calcValueOfNextSymbol();
-		assertEquals(50, romanNumeralConverter.getValueOfNextSymbol());
-		romanNumeralConverter.setCurrentSymbolIndex(1);
+		assertEquals(50, romanNumeralConverter.valueOfNextSymbol);
+		romanNumeralConverter.currentSymbolIndex = 1;
 		romanNumeralConverter.calcValueOfNextSymbol();
-		assertEquals(100, romanNumeralConverter.getValueOfNextSymbol());
-		romanNumeralConverter.setCurrentSymbolIndex(0);
+		assertEquals(100, romanNumeralConverter.valueOfNextSymbol);
+		romanNumeralConverter.currentSymbolIndex = 0;
 		romanNumeralConverter.calcValueOfNextSymbol();
-		assertEquals(500, romanNumeralConverter.getValueOfNextSymbol());
+		assertEquals(500, romanNumeralConverter.valueOfNextSymbol);
 	}
 	
 	@Test
 	public void return1666ifRomanNumeralIsMDCLXVIAndReturnRomanNumeralConvertedToArabicNumeralMethodIsCalled() {
-		romanNumeralConverter.setRomanNumeral("MDCLXVI");
+		romanNumeralConverter.romanNumeral = "MDCLXVI";
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
 		assertEquals(1666, romanNumeralConverter.returnRomanNumeralConvertedToArabicNumeral());
 	}
 	
 	@Test
 	public void return1ifRomanNumeralIsIAndReturnRomanNumeralConvertedToArabicNumeralMethodIsCalled() {
-		romanNumeralConverter.setRomanNumeral("I");
+		romanNumeralConverter.romanNumeral = "I";
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
 		assertEquals(1, romanNumeralConverter.returnRomanNumeralConvertedToArabicNumeral());
 	}
 	
 	@Test
 	public void return3999ifRomanNumeralIsMMMCMXCIXAndReturnRomanNumeralConvertedToArabicNumeralMethodIsCalled() {
-		romanNumeralConverter.setRomanNumeral("MMMCMXCIX");
+		romanNumeralConverter.romanNumeral = "MMMCMXCIX";
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
 		assertEquals(3999, romanNumeralConverter.returnRomanNumeralConvertedToArabicNumeral());
 	}
 	
 	@Test
-	public void testGetIsValidAndSetIsValid() {
-		romanNumeralConverter.setIsValid(false);
-		assertEquals(false, romanNumeralConverter.getIsValid());		
-	}
-	
-	@Test
 	public void testSetIsValidToFalseIfARomanNumeralSymbolIsProceededByAHigherSymbolExceptWhenBothSymbolsCombineToMakeA9OrA4() {
-		romanNumeralConverter.setRomanNumeral("DM");	
+		romanNumeralConverter.romanNumeral = "DM";	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
-		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.isValid = true;
 		romanNumeralConverter.setIsValidToFalseIfARomanNumeralSymbolIsProceededByAHigherSymbolExceptWhenBothSymbolsCombineToMakeA9OrA4();
-		assertFalse(romanNumeralConverter.getIsValid());		
+		assertFalse(romanNumeralConverter.isValid);			
 	}
 	
 	@Test
 	public void testSetIsValidToTrueIfARomanNumeralIsNotProceededByAHigherRomanNumeralExceptWhenBothNumeralsCombineToMakeA9OrA4WhenRomanNumeralIsMMMCMXCIX() {
-		romanNumeralConverter.setRomanNumeral("MMMCMXCIX");	
+		romanNumeralConverter.romanNumeral = "MMMCMXCIX";	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
-		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.isValid = true;
 		romanNumeralConverter.setIsValidToFalseIfARomanNumeralSymbolIsProceededByAHigherSymbolExceptWhenBothSymbolsCombineToMakeA9OrA4();
-		assertTrue(romanNumeralConverter.getIsValid());		
+		assertTrue(romanNumeralConverter.isValid);		
 	}
 	
 	@Test
 	public void testSetIsValidToTrueIfARomanNumeralIsNotProceededByAHigherRomanNumeralExceptWhenBothNumeralsCombineToMakeA9OrA4WhenRomanNumeralIsCDXLIV() {
-		romanNumeralConverter.setRomanNumeral("CDXLIV");	
+		romanNumeralConverter.romanNumeral = "CDXLIV";	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
-		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.isValid = true;
 		romanNumeralConverter.setIsValidToFalseIfARomanNumeralSymbolIsProceededByAHigherSymbolExceptWhenBothSymbolsCombineToMakeA9OrA4();
-		assertTrue(romanNumeralConverter.getIsValid());		
+		assertTrue(romanNumeralConverter.isValid);		
 	}
 	
 	@Test
 	public void testSetIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5AppearsTwiceInARowWhenRomanNumeralIsMDDCVI() {
-		romanNumeralConverter.setRomanNumeral("MDDCVI");	
+		romanNumeralConverter.romanNumeral = "MDDCVI";	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
-		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.isValid = true;
 		romanNumeralConverter.setIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5AppearsTwiceInARow();
-		assertFalse(romanNumeralConverter.getIsValid());		
+		assertFalse(romanNumeralConverter.isValid);		
 	}
 	
 	@Test
 	public void testSetIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5AppearsTwiceInARowWhenRomanNumeralIsMDCVVI() {
-		romanNumeralConverter.setRomanNumeral("MDCVVI");	
+		romanNumeralConverter.romanNumeral = "MDCVVI";	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
-		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.isValid = true;
 		romanNumeralConverter.setIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5AppearsTwiceInARow();
-		assertFalse(romanNumeralConverter.getIsValid());		
+		assertFalse(romanNumeralConverter.isValid);			
 	}
 	
 	@Test
 	public void testSetIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5AppearsTwiceInARowWhenRomanNumeralIsMDCLLXI() {
-		romanNumeralConverter.setRomanNumeral("MDCLLXI");	
+		romanNumeralConverter.romanNumeral = "MDCLLXI";	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
-		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.isValid = true;
 		romanNumeralConverter.setIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5AppearsTwiceInARow();
-		assertFalse(romanNumeralConverter.getIsValid());		
+		assertFalse(romanNumeralConverter.isValid);			
 	}
 	
 	@Test
 	public void testSetIsValidIsTrueWhenSetIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5AppearsTwiceInARowWhenRomanNumeralIsMDLVI() {
-		romanNumeralConverter.setRomanNumeral("MDLVI");	
+		romanNumeralConverter.romanNumeral = "MDLVI";	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
-		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.isValid = true;
 		romanNumeralConverter.setIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5AppearsTwiceInARow();
-		assertTrue(romanNumeralConverter.getIsValid());		
+		assertTrue(romanNumeralConverter.isValid);		
 	}
 	
 	@Test
 	public void testSetIsValidToFalseIfMoreThanThreeRomanNumeralsAreInARow() {
-		romanNumeralConverter.setRomanNumeral("XXXXIV");	
+		romanNumeralConverter.romanNumeral = "XXXXIV";	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
-		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.isValid = true;
 		romanNumeralConverter.setIsValidToFalseIfMoreThanThreeRomanNumeralsAreInARow();
-		assertFalse(romanNumeralConverter.getIsValid());		
+		assertFalse(romanNumeralConverter.isValid);			
 	}
 	
 	@Test
 	public void testIsValidIsTrueIfNoMoreThanThreeRomanNumeralsAreInARow() {
-		romanNumeralConverter.setRomanNumeral("XXXIV");	
+		romanNumeralConverter.romanNumeral = "XXXIV";	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
-		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.isValid = true;
 		romanNumeralConverter.setIsValidToFalseIfMoreThanThreeRomanNumeralsAreInARow();
-		assertTrue(romanNumeralConverter.getIsValid());		
+		assertTrue(romanNumeralConverter.isValid);		
 	}
 	
 	@Test
 	public void testSetIsValidToFalseIfMoreThanOneRomanNumeralIsSubtractedFromAProceedingHigherNumeral() {
-		romanNumeralConverter.setRomanNumeral("XXLVI");	
+		romanNumeralConverter.romanNumeral = "XXLVI";	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
-		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.isValid = true;
 		romanNumeralConverter.setIsValidToFalseIfMoreThanOneRomanNumeralIsSubtractedFromAProceedingHigherNumeral();
-		assertFalse(romanNumeralConverter.getIsValid());		
+		assertFalse(romanNumeralConverter.isValid);			
 	}
 	
 	@Test
 	public void testSetIsValidToFalseIfMoreThanOneRomanNumeralIsSubtractedFromAProceedingHigherNumeralSetsIsValidToTrueWhenRomanNumeralIsXLVI() {
-		romanNumeralConverter.setRomanNumeral("XLVI");	
+		romanNumeralConverter.romanNumeral = "XLVI";	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
-		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.isValid = true;
 		romanNumeralConverter.setIsValidToFalseIfMoreThanOneRomanNumeralIsSubtractedFromAProceedingHigherNumeral();
-		assertTrue(romanNumeralConverter.getIsValid());		
+		assertTrue(romanNumeralConverter.isValid);		
 	}
 	
 	@Test
 	public void testSetIsValidToFalseIfSymbolIsNotRomanNumeralSymbolWhenRomanNumeralIsXLPI() {
-		romanNumeralConverter.setRomanNumeral("XLPI");	
+		romanNumeralConverter.romanNumeral = "XLPI";	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
-		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.isValid = true;
 		romanNumeralConverter.setIsValidToFalseIfSymbolIsNotRomanNumeralSymbol();
-		assertFalse(romanNumeralConverter.getIsValid());		
+		assertFalse(romanNumeralConverter.isValid);		
 	}
 	
 	@Test
 	public void testSetIsValidToFalseIfSymbolIsNotRomanNumeralSymbolWhenRomanNumeralIsXLVI() {
-		romanNumeralConverter.setRomanNumeral("XLVI");	
+		romanNumeralConverter.romanNumeral = "XLVI";	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
-		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.isValid = true;
 		romanNumeralConverter.setIsValidToFalseIfSymbolIsNotRomanNumeralSymbol();
-		assertTrue(romanNumeralConverter.getIsValid());		
+		assertTrue(romanNumeralConverter.isValid);		
 	}
 	
 	@Test
 	public void testIsValidRomanNumeralWhenRomanNumeralIsXLPI() {
-		romanNumeralConverter.setRomanNumeral("XLPI");	
+		romanNumeralConverter.romanNumeral = "XLPI";	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
-		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.isValid = true;
 		romanNumeralConverter.isValidRomanNumeral();
-		assertFalse(romanNumeralConverter.getIsValid());		
+		assertFalse(romanNumeralConverter.isValid);		
 	}
 	
 
 	@Test
 	public void testIsValidRomanNumeralWhenRomanNumeralIsXLVI() {
-		romanNumeralConverter.setRomanNumeral("XLVI");	
+		romanNumeralConverter.romanNumeral = "XLVI";	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
-		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.isValid = true;
 		romanNumeralConverter.isValidRomanNumeral();
-		assertTrue(romanNumeralConverter.getIsValid());		
+		assertTrue(romanNumeralConverter.isValid);		
 	}
 	
 	
 	@Test
 	public void testIsValidRomanNumeralWhenRomanNumeralIsLLVI() {
-		romanNumeralConverter.setRomanNumeral("LLVI");	
+		romanNumeralConverter.romanNumeral = "LLVI";	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
-		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.isValid = true;
 		romanNumeralConverter.isValidRomanNumeral();
-		assertFalse(romanNumeralConverter.getIsValid());		
+		assertFalse(romanNumeralConverter.isValid);			
 	}
 	
 	
 	@Test
 	public void testIsValidRomanNumeralWhenRomanNumeralIsXXXXVI() {
-		romanNumeralConverter.setRomanNumeral("XXXXVI");	
+		romanNumeralConverter.romanNumeral = "XXXXVI";	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
-		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.isValid = true;
 		romanNumeralConverter.isValidRomanNumeral();
-		assertFalse(romanNumeralConverter.getIsValid());		
+		assertFalse(romanNumeralConverter.isValid);			
 	}
 	
 	@Test
 	public void testIsValidRomanNumeralWhenRomanNumeralIsXXCXVI() {
-		romanNumeralConverter.setRomanNumeral("XXCXVI");	
+		romanNumeralConverter.romanNumeral = "XXCXVI";	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
-		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.isValid = true;
 		romanNumeralConverter.isValidRomanNumeral();
-		assertFalse(romanNumeralConverter.getIsValid());		
+		assertFalse(romanNumeralConverter.isValid);		
 	}
 	
 	@Test
 	public void testIsValidRomanNumeralWhenRomanNumeralIsXMXVI() {
-		romanNumeralConverter.setRomanNumeral("XMXVI");	
+		romanNumeralConverter.romanNumeral = "XMXVI";	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
-		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.isValid = true;
 		romanNumeralConverter.isValidRomanNumeral();
-		assertFalse(romanNumeralConverter.getIsValid());		
+		assertFalse(romanNumeralConverter.isValid);		
 	}
 	
 	@Test
 	public void testIsValidRomanNumeralWhenRomanNumeralIsVXVI() {
-		romanNumeralConverter.setRomanNumeral("VXVI");	
+		romanNumeralConverter.romanNumeral = "VXVI";	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
-		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.isValid = true;
 		romanNumeralConverter.isValidRomanNumeral();
-		assertFalse(romanNumeralConverter.getIsValid());		
+		assertFalse(romanNumeralConverter.isValid);			
 	}
 	
 	@Test
 	public void testIsValidRomanNumeralWhenRomanNumeralIsMMMCMXCIX() {
-		romanNumeralConverter.setRomanNumeral("MMMCMXCIX");	
+		romanNumeralConverter.romanNumeral = "MMMCMXCIX";	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
-		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.isValid = true;
 		romanNumeralConverter.isValidRomanNumeral();
-		assertTrue(romanNumeralConverter.getIsValid());		
+		assertTrue(romanNumeralConverter.isValid);			
 	}
 	
 	@Test
 	public void testIsValidRomanNumeralWhenRomanNumeralIsMMMM() {
-		romanNumeralConverter.setRomanNumeral("MMMM");	
+		romanNumeralConverter.romanNumeral = "MMMM";	
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
-		romanNumeralConverter.setIsValid(true);
+		romanNumeralConverter.isValid = true;
 		romanNumeralConverter.isValidRomanNumeral();
-		assertFalse(romanNumeralConverter.getIsValid());		
-	}
-	
-	@Test
-	public void testGetUserInputAndSetUserInput() {
-		romanNumeralConverter.setUserInput("XXX");
-		assertEquals("XXX", romanNumeralConverter.getUserInput());		
+		assertFalse(romanNumeralConverter.isValid);		
 	}
 }

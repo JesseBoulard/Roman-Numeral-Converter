@@ -8,15 +8,15 @@ import java.util.Scanner;
 public class RomanNumeralConverter {
 
 	private static final Map<String, Integer> CONVERT_TO_ARABIC_DIGIT = createMapOfRomanToArabicNumerals();
-	private String romanNumeral;
-	private String[] romanNumeralSymbolArray;
-	private int currentSymbolIndex;
-	private int valueOfCurrentSymbol;
-	private int valueOfNextSymbol;
-	private int valueToSubtractFromCurrentSymbol;
-	private int arabicNumeral;
-	private boolean isValid;
-	private String userInput;
+	protected String romanNumeral;
+	protected String[] romanNumeralSymbolArray;
+	protected int currentSymbolIndex;
+	protected int valueOfCurrentSymbol;
+	protected int valueOfNextSymbol;
+	protected int valueToSubtractFromCurrentSymbol;
+	protected int arabicNumeral;
+	protected boolean isValid;
+	protected String userInput;
 
 	private static Map<String, Integer> createMapOfRomanToArabicNumerals() 
 	{
@@ -31,20 +31,20 @@ public class RomanNumeralConverter {
 		return Collections.unmodifiableMap(convertToArabicNumeral);
 	}
 
-	public int valueOf(String romanNumeralSymbol) {
+	protected int valueOf(String romanNumeralSymbol) {
 		return CONVERT_TO_ARABIC_DIGIT.get(romanNumeralSymbol);
 	}
 
-	public void splitRomanNumeralIntoRomanNumeralSymbolArray() {
+	protected void splitRomanNumeralIntoRomanNumeralSymbolArray() {
 		romanNumeralSymbolArray = romanNumeral.split("");
 	}
 
-	public void calcValueOfCurrentSymbol() {
+	protected void calcValueOfCurrentSymbol() {
 		valueOfCurrentSymbol = valueOf(romanNumeralSymbolArray[currentSymbolIndex]);
 	}
 
 
-	public void calcValueOfNextSymbol()
+	protected void calcValueOfNextSymbol()
 	{
 		if (currentSymbolIndex == romanNumeralSymbolArray.length - 1)
 		{
@@ -56,14 +56,14 @@ public class RomanNumeralConverter {
 		}
 	}
 
-	public int returnRomanNumeralConvertedToArabicNumeral()
+	protected int returnRomanNumeralConvertedToArabicNumeral()
 	{
 		arabicNumeral = 0;
 		for (currentSymbolIndex = 0; currentSymbolIndex < romanNumeralSymbolArray.length; currentSymbolIndex++)
 		{
 			calcValueOfCurrentSymbol();
 			calcValueOfNextSymbol();
-			if (valueOfCurrentSymbol < getValueOfNextSymbol())
+			if (valueOfCurrentSymbol < valueOfNextSymbol)
 			{
 				valueToSubtractFromCurrentSymbol = valueOfCurrentSymbol;
 			}
@@ -76,7 +76,7 @@ public class RomanNumeralConverter {
 		return arabicNumeral;
 	}
 
-	public void setIsValidToFalseIfARomanNumeralSymbolIsProceededByAHigherSymbolExceptWhenBothSymbolsCombineToMakeA9OrA4() 
+	protected void setIsValidToFalseIfARomanNumeralSymbolIsProceededByAHigherSymbolExceptWhenBothSymbolsCombineToMakeA9OrA4() 
 	{
 		for (currentSymbolIndex = 0; currentSymbolIndex < romanNumeralSymbolArray.length - 1; currentSymbolIndex++)
 		{
@@ -89,7 +89,7 @@ public class RomanNumeralConverter {
 		}
 	}
 
-	public void setIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5AppearsTwiceInARow()
+	protected void setIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5AppearsTwiceInARow()
 	{
 		for (int i = 0; i < romanNumeralSymbolArray.length - 1; i++)
 		{
@@ -100,7 +100,7 @@ public class RomanNumeralConverter {
 		}
 	}
 
-	public void setIsValidToFalseIfMoreThanThreeRomanNumeralsAreInARow()
+	protected void setIsValidToFalseIfMoreThanThreeRomanNumeralsAreInARow()
 	{
 		for (int i = 0; i < romanNumeralSymbolArray.length - 3; i++)
 		{
@@ -112,7 +112,7 @@ public class RomanNumeralConverter {
 		}
 	}
 
-	public void setIsValidToFalseIfMoreThanOneRomanNumeralIsSubtractedFromAProceedingHigherNumeral()
+	protected void setIsValidToFalseIfMoreThanOneRomanNumeralIsSubtractedFromAProceedingHigherNumeral()
 	{
 		for (int i = 0; i < romanNumeralSymbolArray.length - 2; i++)
 		{
@@ -122,8 +122,8 @@ public class RomanNumeralConverter {
 			}
 		}
 	}
-	
-	public void setIsValidToFalseIfSymbolIsNotRomanNumeralSymbol()
+
+	protected void setIsValidToFalseIfSymbolIsNotRomanNumeralSymbol()
 	{
 		try
 		{
@@ -137,100 +137,53 @@ public class RomanNumeralConverter {
 			isValid = false;
 		}
 	}
-	
 
-		public boolean isValidRomanNumeral()
+
+	protected boolean isValidRomanNumeral()
+	{
+		isValid = true;
+		setIsValidToFalseIfSymbolIsNotRomanNumeralSymbol();
+		if (isValid == true)
 		{
-			isValid = true;
-			setIsValidToFalseIfSymbolIsNotRomanNumeralSymbol();
-			if (isValid == true)
-			{
-				setIsValidToFalseIfARomanNumeralSymbolIsProceededByAHigherSymbolExceptWhenBothSymbolsCombineToMakeA9OrA4();
-			}
-			if (isValid == true)
-			{
-				setIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5AppearsTwiceInARow();
-			}
-			if (isValid == true)
-			{
-				setIsValidToFalseIfMoreThanThreeRomanNumeralsAreInARow();
-			}
-			if (isValid == true)
-			{
-				setIsValidToFalseIfMoreThanOneRomanNumeralIsSubtractedFromAProceedingHigherNumeral();
-			}
-			return isValid;
+			setIsValidToFalseIfARomanNumeralSymbolIsProceededByAHigherSymbolExceptWhenBothSymbolsCombineToMakeA9OrA4();
 		}
-	
-		public void promptUserForARomanNumeral()
+		if (isValid == true)
 		{
-			System.out.println("Please enter a Roman numeral to convert to an Arabic numeral. Enter q to to quit.");
-			Scanner scnr = new Scanner(System.in);
-			userInput = scnr.next();
-			romanNumeral = userInput.toUpperCase();
-			if (romanNumeral.charAt(0) == 'Q')
-			{
-				RomanNumeralConverterApp romanNumeralConverterApp = new RomanNumeralConverterApp();
-				return;
-			}
-			splitRomanNumeralIntoRomanNumeralSymbolArray();
-			if (isValidRomanNumeral())
-			{
-				System.out.println(romanNumeral + " is equal to " + returnRomanNumeralConvertedToArabicNumeral());
-				promptUserForARomanNumeral();
-			}
-			else
-			{
-				System.out.println("Roman numeral is invalid!");
-				promptUserForARomanNumeral();
-			}
+			setIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5AppearsTwiceInARow();
 		}
-
-	
-	//************************************setters and getters****************************************
-
-	public String getRomanNumeral() {
-		return romanNumeral;
-	}
-
-	public void setRomanNumeral(String romanNumeral) {
-		this.romanNumeral = romanNumeral;
-	}
-
-	public String[] getRomanNumeralSymbolArray() {
-		return romanNumeralSymbolArray;
-	}
-
-	public int getCurrentSymbolIndex() {
-		return currentSymbolIndex;
-	}
-
-	public void setCurrentSymbolIndex(int currentSymbolIndex) {
-		this.currentSymbolIndex = currentSymbolIndex;
-	}
-
-	public int getValueOfCurrentSymbol() {
-		return valueOfCurrentSymbol;
-	}
-
-	public int getValueOfNextSymbol() {
-		return valueOfNextSymbol;
-	}
-
-	public boolean getIsValid() {
+		if (isValid == true)
+		{
+			setIsValidToFalseIfMoreThanThreeRomanNumeralsAreInARow();
+		}
+		if (isValid == true)
+		{
+			setIsValidToFalseIfMoreThanOneRomanNumeralIsSubtractedFromAProceedingHigherNumeral();
+		}
 		return isValid;
 	}
 
-	public void setIsValid(boolean isValid) {
-		this.isValid = isValid;
-	}
-
-	public String getUserInput() {
-		return userInput;
-	}
-
-	public void setUserInput(String userInput) {
-		this.userInput = userInput;
+	protected void promptUserForARomanNumeral()
+	{
+		System.out.println("Please enter a Roman numeral to convert to an Arabic numeral. Enter q to to quit.");
+		Scanner scnr = new Scanner(System.in);
+		userInput = scnr.next();
+		romanNumeral = userInput.toUpperCase();
+		if (romanNumeral.charAt(0) == 'Q')
+		{
+			RomanNumeralConverterApp romanNumeralConverterApp = new RomanNumeralConverterApp();
+			return;
+		}
+		splitRomanNumeralIntoRomanNumeralSymbolArray();
+		if (isValidRomanNumeral())
+		{
+			System.out.println(romanNumeral + " is equal to " + returnRomanNumeralConvertedToArabicNumeral());
+			promptUserForARomanNumeral();
+		}
+		else
+		{
+			System.out.println("Roman numeral is invalid!");
+			promptUserForARomanNumeral();
+		}
 	}
 
 }

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class RomanNumeralConverterApp {
 	
-	private int whichConverter;
+	protected int whichConverter;
 	
 	public RomanNumeralConverterApp()
 	{
@@ -15,7 +15,7 @@ public class RomanNumeralConverterApp {
 		RomanNumeralConverterApp romanNumeralConverterApp = new RomanNumeralConverterApp();
 	}
 	
-	private void promptUserForWhichTypeOfNumeralToConvert()
+	protected void promptUserForWhichTypeOfNumeralToConvert()
 	{
 		System.out.println("If you would like to convert a Roman numeral to an Arabic numeral, enter: 1");
 		System.out.println("If you would like to convert a Arabic numeral to an Roman numeral, enter: 2");
@@ -25,19 +25,19 @@ public class RomanNumeralConverterApp {
 		attemptToConvertNumeralOfTypeSelected();
 	}
 	
-	private void convertRomanNumeral()
+	protected void convertRomanNumeral()
 	{
 		RomanNumeralConverter romanNumeralConverter = new RomanNumeralConverter();
 		romanNumeralConverter.promptUserForARomanNumeral();
 	}
 	
-	private void convertArabicNumeral()
+	protected void convertArabicNumeral()
 	{
 		ArabicNumeralConverter arabicNumeralConverter = new ArabicNumeralConverter();
 		arabicNumeralConverter.promptUserForAnArabicNumeral();
 	}
 	
-	private void attemptToConvertNumeralOfTypeSelected()
+	protected void attemptToConvertNumeralOfTypeSelected()
 	{
 		if (whichConverter == 1)
 		{
