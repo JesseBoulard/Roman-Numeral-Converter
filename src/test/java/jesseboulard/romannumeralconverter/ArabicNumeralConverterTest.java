@@ -1,9 +1,11 @@
-package com.romannumeralconverter;
+package jesseboulard.romannumeralconverter;
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import jesseboulard.romannumeralconverter.ArabicNumeralConverter;
 
 public class ArabicNumeralConverterTest {
 

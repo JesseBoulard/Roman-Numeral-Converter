@@ -1,4 +1,4 @@
-package com.romannumeralconverter;
+package jesseboulard.romannumeralconverter;
 
 import java.util.Scanner;
 
