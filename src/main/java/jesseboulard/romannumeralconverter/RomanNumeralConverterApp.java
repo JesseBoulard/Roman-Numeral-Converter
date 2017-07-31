@@ -1,12 +1,13 @@
 package jesseboulard.romannumeralconverter;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class RomanNumeralConverterApp {
-	
-	protected int whichConverter;
-	
-	public RomanNumeralConverterApp()
+
+	private int whichConverter;
+
+	private RomanNumeralConverterApp()
 	{
 		promptUserForWhichTypeOfNumeralToConvert();
 	}
@@ -14,8 +15,8 @@ public class RomanNumeralConverterApp {
 	{
 		RomanNumeralConverterApp romanNumeralConverterApp = new RomanNumeralConverterApp();
 	}
-	
-	protected void promptUserForWhichTypeOfNumeralToConvert()
+
+	private void promptUserForWhichTypeOfNumeralToConvert()
 	{
 		System.out.println("If you would like to convert a Roman numeral to an Arabic numeral, enter: 1");
 		System.out.println("If you would like to convert a Arabic numeral to an Roman numeral, enter: 2");
@@ -24,8 +25,8 @@ public class RomanNumeralConverterApp {
 		whichConverter = scnr.nextInt();
 		attemptToConvertNumeralOfTypeSelected();
 	}
-	
-	protected void promptUserForARomanNumeral()
+
+	private void promptUserForARomanNumeral()
 	{
 		RomanNumeralConverter romanNumeralConverter = new RomanNumeralConverter();
 		System.out.println("Please enter a Roman numeral to convert to an Arabic numeral. Enter q to to quit.");
@@ -50,7 +51,7 @@ public class RomanNumeralConverterApp {
 		}
 	}
 
-	protected void promptUserForAnArabicNumeral()
+	private void promptUserForAnArabicNumeral()
 	{
 		ArabicNumeralConverter arabicNumeralConverter = new ArabicNumeralConverter();
 		System.out.println("Please enter a Arabic numeral to convert to a Roman numeral. Enter q to to quit.");
@@ -74,8 +75,8 @@ public class RomanNumeralConverterApp {
 			promptUserForAnArabicNumeral();
 		}
 	}
-	
-	protected void attemptToConvertNumeralOfTypeSelected()
+
+	private void convertNumeralOfTypeSelected()
 	{
 		if (whichConverter == 1)
 		{
@@ -89,5 +90,18 @@ public class RomanNumeralConverterApp {
 		{
 			System.out.println("Goodbye");
 		}
-	}	
+	}
+
+	private void attemptToConvertNumeralOfTypeSelected()
+	{
+		try
+		{
+			convertNumeralOfTypeSelected();	
+		}
+		catch (InputMismatchException e)
+		{
+			System.out.println("Invalid input!");
+			promptUserForWhichTypeOfNumeralToConvert();
+		}
+	}
 }
