@@ -8,13 +8,11 @@ import java.util.Scanner;
 public class RomanNumeralConverter {
 
 	private static final Map<String, Integer> CONVERT_TO_ARABIC_DIGIT = createMapOfRomanToArabicNumerals();
-	protected String romanNumeral;
 	protected String[] romanNumeralSymbolArray;
 	protected int currentSymbolIndex;
 	protected int valueOfCurrentSymbol;
 	protected int valueOfNextSymbol;
 	protected int valueToSubtractFromCurrentSymbol;
-	protected int arabicNumeral;
 
 	private static Map<String, Integer> createMapOfRomanToArabicNumerals() 
 	{
@@ -33,7 +31,7 @@ public class RomanNumeralConverter {
 		return CONVERT_TO_ARABIC_DIGIT.get(romanNumeralSymbol);
 	}
 
-	protected void splitRomanNumeralIntoRomanNumeralSymbolArray() {
+	protected void splitRomanNumeralIntoRomanNumeralSymbolArray(String romanNumeral) {
 		romanNumeralSymbolArray = romanNumeral.split("");
 	}
 
@@ -56,7 +54,7 @@ public class RomanNumeralConverter {
 
 	protected int returnRomanNumeralConvertedToArabicNumeral()
 	{
-		arabicNumeral = 0;
+		int arabicNumeral = 0;
 		for (currentSymbolIndex = 0; currentSymbolIndex < romanNumeralSymbolArray.length; currentSymbolIndex++)
 		{
 			calcValueOfCurrentSymbol();

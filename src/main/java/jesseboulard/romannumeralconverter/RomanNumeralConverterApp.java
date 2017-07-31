@@ -31,16 +31,16 @@ public class RomanNumeralConverterApp {
 		System.out.println("Please enter a Roman numeral to convert to an Arabic numeral. Enter q to to quit.");
 		Scanner scnr = new Scanner(System.in);
 		userInput = scnr.next();
-		romanNumeralConverter.romanNumeral = userInput.toUpperCase();
-		if (romanNumeralConverter.romanNumeral.charAt(0) == 'Q')
+		String romanNumeral = userInput.toUpperCase();
+		if (romanNumeral.charAt(0) == 'Q')
 		{
 			RomanNumeralConverterApp romanNumeralConverterApp = new RomanNumeralConverterApp();
 			return;
 		}
-		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray();
+		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray(romanNumeral);
 		if (romanNumeralConverter.isValidRomanNumeral())
 		{
-			System.out.println(romanNumeralConverter.romanNumeral + " is equal to " + romanNumeralConverter.returnRomanNumeralConvertedToArabicNumeral());
+			System.out.println(romanNumeral + " is equal to " + romanNumeralConverter.returnRomanNumeralConvertedToArabicNumeral());
 			promptUserForARomanNumeral();
 		}
 		else
