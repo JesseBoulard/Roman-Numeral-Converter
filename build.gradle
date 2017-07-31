@@ -9,6 +9,10 @@ run
     standardInput = System.in
 }
 
+repositories {
+    mavenCentral()
+}
+
 dependencies {
 
 testCompile 'junit:junit:4.12'
