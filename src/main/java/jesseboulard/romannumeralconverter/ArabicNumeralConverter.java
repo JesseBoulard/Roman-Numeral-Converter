@@ -13,7 +13,6 @@ public class ArabicNumeralConverter {
 	protected int currentDigitValue;
 	protected int nextDigitPlaceValue;
 	protected String romanNumeralConcatenation;
-	protected String userInput;
 
 	private static Map<Integer, String> createMapOfArabicToRomanNumerals() 
 	{
@@ -118,7 +117,7 @@ public class ArabicNumeralConverter {
 		return romanNumeralConcatenation;
 	}
 
-	protected boolean returnTrueIfUserInputIsAnIntBetween1And3999()
+	protected boolean returnTrueIfUserInputIsAnIntBetween1And3999(String userInput)
 	{
 		arabicNumeral = 0;
 		boolean isValid = true;
@@ -131,12 +130,12 @@ public class ArabicNumeralConverter {
 		return isValid;
 	}
 
-	protected boolean returnFalseIfUserInputIsNotAnIntBetween1And3999()
+	protected boolean returnFalseIfUserInputIsNotAnIntBetween1And3999(String userInput)
 	{
 		boolean isValid = false;
 		try
 		{
-			if (returnTrueIfUserInputIsAnIntBetween1And3999())
+			if (returnTrueIfUserInputIsAnIntBetween1And3999(userInput))
 			{
 				isValid = true;
 			}

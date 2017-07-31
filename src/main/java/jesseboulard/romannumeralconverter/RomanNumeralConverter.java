@@ -15,7 +15,6 @@ public class RomanNumeralConverter {
 	protected int valueOfNextSymbol;
 	protected int valueToSubtractFromCurrentSymbol;
 	protected int arabicNumeral;
-	protected String userInput;
 
 	private static Map<String, Integer> createMapOfRomanToArabicNumerals() 
 	{
@@ -166,29 +165,4 @@ public class RomanNumeralConverter {
 		}
 		return isValid;
 	}
-
-	protected void promptUserForARomanNumeral()
-	{
-		System.out.println("Please enter a Roman numeral to convert to an Arabic numeral. Enter q to to quit.");
-		Scanner scnr = new Scanner(System.in);
-		userInput = scnr.next();
-		romanNumeral = userInput.toUpperCase();
-		if (romanNumeral.charAt(0) == 'Q')
-		{
-			RomanNumeralConverterApp romanNumeralConverterApp = new RomanNumeralConverterApp();
-			return;
-		}
-		splitRomanNumeralIntoRomanNumeralSymbolArray();
-		if (isValidRomanNumeral())
-		{
-			System.out.println(romanNumeral + " is equal to " + returnRomanNumeralConvertedToArabicNumeral());
-			promptUserForARomanNumeral();
-		}
-		else
-		{
-			System.out.println("Roman numeral is invalid!");
-			promptUserForARomanNumeral();
-		}
-	}
-
 }

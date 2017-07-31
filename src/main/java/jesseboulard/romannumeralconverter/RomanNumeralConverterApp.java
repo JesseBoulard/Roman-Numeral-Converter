@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class RomanNumeralConverterApp {
 
 	private int whichConverter;
+	private String userInput;
 
 	public RomanNumeralConverterApp()
 	{
@@ -29,8 +30,8 @@ public class RomanNumeralConverterApp {
 		RomanNumeralConverter romanNumeralConverter = new RomanNumeralConverter();
 		System.out.println("Please enter a Roman numeral to convert to an Arabic numeral. Enter q to to quit.");
 		Scanner scnr = new Scanner(System.in);
-		romanNumeralConverter.userInput = scnr.next();
-		romanNumeralConverter.romanNumeral = romanNumeralConverter.userInput.toUpperCase();
+		userInput = scnr.next();
+		romanNumeralConverter.romanNumeral = userInput.toUpperCase();
 		if (romanNumeralConverter.romanNumeral.charAt(0) == 'Q')
 		{
 			RomanNumeralConverterApp romanNumeralConverterApp = new RomanNumeralConverterApp();
@@ -54,13 +55,13 @@ public class RomanNumeralConverterApp {
 		ArabicNumeralConverter arabicNumeralConverter = new ArabicNumeralConverter();
 		System.out.println("Please enter a Arabic numeral to convert to a Roman numeral. Enter q to to quit.");
 		Scanner scnr = new Scanner(System.in);
-		arabicNumeralConverter.userInput = scnr.next();
-		if (arabicNumeralConverter.userInput.charAt(0) == 'q')
+		userInput = scnr.next();
+		if (userInput.charAt(0) == 'q')
 		{
 			RomanNumeralConverterApp romanNumeralConverterApp = new RomanNumeralConverterApp();
 			return;
 		}
-		if (arabicNumeralConverter.returnFalseIfUserInputIsNotAnIntBetween1And3999())
+		if (arabicNumeralConverter.returnFalseIfUserInputIsNotAnIntBetween1And3999(userInput))
 		{
 			arabicNumeralConverter.splitArabicNumeralIntoDigitArray();
 			System.out.println(arabicNumeralConverter.arabicNumeral + " is equal to " + arabicNumeralConverter.returnArabicNumeralConvertedToRomanNumeral());
