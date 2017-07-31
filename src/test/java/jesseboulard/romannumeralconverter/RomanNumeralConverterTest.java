@@ -54,68 +54,52 @@ public class RomanNumeralConverterTest {
 	public void return50ifCurrentSymbolIsLAndValueOfCurrentSymbolMethodIsCalled() {
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray("MDCLXVI");
 		romanNumeralConverter.currentSymbolIndex = 3;
-		romanNumeralConverter.calcValueOfCurrentSymbol();
-		assertEquals(50, romanNumeralConverter.valueOfCurrentSymbol);
+		assertEquals(50, romanNumeralConverter.valueOfCurrentSymbol());
 	}
 	
 	@Test
 	public void testAllSymbolsWhenValueOfCurrentSymbolMethodIsCalled() {
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray("MDCLXVI");
 		romanNumeralConverter.currentSymbolIndex = 0;
-		romanNumeralConverter.calcValueOfCurrentSymbol();
-		assertEquals(1000, romanNumeralConverter.valueOfCurrentSymbol);
+		assertEquals(1000, romanNumeralConverter.valueOfCurrentSymbol());
 		romanNumeralConverter.currentSymbolIndex = 1;
-		romanNumeralConverter.calcValueOfCurrentSymbol();
-		assertEquals(500, romanNumeralConverter.valueOfCurrentSymbol);
+		assertEquals(500, romanNumeralConverter.valueOfCurrentSymbol());
 		romanNumeralConverter.currentSymbolIndex = 2;
-		romanNumeralConverter.calcValueOfCurrentSymbol();
-		assertEquals(100, romanNumeralConverter.valueOfCurrentSymbol);
+		assertEquals(100, romanNumeralConverter.valueOfCurrentSymbol());
 		romanNumeralConverter.currentSymbolIndex = 3;
-		romanNumeralConverter.calcValueOfCurrentSymbol();
-		assertEquals(50, romanNumeralConverter.valueOfCurrentSymbol);
+		assertEquals(50, romanNumeralConverter.valueOfCurrentSymbol());
 		romanNumeralConverter.currentSymbolIndex = 4;
-		romanNumeralConverter.calcValueOfCurrentSymbol();
-		assertEquals(10, romanNumeralConverter.valueOfCurrentSymbol);
+		assertEquals(10, romanNumeralConverter.valueOfCurrentSymbol());
 		romanNumeralConverter.currentSymbolIndex = 5;
-		romanNumeralConverter.calcValueOfCurrentSymbol();
-		assertEquals(5, romanNumeralConverter.valueOfCurrentSymbol);
+		assertEquals(5, romanNumeralConverter.valueOfCurrentSymbol());
 		romanNumeralConverter.currentSymbolIndex = 6;
-		romanNumeralConverter.calcValueOfCurrentSymbol();
-		assertEquals(1, romanNumeralConverter.valueOfCurrentSymbol);
+		assertEquals(1, romanNumeralConverter.valueOfCurrentSymbol());
 	}
 	
 	@Test
 	public void return10ifNextSymbolIsXAndValueOfNextSymbolMethodIsCalled() {
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray("MDCLXVI");
 		romanNumeralConverter.currentSymbolIndex = 3;
-		romanNumeralConverter.calcValueOfNextSymbol();
-		assertEquals(10, romanNumeralConverter.valueOfNextSymbol);
+		assertEquals(10, romanNumeralConverter.valueOfNextSymbol());
 	}
 	
 	@Test
 	public void returnCorrectValueIfTheValueOfNextSymbolMethodIsCalledOnAnySymbolInRomanNumeralSymbolArray() {
 		romanNumeralConverter.splitRomanNumeralIntoRomanNumeralSymbolArray("MDCLXVI");
 		romanNumeralConverter.currentSymbolIndex = 6;
-		romanNumeralConverter.calcValueOfNextSymbol();
-		assertEquals(0, romanNumeralConverter.valueOfNextSymbol);
+		assertEquals(0, romanNumeralConverter.valueOfNextSymbol());
 		romanNumeralConverter.currentSymbolIndex = 5;
-		romanNumeralConverter.calcValueOfNextSymbol();
-		assertEquals(1, romanNumeralConverter.valueOfNextSymbol);
+		assertEquals(1, romanNumeralConverter.valueOfNextSymbol());
 		romanNumeralConverter.currentSymbolIndex = 4;
-		romanNumeralConverter.calcValueOfNextSymbol();
-		assertEquals(5, romanNumeralConverter.valueOfNextSymbol);
+		assertEquals(5, romanNumeralConverter.valueOfNextSymbol());
 		romanNumeralConverter.currentSymbolIndex = 3;
-		romanNumeralConverter.calcValueOfNextSymbol();
-		assertEquals(10, romanNumeralConverter.valueOfNextSymbol);
+		assertEquals(10, romanNumeralConverter.valueOfNextSymbol());
 		romanNumeralConverter.currentSymbolIndex = 2;
-		romanNumeralConverter.calcValueOfNextSymbol();
-		assertEquals(50, romanNumeralConverter.valueOfNextSymbol);
+		assertEquals(50, romanNumeralConverter.valueOfNextSymbol());
 		romanNumeralConverter.currentSymbolIndex = 1;
-		romanNumeralConverter.calcValueOfNextSymbol();
-		assertEquals(100, romanNumeralConverter.valueOfNextSymbol);
+		assertEquals(100, romanNumeralConverter.valueOfNextSymbol());
 		romanNumeralConverter.currentSymbolIndex = 0;
-		romanNumeralConverter.calcValueOfNextSymbol();
-		assertEquals(500, romanNumeralConverter.valueOfNextSymbol);
+		assertEquals(500, romanNumeralConverter.valueOfNextSymbol());
 	}
 	
 	@Test

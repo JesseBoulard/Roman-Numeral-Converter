@@ -10,9 +10,6 @@ public class RomanNumeralConverter {
 	private static final Map<String, Integer> CONVERT_TO_ARABIC_DIGIT = createMapOfRomanToArabicNumerals();
 	protected String[] romanNumeralSymbolArray;
 	protected int currentSymbolIndex;
-	protected int valueOfCurrentSymbol;
-	protected int valueOfNextSymbol;
-	protected int valueToSubtractFromCurrentSymbol;
 
 	private static Map<String, Integer> createMapOfRomanToArabicNumerals() 
 	{
@@ -35,13 +32,14 @@ public class RomanNumeralConverter {
 		romanNumeralSymbolArray = romanNumeral.split("");
 	}
 
-	protected void calcValueOfCurrentSymbol() {
-		valueOfCurrentSymbol = valueOf(romanNumeralSymbolArray[currentSymbolIndex]);
+	protected int valueOfCurrentSymbol() {
+		return valueOf(romanNumeralSymbolArray[currentSymbolIndex]);
 	}
 
 
-	protected void calcValueOfNextSymbol()
+	protected int valueOfNextSymbol()
 	{
+		int valueOfNextSymbol = 0;
 		if (currentSymbolIndex == romanNumeralSymbolArray.length - 1)
 		{
 			valueOfNextSymbol = 0;
@@ -50,22 +48,22 @@ public class RomanNumeralConverter {
 		{
 			valueOfNextSymbol = valueOf(romanNumeralSymbolArray[currentSymbolIndex + 1]);
 		}
+		return valueOfNextSymbol;
 	}
 
 	protected int returnRomanNumeralConvertedToArabicNumeral()
 	{
 		int arabicNumeral = 0;
+		int valueToSubtractFromCurrentSymbol = 0;
 		for (currentSymbolIndex = 0; currentSymbolIndex < romanNumeralSymbolArray.length; currentSymbolIndex++)
 		{
-			calcValueOfCurrentSymbol();
-			calcValueOfNextSymbol();
-			if (valueOfCurrentSymbol < valueOfNextSymbol)
+			if (valueOfCurrentSymbol() < valueOfNextSymbol())
 			{
-				valueToSubtractFromCurrentSymbol = valueOfCurrentSymbol;
+				valueToSubtractFromCurrentSymbol = valueOfCurrentSymbol();
 			}
 			else
 			{
-				arabicNumeral += (valueOfCurrentSymbol - valueToSubtractFromCurrentSymbol);
+				arabicNumeral += (valueOfCurrentSymbol() - valueToSubtractFromCurrentSymbol);
 				valueToSubtractFromCurrentSymbol = 0;
 			}
 		}
@@ -134,7 +132,7 @@ public class RomanNumeralConverter {
 		{
 			for (currentSymbolIndex = 0; currentSymbolIndex < romanNumeralSymbolArray.length; currentSymbolIndex++)
 			{
-				calcValueOfCurrentSymbol();
+				valueOfCurrentSymbol();
 			}
 		}
 		catch (Exception e)
