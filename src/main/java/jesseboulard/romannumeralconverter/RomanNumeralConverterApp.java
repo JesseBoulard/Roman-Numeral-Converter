@@ -7,7 +7,7 @@ public class RomanNumeralConverterApp {
 
 	private int whichConverter;
 
-	private RomanNumeralConverterApp()
+	public RomanNumeralConverterApp()
 	{
 		promptUserForWhichTypeOfNumeralToConvert();
 	}
