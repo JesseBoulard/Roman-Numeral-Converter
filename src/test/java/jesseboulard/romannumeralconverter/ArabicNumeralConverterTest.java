@@ -226,40 +226,35 @@ public class ArabicNumeralConverterTest {
 	@Test
 	public void testVerifyInputIsArabicNumeralBetween1And3999WhenUserInputIs1() {
 		arabicNumeralConverter.userInput = "1";
-		arabicNumeralConverter.setIsValidToFalseIfUserInputIsNotAnIntBetween1And3999();
 		assertEquals(1, arabicNumeralConverter.arabicNumeral);		
-		assertTrue(arabicNumeralConverter.isValid);	
+		assertTrue(arabicNumeralConverter.returnFalseIfUserInputIsNotAnIntBetween1And3999());	
 	}
 	
 	@Test
 	public void testVerifyInputIsArabicNumeralBetween1And3999WhenUserInputIsME262() {
 		arabicNumeralConverter.userInput = "ME262";
-		arabicNumeralConverter.setIsValidToFalseIfUserInputIsNotAnIntBetween1And3999();
 		assertEquals(0, arabicNumeralConverter.arabicNumeral);		
-		assertFalse(arabicNumeralConverter.isValid);	
+		assertFalse(arabicNumeralConverter.returnFalseIfUserInputIsNotAnIntBetween1And3999());	
 	}
 	
 	@Test
 	public void testVerifyInputIsArabicNumeralBetween1And3999WhenUserInputIs3999() {
 		arabicNumeralConverter.userInput = "3999";
-		arabicNumeralConverter.setIsValidToFalseIfUserInputIsNotAnIntBetween1And3999();
 		assertEquals(3999, arabicNumeralConverter.arabicNumeral);		
-		assertTrue(arabicNumeralConverter.isValid);	
+		assertTrue(arabicNumeralConverter.returnFalseIfUserInputIsNotAnIntBetween1And3999());	
 	}
 	
 	@Test
 	public void testVerifyInputIsArabicNumeralBetween1And3999WhenUserInputIs4000() {
 		arabicNumeralConverter.userInput = "4000";
-		arabicNumeralConverter.setIsValidToFalseIfUserInputIsNotAnIntBetween1And3999();
 		assertEquals(0, arabicNumeralConverter.arabicNumeral);		
-		assertFalse(arabicNumeralConverter.isValid);	
+		assertFalse(arabicNumeralConverter.returnFalseIfUserInputIsNotAnIntBetween1And3999());	
 	}
 	
 	@Test
 	public void testVerifyInputIsArabicNumeralBetween1And3999WhenUserInputIs0() {
 		arabicNumeralConverter.userInput = "0";
-		arabicNumeralConverter.setIsValidToFalseIfUserInputIsNotAnIntBetween1And3999();
 		assertEquals(0, arabicNumeralConverter.arabicNumeral);		
-		assertFalse(arabicNumeralConverter.isValid);	
+		assertFalse(arabicNumeralConverter.returnFalseIfUserInputIsNotAnIntBetween1And3999());	
 	}
 }

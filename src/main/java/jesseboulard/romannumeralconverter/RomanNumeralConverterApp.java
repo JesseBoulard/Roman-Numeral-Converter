@@ -55,13 +55,12 @@ public class RomanNumeralConverterApp {
 		System.out.println("Please enter a Arabic numeral to convert to a Roman numeral. Enter q to to quit.");
 		Scanner scnr = new Scanner(System.in);
 		arabicNumeralConverter.userInput = scnr.next();
-		arabicNumeralConverter.setIsValidToFalseIfUserInputIsNotAnIntBetween1And3999();
 		if (arabicNumeralConverter.userInput.charAt(0) == 'q')
 		{
 			RomanNumeralConverterApp romanNumeralConverterApp = new RomanNumeralConverterApp();
 			return;
 		}
-		if (arabicNumeralConverter.isValid)
+		if (arabicNumeralConverter.returnFalseIfUserInputIsNotAnIntBetween1And3999())
 		{
 			arabicNumeralConverter.splitArabicNumeralIntoDigitArray();
 			System.out.println(arabicNumeralConverter.arabicNumeral + " is equal to " + arabicNumeralConverter.returnArabicNumeralConvertedToRomanNumeral());

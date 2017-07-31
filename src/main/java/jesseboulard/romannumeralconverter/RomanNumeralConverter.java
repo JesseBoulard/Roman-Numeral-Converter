@@ -15,7 +15,6 @@ public class RomanNumeralConverter {
 	protected int valueOfNextSymbol;
 	protected int valueToSubtractFromCurrentSymbol;
 	protected int arabicNumeral;
-	protected boolean isValid;
 	protected String userInput;
 
 	private static Map<String, Integer> createMapOfRomanToArabicNumerals() 
@@ -76,8 +75,9 @@ public class RomanNumeralConverter {
 		return arabicNumeral;
 	}
 
-	protected void setIsValidToFalseIfARomanNumeralSymbolIsProceededByAHigherSymbolExceptWhenBothSymbolsCombineToMakeA9OrA4() 
+	protected boolean returnFalseIfARomanNumeralSymbolIsProceededByAHigherSymbolExceptWhenBothSymbolsCombineToMakeA9OrA4() 
 	{
+		boolean isValid = true;
 		for (currentSymbolIndex = 0; currentSymbolIndex < romanNumeralSymbolArray.length - 1; currentSymbolIndex++)
 		{
 			if (valueOf(romanNumeralSymbolArray[currentSymbolIndex]) < valueOf(romanNumeralSymbolArray[currentSymbolIndex + 1]) && 
@@ -87,10 +87,12 @@ public class RomanNumeralConverter {
 				isValid = false;
 			}
 		}
+		return isValid;
 	}
 
-	protected void setIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5AppearsTwiceInARow()
+	protected boolean returnFalseIfARomanNumeralSymbolWithAValueStartingWith5AppearsTwiceInARow()
 	{
+		boolean isValid = true;
 		for (int i = 0; i < romanNumeralSymbolArray.length - 1; i++)
 		{
 			if (romanNumeralSymbolArray[i].equals(romanNumeralSymbolArray[i + 1]) && Integer.toString(valueOf(romanNumeralSymbolArray[i])).charAt(0) == '5')
@@ -98,10 +100,12 @@ public class RomanNumeralConverter {
 				isValid = false;
 			}
 		}
+		return isValid;
 	}
 
-	protected void setIsValidToFalseIfMoreThanThreeRomanNumeralsAreInARow()
+	protected boolean returnFalseIfMoreThanThreeRomanNumeralsAreInARow()
 	{
+		boolean isValid = true;
 		for (int i = 0; i < romanNumeralSymbolArray.length - 3; i++)
 		{
 			if (romanNumeralSymbolArray[i].equals(romanNumeralSymbolArray[i + 1]) && romanNumeralSymbolArray[i].equals(romanNumeralSymbolArray[i + 2]) && 
@@ -110,10 +114,12 @@ public class RomanNumeralConverter {
 				isValid = false;
 			}
 		}
+		return isValid;
 	}
 
-	protected void setIsValidToFalseIfMoreThanOneRomanNumeralIsSubtractedFromAProceedingHigherNumeral()
+	protected boolean returnFalseIfMoreThanOneRomanNumeralIsSubtractedFromAProceedingHigherNumeral()
 	{
+		boolean isValid = true;
 		for (int i = 0; i < romanNumeralSymbolArray.length - 2; i++)
 		{
 			if (romanNumeralSymbolArray[i].equals(romanNumeralSymbolArray[i + 1]) && valueOf(romanNumeralSymbolArray[i + 2]) > valueOf(romanNumeralSymbolArray[i + 1]))
@@ -121,10 +127,12 @@ public class RomanNumeralConverter {
 				isValid = false;
 			}
 		}
+		return isValid;
 	}
 
-	protected void setIsValidToFalseIfSymbolIsNotRomanNumeralSymbol()
+	protected boolean returnFalseIfSymbolIsNotRomanNumeralSymbol()
 	{
+		boolean isValid = true;
 		try
 		{
 			for (currentSymbolIndex = 0; currentSymbolIndex < romanNumeralSymbolArray.length; currentSymbolIndex++)
@@ -136,28 +144,25 @@ public class RomanNumeralConverter {
 		{
 			isValid = false;
 		}
+		return isValid;
 	}
 
 
 	protected boolean isValidRomanNumeral()
 	{
-		isValid = true;
-		setIsValidToFalseIfSymbolIsNotRomanNumeralSymbol();
-		if (isValid == true)
+		boolean isValid = true;
+		
+		if (returnFalseIfSymbolIsNotRomanNumeralSymbol() &&
+				returnFalseIfARomanNumeralSymbolIsProceededByAHigherSymbolExceptWhenBothSymbolsCombineToMakeA9OrA4() &&
+				returnFalseIfARomanNumeralSymbolWithAValueStartingWith5AppearsTwiceInARow() &&	
+				returnFalseIfMoreThanThreeRomanNumeralsAreInARow() &&
+				returnFalseIfMoreThanOneRomanNumeralIsSubtractedFromAProceedingHigherNumeral())
 		{
-			setIsValidToFalseIfARomanNumeralSymbolIsProceededByAHigherSymbolExceptWhenBothSymbolsCombineToMakeA9OrA4();
+			isValid = true;
 		}
-		if (isValid == true)
+		else
 		{
-			setIsValidToFalseIfARomanNumeralSymbolWithAValueStartingWith5AppearsTwiceInARow();
-		}
-		if (isValid == true)
-		{
-			setIsValidToFalseIfMoreThanThreeRomanNumeralsAreInARow();
-		}
-		if (isValid == true)
-		{
-			setIsValidToFalseIfMoreThanOneRomanNumeralIsSubtractedFromAProceedingHigherNumeral();
+			isValid = false;
 		}
 		return isValid;
 	}
