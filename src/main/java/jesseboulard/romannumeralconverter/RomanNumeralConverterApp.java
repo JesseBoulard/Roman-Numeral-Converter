@@ -21,8 +21,6 @@ public class RomanNumeralConverterApp {
 		System.out.println("If you would like to convert a Roman numeral to an Arabic numeral, enter: 1");
 		System.out.println("If you would like to convert a Arabic numeral to an Roman numeral, enter: 2");
 		System.out.println("To quit enter: 3");
-		Scanner scnr = new Scanner(System.in);
-		whichConverter = scnr.nextInt();
 		attemptToConvertNumeralOfTypeSelected();
 	}
 
@@ -94,8 +92,10 @@ public class RomanNumeralConverterApp {
 
 	private void attemptToConvertNumeralOfTypeSelected()
 	{
+		Scanner scnr = new Scanner(System.in);
 		try
 		{
+			whichConverter = scnr.nextInt();
 			convertNumeralOfTypeSelected();	
 		}
 		catch (InputMismatchException e)
