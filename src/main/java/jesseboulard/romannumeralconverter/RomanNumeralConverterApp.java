@@ -20,7 +20,7 @@ public class RomanNumeralConverterApp {
 	private void promptUserForWhichTypeOfNumeralToConvert()
 	{
 		System.out.println("If you would like to convert a Roman numeral to an Arabic numeral, enter: 1");
-		System.out.println("If you would like to convert a Arabic numeral to an Roman numeral, enter: 2");
+		System.out.println("If you would like to convert an Arabic numeral to an Roman numeral, enter: 2");
 		System.out.println("To quit enter: 3");
 		attemptToConvertNumeralOfTypeSelected();
 	}
