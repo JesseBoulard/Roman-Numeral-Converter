@@ -63,8 +63,8 @@ public class RomanNumeralConverterApp {
 		}
 		if (arabicNumeralConverter.returnFalseIfUserInputIsNotAnIntBetween1And3999(userInput))
 		{
-			arabicNumeralConverter.splitArabicNumeralIntoDigitArray();
-			System.out.println(arabicNumeralConverter.arabicNumeral + " is equal to " + arabicNumeralConverter.returnArabicNumeralConvertedToRomanNumeral());
+			arabicNumeralConverter.splitArabicNumeralIntoDigitArray(userInput);
+			System.out.println(userInput + " is equal to " + arabicNumeralConverter.returnArabicNumeralConvertedToRomanNumeral());
 			promptUserForAnArabicNumeral();
 		}
 		else

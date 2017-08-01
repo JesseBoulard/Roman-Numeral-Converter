@@ -7,12 +7,9 @@ import java.util.Scanner;
 
 public class ArabicNumeralConverter {
 	protected static final Map<Integer, String> CONVERT_TO_ROMAN_NUMERAL_SYMBOL = createMapOfArabicToRomanNumerals();
-	protected int arabicNumeral;
 	protected int[] digitArray;
 	protected int currentDigitIndex;
-	protected int currentDigitValue;
 	protected int nextDigitPlaceValue;
-	protected String romanNumeralConcatenation;
 
 	private static Map<Integer, String> createMapOfArabicToRomanNumerals() 
 	{
@@ -31,8 +28,8 @@ public class ArabicNumeralConverter {
 		return CONVERT_TO_ROMAN_NUMERAL_SYMBOL.get(arabicNumeral);
 	}
 
-	protected void splitArabicNumeralIntoDigitArray() { 
-		String[] digitArrayAsString = Integer.toString(arabicNumeral).split("");
+	protected void splitArabicNumeralIntoDigitArray(String arabicNumeral) { 
+		String[] digitArrayAsString = arabicNumeral.split("");
 		digitArray = new int[digitArrayAsString.length];
 		for (int i = 0; i < digitArray.length; i++)
 		{
@@ -65,15 +62,16 @@ public class ArabicNumeralConverter {
 		return nextDigitPlaceValue / 10;
 	}
 
-	protected void ifCurrentDigitIsA9Add9EquivalentToRomanNumeralConcatenation() {
+	protected String returnConcatenationOfRomanNumeralEquivalentOfCurrentDigitIfItIsA9(String romanNumeralConcatenation) {
 		if (digitArray[currentDigitIndex] == 9)
 		{
 			romanNumeralConcatenation += romanNumeralSymbolFor(currentDigitPlaceValue());
 			romanNumeralConcatenation += romanNumeralSymbolFor(nextDigitPlaceValue);
 		}
+		return romanNumeralConcatenation;
 	}
 
-	protected void ifCurrentDigitIsLessThan9AndGreaterThanOrEqualTo5AddDigitEquivalentToRomanNumeralConcatenation() {
+	protected String returnConcatenationOfRomanNumeralEquivalentOfCurrentDigitIfItIsLessThan9AndGreaterThanOrEqualTo5(String romanNumeralConcatenation) {
 		if (digitArray[currentDigitIndex] >= 5 && digitArray[currentDigitIndex] < 9)
 		{
 			int currentDigitPlaceValue = currentDigitPlaceValue();
@@ -83,18 +81,20 @@ public class ArabicNumeralConverter {
 				romanNumeralConcatenation += romanNumeralSymbolFor(currentDigitPlaceValue);
 			}
 		}
+		return romanNumeralConcatenation;
 	}
 
-	protected void ifCurrentDigitIsA4Add4EquivalentToRomanNumeralConcatenation()
+	protected String returnConcatenationOfRomanNumeralEquivalentOfCurrentDigitIfItIsA4(String romanNumeralConcatenation)
 	{
 		if (digitArray[currentDigitIndex] == 4)
 		{
 			romanNumeralConcatenation += romanNumeralSymbolFor(currentDigitPlaceValue());
 			romanNumeralConcatenation += romanNumeralSymbolFor(nextDigitPlaceValue / 2);
 		}
+		return romanNumeralConcatenation;
 	}
 
-	protected void ifCurrentDigitIsLessThan4AddDigitEquivalentToRomanNumeralConcatenation()
+	protected String returnConcatenationOfRomanNumeralEquivalentOfCurrentDigitIfItIsLessThan4(String romanNumeralConcatenation)
 	{
 		if (digitArray[currentDigitIndex] < 4)
 		{
@@ -103,23 +103,24 @@ public class ArabicNumeralConverter {
 				romanNumeralConcatenation += romanNumeralSymbolFor(currentDigitPlaceValue());
 			}
 		}
+		return romanNumeralConcatenation;
 	}
 
 	protected String returnArabicNumeralConvertedToRomanNumeral() {
-		romanNumeralConcatenation = "";
+		String romanNumeralConcatenation = "";
 		for (currentDigitIndex = 0; currentDigitIndex < digitArray.length; currentDigitIndex++)
 		{
-			ifCurrentDigitIsA9Add9EquivalentToRomanNumeralConcatenation();
-			ifCurrentDigitIsLessThan9AndGreaterThanOrEqualTo5AddDigitEquivalentToRomanNumeralConcatenation();
-			ifCurrentDigitIsA4Add4EquivalentToRomanNumeralConcatenation();
-			ifCurrentDigitIsLessThan4AddDigitEquivalentToRomanNumeralConcatenation();
+			romanNumeralConcatenation = returnConcatenationOfRomanNumeralEquivalentOfCurrentDigitIfItIsA9(romanNumeralConcatenation);
+			romanNumeralConcatenation = returnConcatenationOfRomanNumeralEquivalentOfCurrentDigitIfItIsLessThan9AndGreaterThanOrEqualTo5(romanNumeralConcatenation);
+			romanNumeralConcatenation = returnConcatenationOfRomanNumeralEquivalentOfCurrentDigitIfItIsA4(romanNumeralConcatenation);
+			romanNumeralConcatenation = returnConcatenationOfRomanNumeralEquivalentOfCurrentDigitIfItIsLessThan4(romanNumeralConcatenation);
 		}
 		return romanNumeralConcatenation;
 	}
 
 	protected boolean returnTrueIfUserInputIsAnIntBetween1And3999(String userInput)
 	{
-		arabicNumeral = 0;
+		int arabicNumeral = 0;
 		boolean isValid = true;
 		arabicNumeral = Integer.parseInt(userInput);
 		if (arabicNumeral < 1 || arabicNumeral > 3999)
