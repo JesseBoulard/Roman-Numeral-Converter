@@ -54,17 +54,17 @@ public class RomanNumeralConverter {
 	protected int returnRomanNumeralConvertedToArabicNumeral()
 	{
 		int arabicNumeral = 0;
-		int valueToSubtractFromCurrentSymbol = 0;
+		int valueToSubtract = 0;
 		for (currentSymbolIndex = 0; currentSymbolIndex < romanNumeralSymbolArray.length; currentSymbolIndex++)
 		{
 			if (valueOfCurrentSymbol() < valueOfNextSymbol())
 			{
-				valueToSubtractFromCurrentSymbol = valueOfCurrentSymbol();
+				valueToSubtract = valueOfCurrentSymbol();
 			}
 			else
 			{
-				arabicNumeral += (valueOfCurrentSymbol() - valueToSubtractFromCurrentSymbol);
-				valueToSubtractFromCurrentSymbol = 0;
+				arabicNumeral += (valueOfCurrentSymbol() - valueToSubtract);
+				valueToSubtract = 0;
 			}
 		}
 		return arabicNumeral;
